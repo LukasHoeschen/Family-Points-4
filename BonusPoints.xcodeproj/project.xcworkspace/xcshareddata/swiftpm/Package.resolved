@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
+        "version" : "5.8.0"
+      }
+    },
+    {
+      "identity" : "simpleswiftcrypto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joehinkle11/SimpleSwiftCrypto",
+      "state" : {
+        "revision" : "32b0d0ce3adcc727175554285d7a8c66d25b2c6d",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swiftdate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftDate/",
+      "state" : {
+        "revision" : "5d943224c3bb173e6ecf27295611615eba90c80e",
+        "version" : "7.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

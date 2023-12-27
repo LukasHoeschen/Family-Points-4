@@ -1,0 +1,170 @@
+{
+  "identifier" : "7FBD9AA0",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "D8246F1B",
+      "localizations" : [
+        {
+          "description" : "20 more Tasks for your complete Family",
+          "displayName" : "20 Tasks",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "20 zusätzliche Aufgaben für deine Familie",
+          "displayName" : "20 Aufgaben",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "org.hoeschen.bonusPoints.purchase.tasks20",
+      "referenceName" : "20 Tasks",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "F518ABC0",
+      "localizations" : [
+
+      ],
+      "name" : "Bonus Points Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "05E5F0D4",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited Features on an annually basis",
+              "displayName" : "Bonus Points Pro - Annualy",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "org.hoeschen.bonusPoints.subscription.pro",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Subscribe Annually",
+          "subscriptionGroupID" : "F518ABC0",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "50FC0F1B",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited Features on a monthly basis",
+              "displayName" : "Bonus Points Pro - Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "org.hoeschen.bonusPoints.subscribe.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Subscribe Monthly",
+          "subscriptionGroupID" : "F518ABC0",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.50",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "25DA051A",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Test - 1 week",
+              "displayName" : "Test - 1 week",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "test",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "test",
+          "subscriptionGroupID" : "F518ABC0",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
