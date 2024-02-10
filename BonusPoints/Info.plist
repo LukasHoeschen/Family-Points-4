@@ -19,8 +19,6 @@
 			<string></string>
 		</dict>
 	</array>
-	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<true/>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -42,7 +40,6 @@
 				</array>
 			</dict>
 		</dict>
-		<dict/>
 	</array>
 </dict>
 </plist>

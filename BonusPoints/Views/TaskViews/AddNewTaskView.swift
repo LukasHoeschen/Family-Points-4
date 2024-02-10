@@ -50,7 +50,7 @@ struct AddNewTaskView: View {
                     }
                     
                     if dataHandler.user.role == .parent {
-                        BonusPointsStoreView()
+                        FamilyPointsStoreView()
                     }
                 } else {
                     Section {

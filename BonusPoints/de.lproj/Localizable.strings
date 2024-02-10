@@ -1,8 +1,29 @@
 /* No comment provided by engineer. */
+"-" = "-";
+
+/* No comment provided by engineer. */
+"!" = "!";
+
+/* No comment provided by engineer. */
+"!!!" = "!!!";
+
+/* No comment provided by engineer. */
 "**%@** total achieved points with this task" = "**%@** Punkte insgesamt erreicht mit dieser Aufgabe";
 
 /* No comment provided by engineer. */
 "**%lld times** completed by all family members" = "**%lld mal** erledigt von allen Familienmitgliedern";
+
+/* No comment provided by engineer. */
+"**Please note:** Connecting multiple devices to your account is not available in the free version." = "**Bitte beachten Sie:** Das Verbinden mehrerer Geräte mit Ihrem Konto ist in der kostenlosen Version nicht möglich.";
+
+/* No comment provided by engineer. */
+"**Proceed with caution.**" = "**Bitte mache mit Vorsicht weiter.**";
+
+/* No comment provided by engineer. */
+"%@P" = "%@P";
+
+/* No comment provided by engineer. */
+"%lld" = "%lld";
 
 /* No comment provided by engineer. */
 "%lld Tasks done" = "%lld Aufgaben erledigt";
@@ -11,7 +32,61 @@
 "%lld Times Completed" = "%lld mal erledigt";
 
 /* No comment provided by engineer. */
+"%lld/%lld Tasks" = "%lld/%lld Aufgaben";
+
+/* No comment provided by engineer. */
+"%lld/4 Family Members" = "%lld/4 Familienmitglieder";
+
+/* No comment provided by engineer. */
+"%lld/4 Task Lists" = "%lld/4 Listen";
+
+/* No comment provided by engineer. */
+"%lldP" = "%lldP";
+
+/* No comment provided by engineer. */
+"• 4 family members, including yourself" = "• 4 Familienmitglieder, einschließlich Sie selbst";
+
+/* No comment provided by engineer. */
+"• 4 task lists" = "• 4 Aufgabenlisten";
+
+/* No comment provided by engineer. */
+"• 30 complimentary tasks" = "• 30 kostenfreie Aufgaben";
+
+/* No comment provided by engineer. */
+"0" = "0";
+
+/* No comment provided by engineer. */
+"1" = "1";
+
+/* No comment provided by engineer. */
+"2" = "2";
+
+/* No comment provided by engineer. */
+"3" = "3";
+
+/* No comment provided by engineer. */
+"4" = "4";
+
+/* No comment provided by engineer. */
+"5" = "5";
+
+/* No comment provided by engineer. */
+"6" = "6";
+
+/* No comment provided by engineer. */
+"7" = "7";
+
+/* No comment provided by engineer. */
+"8" = "8";
+
+/* No comment provided by engineer. */
+"9" = "9";
+
+/* No comment provided by engineer. */
 "About" = "Über";
+
+/* No comment provided by engineer. */
+"About & Contact" = "Über & Kontakt";
 
 /* No comment provided by engineer. */
 "About Me" = "Über Mich";
@@ -47,6 +122,21 @@
 "All your data is end-to-end encrypted. Wondering how we store your data on our server? For example, your family name looks like this: %@" = "Ihre Daten werden End-zu-End-Verschlüsselt. Möchten Sie wissen, wie wir Ihre Daten auf unserem Server speichern? \nIhr Familienname sieht beispielsweiße so aus: %a";
 
 /* No comment provided by engineer. */
+"All your data is securely encrypted on our servers. Neither we nor any third parties have the capability to decrypt it. Only you and your future family members possess the secret key required to decrypt the data." = "Alle Ihre Daten werden auf unseren Servern sicher verschlüsselt. Weder wir noch Dritte haben die Möglichkeit, sie zu entschlüsseln. Nur Sie und Ihre zukünftigen Familienmitglieder besitzen den geheimen Schlüssel, der zur Entschlüsselung der Daten erforderlich ist.";
+
+/* No comment provided by engineer. */
+"Alternatively, you can simply tap the file, and it should automatically open here." = "Alternativ können Sie auch einfach auf die Datei tippen, die dann automatisch geöffnet wird.";
+
+/* No comment provided by engineer. */
+"Family Points PRO" = "Bonus Punkte PRO";
+
+/* No comment provided by engineer. */
+"Family Points User Export" = "Bonus Punkte Benutzer-Export";
+
+/* No comment provided by engineer. */
+"Buy me a Coffee" = "Kauf mir einen Kaffee";
+
+/* No comment provided by engineer. */
 "Cancel" = "Abbrechen";
 
 /* No comment provided by engineer. */
@@ -74,16 +164,25 @@
 "Completed" = "Erledigt";
 
 /* No comment provided by engineer. */
+"Connect new Device" = "Ein neues Gerät verbinden";
+
+/* No comment provided by engineer. */
 "Connect to an other Device" = "Verbinde dich mit einem anderem Gerät";
 
 /* No comment provided by engineer. */
 "Connected Devices" = "Verbundene Geräte";
 
 /* No comment provided by engineer. */
+"Contact" = "Kontakt";
+
+/* No comment provided by engineer. */
+"Contact me" = "Kontaktiere mich";
+
+/* No comment provided by engineer. */
 "Copy my (unencrypted) Data" = "Kopiere meine (unverschlüsselten) Daten";
 
 /* No comment provided by engineer. */
-"Create" = "Erstellt";
+"Create" = "Erstellen";
 
 /* No comment provided by engineer. */
 "Create a New Family" = "Erstelle eine neue Familie";
@@ -102,6 +201,9 @@
 
 /* No comment provided by engineer. */
 "Current Tasks Completed" = "Aktuell erledigte Aufgaben";
+
+/* No comment provided by engineer. */
+"Current Utilisation" = "Derzeitige Benutzung";
 
 /* No comment provided by engineer. */
 "Delete" = "Löschen";
@@ -131,6 +233,12 @@
 "Delete your User" = "Deinen Benutzer löschen";
 
 /* No comment provided by engineer. */
+"Deleting your family (%@) will erase all your data from our servers, including tasks, lists, family members, and their devices. This action cannot be undone." = "Wenn Sie Ihre Familie löschen (%@), werden alle Ihre Daten von unseren Servern gelöscht, einschließlich Aufgaben, Listen, Familienmitglieder und deren Geräte. Diese Aktion kann nicht rückgängig gemacht werden.";
+
+/* No comment provided by engineer. */
+"Deleting your user will remove all your user data (%@) stored on our servers. Your account cannot be reinstalled." = "Wenn Sie Ihren Benutzer löschen, werden alle auf unseren Servern gespeicherten Benutzerdaten (%@) gelöscht. Ihr Konto kann nicht wiederhergestellt werden.";
+
+/* No comment provided by engineer. */
 "Deny" = "Ablehnen";
 
 /* No comment provided by engineer. */
@@ -140,10 +248,13 @@
 "Device:" = "Gerät:";
 
 /* No comment provided by engineer. */
-"Devices wanting to link" = "Geräte, die sich verbinden möchten";
+"Devices wanting to connect" = "Geräte, die eine Verbindung herstellen möchten";
 
 /* Initialised Tasks */
 "Do Homework" = "Hausaufgaben machen";
+
+/* No comment provided by engineer. */
+"Do you have any recommendations?" = "Haben Sie Empfehlungen?";
 
 /* No comment provided by engineer. */
 "Do you really want to delete this list with all tasks? This can't be undo." = "Möchtest Du wirklich diese Liste mit allen Aufgaben löschen?";
@@ -179,13 +290,31 @@
 "Enter your last name" = "Bitte gib deinen Nachnamen ein";
 
 /* No comment provided by engineer. */
+"Export" = "Exportieren";
+
+/* No comment provided by engineer. */
+"Export User" = "Benutzer exportieren";
+
+/* No comment provided by engineer. */
+"Export your User" = "Exportieren Sie Ihren Benutzer-Account";
+
+/* No comment provided by engineer. */
 "Family" = "Familie";
 
 /* No comment provided by engineer. */
 "Family members can also be added through the settings." = "Familienmitglieder können auch in den Einstellungen hinzugefügt werden.";
 
 /* No comment provided by engineer. */
+"For adding more Family Members, please subscribe." = "Um weitere Familienmitglieder hinzuzufügen, bitte abonnieren Sie Family Points Pro.";
+
+/* No comment provided by engineer. */
 "For:" = "Für:";
+
+/* No comment provided by engineer. */
+"Fri" = "Fr";
+
+/* No comment provided by engineer. */
+"Hide" = "Ausblenden";
 
 /* No comment provided by engineer. */
 "I'm Lukas, a 17-year-old boy from Germany (2023). If you have ideas for new features or any suggestions, please feel free to contact me. Thank you so much for using my app." = "Mein Name ist Lukas und ich bin ein 17 jähriger Schüler aus Deutschland. Wenn Sie Ideen für neue Funktionen oder sonstige Anmerkungen haben, kontaktieren Sie mich bitte.\nDanke dass Sie meine App benutzen!";
@@ -203,7 +332,16 @@
 "Importance" = "Wichtigkeit";
 
 /* No comment provided by engineer. */
+"Important Note: Unlike your other data, this recommendation is stored in plain text on my server to facilitate reading. Please be aware of this." = "Wichtiger Hinweis: Im Gegensatz zu Ihren anderen Daten wird diese Empfehlung auf meinem Server im Klartext gespeichert, um das Lesen zu erleichtern. Bitte beachten Sie dies.";
+
+/* No comment provided by engineer. */
+"Important Note: Your message will be transmitted and stored in plain text to facilitate communication. Please provide details and ensure it's at least 100 characters." = "Wichtiger Hinweis: Ihre Nachricht wird im Klartext übertragen und gespeichert, um die Kommunikation zu erleichtern. Bitte geben Sie Einzelheiten an und achten Sie darauf, dass sie mindestens 100 Zeichen verwenden.";
+
+/* No comment provided by engineer. */
 "Info" = "Info";
+
+/* No comment provided by engineer. */
+"Information" = "Information";
 
 /* No comment provided by engineer. */
 "Insights" = "Einblicke";
@@ -221,34 +359,70 @@
 "Join Family" = "Trete einer Familie bei";
 
 /* No comment provided by engineer. */
+"Just open the file on your new device to log in again." = "Öffnen Sie die Datei einfach auf Ihrem neuen Gerät, um sich erneut anzumelden.";
+
+/* No comment provided by engineer. */
 "Kid" = "Kind";
 
 /* No comment provided by engineer. */
 "Link Device" = "Verbinde ein Gerät";
 
 /* No comment provided by engineer. */
-"Link new Device" = "Verbinde ein neues Gerät";
+"Lists" = "Listen";
+
+/* No comment provided by engineer. */
+"Lists can help you to organise your tasks based on specific topics. For instance, you could create a list for each family member or for categories such as cleaning or work.\nHere you can create new lists, sort or delete them." = "Listen können Ihnen helfen, Ihre Aufgaben nach bestimmten Themen zu organisieren. Sie können zum Beispiel eine Liste für jedes Familienmitglied oder für Kategorien wie Reinigung oder Arbeit erstellen.\nHier können Sie neue Listen erstellen, sie sortieren oder löschen.";
+
+/* No comment provided by engineer. */
+"Load User Account from File" = "Benutzerkonto aus Datei laden";
 
 /* No comment provided by engineer. */
 "Log out" = "Ausloggen";
 
 /* No comment provided by engineer. */
+"Logging out will delete all your data on this device. Your account (%@) won't be deleted on our servers, but you'll need to export your account information and import it on your new device. If you have a second device connected to your account, you can use it to set up your new device." = "Wenn Sie sich abmelden, werden alle Ihre Daten auf diesem Gerät gelöscht. Ihr Konto (%@) wird nicht auf unseren Servern gelöscht, aber Sie müssen Ihre Kontoinformationen exportieren und auf Ihr neues Gerät importieren. Wenn Sie ein zweites Gerät haben, das mit Ihrem Konto verbunden ist, können Sie dieses zum Einrichten Ihres neuen Geräts verwenden.";
+
+/* No comment provided by engineer. */
 "Members wanting to join" = "Mitglieder, die beitreten möchten";
+
+/* No comment provided by engineer. */
+"Mon" = "Mo";
 
 /* No comment provided by engineer. */
 "Most Completed Tasks" = "Am meisten erledigte Aufgaben";
 
 /* No comment provided by engineer. */
+"Multi-device connectivity is supported exclusively for subscribers." = "Multi-Device-Konnektivität wird ausschließlich für Abonnenten unterstützt.";
+
+/* No comment provided by engineer. */
 "Name" = "Name";
 
 /* No comment provided by engineer. */
+"Name of new Task" = "Name der Aufgabe";
+
+/* No comment provided by engineer. */
+"Name:" = "Name:";
+
+/* No comment provided by engineer. */
 "Name: " = "Name:";
+
+/* No comment provided by engineer. */
+"No" = "Nein";
 
 /* No comment provided by engineer. */
 "No matching Tasks found." = "Keine Aufgaben gefunden";
 
 /* No comment provided by engineer. */
 "No Tasks in this list yet" = "Keine Aufgaben in dieser Liste";
+
+/* No comment provided by engineer. */
+"Not necessary" = "Nicht erforderlich";
+
+/* No comment provided by engineer. */
+"Notification Settings" = "Benachrichtigungen";
+
+/* No comment provided by engineer. */
+"Notifications" = "Benachrichtigungen";
 
 /* No comment provided by engineer. */
 "OK" = "OK";
@@ -269,10 +443,19 @@
 "Please ask a family member to accept you in the settings." = "Bitte ein Familienmitglied, dich in den Einstellungen zu akzeptieren.";
 
 /* No comment provided by engineer. */
+"Please ask your Parents for help." = "Bitte deine Eltern um Hilfe.";
+
+/* No comment provided by engineer. */
 "Please enter a name" = "Bitte gib einen Namen ein";
 
 /* No comment provided by engineer. */
+"Please enter the Task Name" = "Bitte geben Sie den Aufgabennamen ein";
+
+/* No comment provided by engineer. */
 "Please establish an internet connection" = "Bitte stelle eine Internetverbindung her";
+
+/* No comment provided by engineer. */
+"Please note that your data is exported without encryption, and your family's secret encryption key is stored in plain text.\n**Please do not delete your device or logout in this App on this device!**" = "Bitte beachten Sie, dass Ihre Daten unverschlüsselt exportiert werden und der geheime Verschlüsselungscode Ihrer Familie im Klartext gespeichert wird.\n**Bitte löschen Sie Ihr Gerät nicht und melden Sie sich in dieser App auf diesem Gerät nicht ab!**";
 
 /* No comment provided by engineer. */
 "Points" = "Punkte";
@@ -284,10 +467,16 @@
 "Points to Add" = "Punkte, die hinzugefügt werden";
 
 /* No comment provided by engineer. */
-"Points to Add if the Task is Completed" = "Punkte, die hinzugefügt werden, wenn die Aufgabe erledigt wird";
+"Points to add if the Task is completed" = "Punkte, die hinzugefügt werden, wenn die Aufgabe erledigt ist";
 
 /* No comment provided by engineer. */
-"Points: " = "Punkt:";
+"Points:" = "Punkte:";
+
+/* No comment provided by engineer. */
+"Purchases and subscriptions are synchronised across all family members." = "Käufe und Abonnements werden zwischen allen Familienmitgliedern synchronisiert.";
+
+/* No comment provided by engineer. */
+"Rate Family Points" = "Bewerte Bonus Punkte";
 
 /* No comment provided by engineer. */
 "Refresh" = "Neuladen";
@@ -299,16 +488,34 @@
 "Remove Device?" = "Gerät entfernen?";
 
 /* No comment provided by engineer. */
+"Right now you're using %lld Tasks of %lld free tasks." = "Im Moment verwenden Sie %lld Aufgaben von %lld freien Aufgaben.";
+
+/* No comment provided by engineer. */
 "Role" = "Rolle ";
 
 /* No comment provided by engineer. */
 "Role:" = "Rolle:";
 
 /* No comment provided by engineer. */
+"Sat" = "Sa";
+
+/* No comment provided by engineer. */
+"Save Changes" = "Änderungen speichern";
+
+/* No comment provided by engineer. */
 "Search" = "Suchen";
 
 /* No comment provided by engineer. */
 "Searching for: %@" = "Suche nach %@";
+
+/* No comment provided by engineer. */
+"Select Days" = "Tage auswählen";
+
+/* No comment provided by engineer. */
+"Select Time" = "Zeit auswählen";
+
+/* No comment provided by engineer. */
+"Send" = "Senden";
 
 /* No comment provided by engineer. */
 "Set Points" = "Setze Punkte";
@@ -326,16 +533,28 @@
 "Setup" = "Setup";
 
 /* No comment provided by engineer. */
-"Task Lists" = "Aufgaben-Listen";
+"Submit" = "Absenden";
+
+/* No comment provided by engineer. */
+"Subscribe now" = "Jetzt abonnieren";
+
+/* No comment provided by engineer. */
+"Sun" = "So";
 
 /* No comment provided by engineer. */
 "Tasks" = "Aufgaben";
 
 /* No comment provided by engineer. */
-"The Idea Behind Bonus Points" = "Die Idee hinter Bonus Points";
+"The Idea Behind Family Points" = "Die Idee hinter Family Points";
 
 /* No comment provided by engineer. */
-"This app was inspired by an idea my sister came up with some time ago. Initially, we recorded our points on the backside of our fridge. To make this fantastic idea accessible to everyone, I created this app." = "Diese App basiert auf einer Idee, die meine Schwester vor einiger Zeit kam.\nAnfangs haben wir unsere Punkte auf unserem Kühlschrank aufgeschrieben. Und nicht nur weil ich oft vergessen habe, meine Punkte aufzuschreiben, sondern auch, um dieses fantastische System jedem zugänglich zu machen, habe ich diese App programmiert.";
+"This app was inspired by an idea my sister came up with some time ago. Initially, we recorded our points on our fridge. To make this fantastic idea accessible to everyone, I created this app." = "Diese App wurde durch eine Idee meiner Schwester inspiriert, die vor einiger Zeit entstand. Ursprünglich haben wir unsere Punkte an unserem Kühlschrank notiert. Um diese fantastische Idee für alle zugänglich zu machen, habe ich diese App entwickelt.";
+
+/* No comment provided by engineer. */
+"This feature allows you to export your user account along with all your private data and encryption key. While useful when transitioning to a new Apple device after selling your current one, it's essential to be mindful of the risks." = "Mit dieser Funktion können Sie Ihr Benutzerkonto zusammen mit all Ihren privaten Daten und dem Verschlüsselungsschlüssel exportieren. Dies ist zwar nützlich, wenn Sie auf ein neues Apple-Gerät umsteigen, nachdem Sie Ihr aktuelles Gerät verkauft haben, aber Sie sollten sich der Risiken bewusst sein.";
+
+/* No comment provided by engineer. */
+"This is only visible if your family name is \"Hoeschen\" and your user name is \"Lukas\". It seems like we have the same name!" = "Dies ist nur sichtbar, wenn Ihr Familienname \"Hoeschen\" und Ihr Benutzername \"Lukas\" ist. Es scheint, als hätten wir den gleichen Namen!";
 
 /* No comment provided by engineer. */
 "This section displays tasks that have been completed most frequently among all family members." = "Dieser Abschnitt zeigt Aufgaben, die häufig von Familienmitgliedern erledigt wurden.";
@@ -346,8 +565,17 @@
 /* No comment provided by engineer. */
 "This section displays tasks that yield the highest number of points." = "Dieser Abschnitt zeigt Aufgaben, die die meisten Punkte bringen.";
 
+/* No comment provided by engineer. */
+"Thu" = "Do";
+
 /* Initialised Tasks */
 "Tidy my Room" = "Zimmer aufräumen";
+
+/* No comment provided by engineer. */
+"Time" = "Zeit";
+
+/* No comment provided by engineer. */
+"To create more tasks, please kindly request your parents to unlock them." = "Um weitere Aufgaben zu erstellen, bitte deine Eltern, sie freizuschalten.";
 
 /* No comment provided by engineer. */
 "Total Achieved" = "Insgesamt erreicht";
@@ -365,19 +593,55 @@
 "Try Again" = "Versuche es erneut";
 
 /* No comment provided by engineer. */
-"Use this key instead of creating a new user on your new device." = "Benutze diesen Code anstatt einen neuen Benutzer zu erstellen.";
+"Tue" = "Di";
+
+/* No comment provided by engineer. */
+"Unlimited Devices" = "Unbegrenzte Anzahl von Geräten";
+
+/* No comment provided by engineer. */
+"Unlimited Family Members" = "Unbegrenzte Anzahl von Familienmitgliedern";
+
+/* No comment provided by engineer. */
+"Unlimited Lists" = "Unbegrenzte Listen";
+
+/* No comment provided by engineer. */
+"Unlimited Tasks" = "Unbegrenzte Aufgaben";
+
+/* No comment provided by engineer. */
+"Unlock premium features:" = "Schalten Sie Premium-Funktionen frei:";
+
+/* No comment provided by engineer. */
+"Upgrade Options" = "Upgrade-Optionen";
+
+/* No comment provided by engineer. */
+"Use this key instead of creating a new user on your second device." = "Verwenden Sie diesen Code, anstatt einen neuen Benutzer auf Ihrem zweiten Gerät anzulegen.";
 
 /* No comment provided by engineer. */
 "User Information" = "Benutzer Informationen";
 
 /* No comment provided by engineer. */
+"Was this video helpful?" = "War dieses Video hilfreich?";
+
+/* No comment provided by engineer. */
 "Watch an example video here." = "Schaue dir hier ein Beispielvideo an.";
+
+/* No comment provided by engineer. */
+"Wed" = "Mi";
 
 /* No comment provided by engineer. */
 "When %@ completes tasks, they will appear here for your approval. You can then choose to either accept or deny them. This way, you can award points only when the task has truly been completed." = "Wenn %@ Aufgaben erledigt, werden diese hier angezeigt. Du kannst sie dann akzeptieren oder ablehnen, je nachdem, ob diese Aufgabe wirklich erledigt wurde.";
 
 /* No comment provided by engineer. */
+"With the free version of Family Points, you enjoy the following features:" = "Mit der kostenlosen Version von Family Points genießen Sie die folgenden Funktionen:";
+
+/* No comment provided by engineer. */
 "Write me an Email" = "Schreibe mir eine Email";
+
+/* No comment provided by engineer. */
+"Write something..." = "Schreibe etwas...";
+
+/* No comment provided by engineer. */
+"Yes" = "Ja";
 
 /* No comment provided by engineer. */
 "Your Devices" = "Deine Geräte";
@@ -386,10 +650,19 @@
 "Your Family" = "Deine Familie";
 
 /* No comment provided by engineer. */
+"Your family has reached its task limit." = "Ihre Familie hat ihre Aufgabengrenze erreicht.";
+
+/* No comment provided by engineer. */
 "Your Family Link key can be found in the settings" = "Dein Familien-Beitritts-Code kann in den Einstellungen eines anderen Familienmitglieds gefunden werden";
 
 /* No comment provided by engineer. */
+"Your first Name" = "Dein Vorname";
+
+/* No comment provided by engineer. */
 "Your Information" = "Deine Informationen";
+
+/* No comment provided by engineer. */
+"Your last Name" = "Dein Nachname";
 
 /* No comment provided by engineer. */
 "Your name" = "Dein Name";

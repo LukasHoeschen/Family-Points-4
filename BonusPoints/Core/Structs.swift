@@ -300,6 +300,20 @@ struct exportUserDataStruct: Codable {
 }
 
 
+
+struct widgetDataStruct: Codable {
+    let deviceId: String
+    let userId: String
+    var familyId: String
+    var tasks: [TaskStruct]
+}
+
+struct widgetChangesStruct: Codable {
+    var list: [String]
+}
+
+
+
 extension UTType {
     static var exportUserData: UTType = UTType(exportedAs: "org.hoeschen.lukas.bonusPoints.userProfile")
 }

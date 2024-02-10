@@ -205,7 +205,7 @@ struct FamilyView: View {
                                                 }
                                                 
                                                 Section {
-                                                    ShareLink(item: userExportData, preview: SharePreview("Bonus Points User Export")) {
+                                                    ShareLink(item: userExportData, preview: SharePreview("Family Points User Export")) {
                                                         Label("Export", systemImage: "square.and.arrow.up")
                                                     }
                                                     Text("Just open the file on your new device to log in again.")

@@ -422,6 +422,7 @@ class AppDataHandler: ObservableObject {
                             self.updateTask(taskListId: self.family.tasks.first!.id, name: NSLocalizedString("Do Homework", comment: "Initialised Tasks"), pointsToAdd: 1, orderWeight: 0, created: .now)
                             self.updateTask(taskListId: self.family.tasks.first!.id, name: NSLocalizedString("Tidy my Room", comment: "Initialised Tasks"), pointsToAdd: 2, orderWeight: 0, created: .now)
                             self.updateTask(taskListId: self.family.tasks.first!.id, name: NSLocalizedString("Set the Table", comment: "Initialised Tasks"), pointsToAdd: 1, orderWeight: 0, created: .now)
+                            self.updateTask(taskListId: self.family.tasks.first!.id, name: NSLocalizedString("Play Video Games for 30 Minutes", comment: "Initialised Tasks"), pointsToAdd: -5, orderWeight: 0, created: .now)
                         }
                     }
                     completion(true)
@@ -489,7 +490,7 @@ class AppDataHandler: ObservableObject {
     func updateTask(taskId: String = "null", taskListId: String, name: String, pointsToAdd: Float, orderWeight: Int, allUsersCounter: Int = 0, created: Date) {
         // MARK: Update Task
         if taskId == "null" && countTasks() >= family.maxTasks && !family.premium {
-            print("Yeah")
+            showSubscriptionStore = true
         } else {
             self.sendData(data: ["taskId": taskId, "listId":taskListId, "name": self.encryptString(s: name), "points": self.encryptFloat(f: pointsToAdd), "orderWeight":self.encryptInt(i: orderWeight), "allUsersCount":self.encryptInt(i: allUsersCounter), "created":self.encryptDate(date: created)], file: "update/task.php") { (res: idResponseStruct?) in
                 DispatchQueue.main.async {
@@ -598,6 +599,12 @@ class AppDataHandler: ObservableObject {
     
     func updateTaskList(id: String = "null", name: String, completion: @escaping (Bool) -> ()) {
         // MARK: Update Tasklist
+        
+        if id == "null" && family.tasks.count >= 4 && !family.premium {
+            completion(false)
+            return
+        }
+        
         self.sendData(data: ["listId": id, "name":self.encryptString(s: name)], file: "update/list.php") { (res: idResponseStruct?) in
             DispatchQueue.main.async {
                 if let response = res {
@@ -646,8 +653,8 @@ class AppDataHandler: ObservableObject {
                     family.users = []
                     familyBadge = 0
                     response.users.forEach { u in
-                        let role = try! JSONDecoder().decode(UserRole.self, from: decryptToData(d: u.role))
-                        var userHere = UserStruct(id: u.id, name: decryptToString(d: u.name), role: role, actualPoints: decryptToFloat(d: u.actualPoints), everPoints: decryptToFloat(d: u.everPoints), tasksDoneCount: -1000, created: decryptToDate(d: u.created), lovedTasks: u.lovedTasks)
+                        let role = try? JSONDecoder().decode(UserRole.self, from: decryptToData(d: u.role))
+                        var userHere = UserStruct(id: u.id, name: decryptToString(d: u.name), role: role ?? .children, actualPoints: decryptToFloat(d: u.actualPoints), everPoints: decryptToFloat(d: u.everPoints), tasksDoneCount: -1000, created: decryptToDate(d: u.created), lovedTasks: u.lovedTasks)
                         
                         u.devices.forEach { d in
                             let deviceHere = DeviceStruct(apiId: d.id, name: decryptToString(d: d.name), type: decryptToString(d: d.type), created: decryptToDate(d: d.created), osImage: decryptToString(d: d.osIcon))
@@ -704,6 +711,9 @@ class AppDataHandler: ObservableObject {
                     if family.maxTasks > maxTasksServer {
                         familyUpdate()
                     }
+                    
+                    loadDataFromWidget()
+                    saveDataForWidget()
                     return
                 }
             }
@@ -725,13 +735,10 @@ class AppDataHandler: ObservableObject {
                     self.user.devicesWantingToLink = []
                     
                     response.devices.forEach { d in
-                        print("d:           \(d)")
                         let devJson = self.decryptToStringWithRSA(rsaPrivateKey: self.UserRSAKey, data: d.data)
-                        print("devJson:           \(Data(base64Encoded: devJson!)!)")
                         if devJson != nil {
                              var dev = try! JSONDecoder().decode(deviceWantToJoinResponseStruct.self, from: Data(base64Encoded: devJson!)!)
                             dev.publicKey = d.key
-                            print("device wanting to link: \(dev)")
                             self.user.devicesWantingToLink.append(dev)
                         }
                     }
@@ -752,8 +759,6 @@ class AppDataHandler: ObservableObject {
             if let response = res {
                 self.joinUserSendData(code: code, publicKey: response.publicKey) { res in
                     DispatchQueue.main.async {
-                        print(res)
-                        print("22")
                         completion(res)
                         return
                     }
@@ -769,9 +774,6 @@ class AppDataHandler: ObservableObject {
         
         let rsaKey: RSAPublicKey? = .load(rsaPublicKeyData: Data(base64Encoded: publicKey)!)
         if rsaKey == nil {
-            print("\n")
-            print("joinUserSendData crypto error")
-            print("\n")
             completion(false)
             return
         }
@@ -789,7 +791,6 @@ class AppDataHandler: ObservableObject {
             if let response = res {
                 if response.publicKey == "Nah, doch nicht" {
                     DispatchQueue.main.async {
-                        print("True")
                         completion(true)
                         return
                     }
@@ -819,7 +820,7 @@ class AppDataHandler: ObservableObject {
         self.sendData(data: ["keyEncoded":accept ? self.encryptStringWithRSA(key: devKey, s: self.AESCryptoKey.exportIvAndPrivateAES256Key().base64EncodedString()) : "DENIED", "id":device.publicKey, "deviceJoiningId":device.id], file: "join/user/accept.php") { (res: idResponseStruct?) in
             if res != nil {
                 // it worked no matter what Struct (idResponseStruct)
-                self.joinUserFetchDevices()
+                self.fetchAllData()
             }
         }
     }
@@ -865,18 +866,15 @@ class AppDataHandler: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.family.linkKey = response.code
-                    print(response.code)
+//                    print(response.code)
                     
                     self.family.usersWantingToLink = []
                     
                     response.devices.forEach { d in
-                        print("d:           \(d)")
                         let devJson = self.decryptToStringWithRSA(rsaPrivateKey: self.FamilyRSAKey, data: d.data)
-                        print("devJson:           \(Data(base64Encoded: devJson!)!)")
                         if devJson != nil {
                              var dev = try! JSONDecoder().decode(deviceWantToJoinResponseStruct.self, from: Data(base64Encoded: devJson!)!)
                             dev.publicKey = d.key
-                            print("device wanting to link: \(dev)")
                             self.family.usersWantingToLink.append(dev)
                         }
                     }
@@ -912,9 +910,6 @@ class AppDataHandler: ObservableObject {
         
         let rsaKey: RSAPublicKey? = .load(rsaPublicKeyData: Data(base64Encoded: publicKey)!)
         if rsaKey == nil {
-            print("\n")
-            print("joinUserSendData crypto error")
-            print("\n")
             completion(false)
             return
         }
@@ -1071,6 +1066,53 @@ class AppDataHandler: ObservableObject {
         
         self.sendData(data: ["message":mes!, "helpful":helpful ? "true" : "false"], file: "create/videoFeedback.php") { (res: someResponseStruct?) in
             
+        }
+    }
+    
+    
+    // MARK: Widget stuff
+    func saveDataForWidget() {
+        var data = widgetDataStruct(deviceId: device.apiId, userId: user.id, familyId: family.premium ? "premium" : "no", tasks: [])
+        family.tasks.forEach { l in
+            l.list.forEach { t in
+                data.tasks.append(t)
+            }
+        }
+        DispatchQueue.global().async {
+            if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+                if let encoded = try? JSONEncoder().encode(data) {
+                    defaults.setValue(encoded, forKey: "widgetData")
+                    defaults.synchronize()
+                }
+            }
+        }
+    }
+    
+    func loadDataFromWidget() {
+        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+            if let storedData = defaults.data(forKey: "widgetAddedCount") {
+                if let data = try? JSONDecoder().decode(widgetChangesStruct.self, from: storedData) {
+                    
+                    var counts: [String: Int] = [:]
+
+                    for item in data.list {
+                        counts[item] = (counts[item] ?? 0) + 1
+                    }
+
+                    for (key, value) in counts {
+                        self.updateTaskDone(taskId: key, count: (self.getTask(id: key)?.counter ?? 0) + value)
+                    }
+                    
+                    DispatchQueue.global().async {
+                        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+                            if let encoded = try? JSONEncoder().encode(widgetChangesStruct(list: [])) {
+                                defaults.setValue(encoded, forKey: "widgetAddedCount")
+                                defaults.synchronize()
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

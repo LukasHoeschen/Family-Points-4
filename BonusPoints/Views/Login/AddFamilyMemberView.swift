@@ -13,7 +13,7 @@ struct AddFamilyMemberView: View {
     
     var body: some View {
         Form {
-            if dataHandler.family.premium || dataHandler.family.users.count <= 4 {
+            if dataHandler.family.premium || dataHandler.family.users.count < 4 {
                 Section {
                     Text("Add your Family Members to your Family")
                 } footer: {

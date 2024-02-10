@@ -19,6 +19,7 @@ struct SettingsView: View {
     @State var edit = false
     
     @State var contactMessage = ""
+    @State var showManageSubscription = false
     
     @State private var deleteDeviceApiId = ""
     @State private var showDeleteDeviceApiId = false
@@ -198,7 +199,6 @@ struct SettingsView: View {
                                     HStack {
                                         Spacer()
                                         Button("Subscribe now") {
-                                            print(dataHandler.showSubscriptionStore)
                                             dataHandler.showSubscriptionStore.toggle()
                                         }
                                         .bold()
@@ -255,17 +255,23 @@ struct SettingsView: View {
                 if !dataHandler.family.premium && dataHandler.user.role == .parent {
                     NavigationLink {
                         Form {
-                            BonusPointsStoreView()
+                            FamilyPointsStoreView()
                         }
                     } label: {
                         Text("Upgrade Options")
                             .foregroundStyle(Color.accentColor)
                     }
+                } else {
+                    Button("Manage your Subscription") {
+                        showManageSubscription = true
+                    }
+                    .foregroundStyle(Color.accentColor)
+                    .manageSubscriptionsSheet(isPresented: $showManageSubscription)
                 }
                 
                 NavigationLink {
                     Form {
-                        Section("The Idea Behind Bonus Points") {
+                        Section("The Idea Behind Family Points") {
                             Text("This app was inspired by an idea my sister came up with some time ago. Initially, we recorded our points on our fridge. To make this fantastic idea accessible to everyone, I created this app.")
                         }
                         
@@ -312,9 +318,11 @@ struct SettingsView: View {
                         
                         Section {
                             RateThisAppHelperViewForSettingsView()
-                            Button("Buy me a Coffee") {
-                                // TODO: this
-                            }
+                            Link(destination: URL(string: "https://www.buymeacoffee.com/hoeschendevelopment")!, label: {
+                                Image("buyMeACoffeeButton")
+                                    .resizable()
+                                    .scaledToFit()
+                            })
                         }
                     }
                     .navigationTitle("About")
@@ -407,7 +415,7 @@ struct RateThisAppHelperViewForSettingsView: View {
     @Environment(\.requestReview) var requestReviewHere
     
     var body: some View {
-            Button("Rate Bonus Points") {
+            Button("Rate Family Points") {
                 requestReviewHere()
             }
     }
@@ -533,7 +541,7 @@ struct NotificationSettingsView: View {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         let content = UNMutableNotificationContent()
-        content.title = "Bonus Points Reminder"
+        content.title = "Family Points Reminder"
         content.body = "Remember to check if your Kids completed some Tasks"
         
         let request = UNNotificationRequest(identifier: "\(weekday)", content: content, trigger: trigger)

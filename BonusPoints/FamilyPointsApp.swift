@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct BonusPointsApp: App {
+struct FamilyPointsApp: App {
     
     @StateObject var mainHandler: AppDataHandler = AppDataHandler()
     @Environment(\.colorScheme) var colorScheme

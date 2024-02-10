@@ -50,9 +50,15 @@ struct TasksDetailView: View {
                         }
                     }.frame(height: CGFloat(allTasks1.count * 60))
                     
-                    Section("Info") {
+                    Section(content: {
                         Text("This section displays tasks that have been completed most frequently among all family members.")
-                    }
+                    }, header: {
+                        Text("Info")
+                    }, footer: {
+                        if !dataHandler.family.premium {
+                            Text("Please subscribe to see all Tasks in Statistics")
+                        }
+                    })
                     
                 }.tag(0)
                 
@@ -78,10 +84,15 @@ struct TasksDetailView: View {
                         }
                     }.frame(height: CGFloat(allTasks1.count * 60))
                     
-                    Section("Info") {
+                    Section(content: {
                         Text("This section displays tasks that yield the highest number of points.")
-                    }
-    
+                    }, header: {
+                        Text("Info")
+                    }, footer: {
+                        if !dataHandler.family.premium {
+                            Text("Please subscribe to see all Tasks in Statistics")
+                        }
+                    })
                 }.tag(1)
                 
                 List {
@@ -106,10 +117,15 @@ struct TasksDetailView: View {
                         }
                     }.frame(height: CGFloat(allTasks1.count * 60))
                     
-                    Section("Info") {
+                    Section(content: {
                         Text("This section displays tasks that have earned the most points.")
-                    }
-    
+                    }, header: {
+                        Text("Info")
+                    }, footer: {
+                        if !dataHandler.family.premium {
+                            Text("Please subscribe to see all Tasks in Statistics")
+                        }
+                    })
                 }.tag(2)
             }
         }
@@ -131,6 +147,10 @@ struct TasksDetailView: View {
                     l.list.forEach { t in
                         tasks.append(t)
                     }
+                }
+                
+                if !dataHandler.family.premium {
+                    tasks = Array(tasks.prefix(3))
                 }
                 
                 withAnimation(.linear(duration: 2)) {

@@ -152,15 +152,28 @@ struct LoginView: View {
                                                         .multilineTextAlignment(.center)
                                                         .font(.largeTitle)
                                                         .focused($loginUserFieldFocus, equals: i)
-                                                        .onChange(of: pairKey[i]) {
-                                                            if pairKey[i].count != 0 {
-                                                                if pairKey[i].count != 1 {
-                                                                    pairKey[i] = String(pairKey[i].last!)
+                                                    
+                                                    if #available(iOS 17, *) {
+                                                        Text(i == 2 ? "-" : "")
+                                                            .onChange(of: pairKey[i]) {
+                                                                if pairKey[i].count != 0 {
+                                                                    if pairKey[i].count != 1 {
+                                                                        pairKey[i] = String(pairKey[i].last!)
+                                                                    }
+                                                                    loginUserFieldFocus = (loginUserFieldFocus ?? -1) + 1
                                                                 }
-                                                                loginUserFieldFocus = (loginUserFieldFocus ?? -1) + 1
                                                             }
-                                                        }
-                                                    Text(i == 2 ? "-" : "")
+                                                    } else {
+                                                        Text(i == 2 ? "-" : "")
+                                                            .onChange(of: pairKey[i]) { _ in
+                                                                if pairKey[i].count != 0 {
+                                                                    if pairKey[i].count != 1 {
+                                                                        pairKey[i] = String(pairKey[i].last!)
+                                                                    }
+                                                                    loginUserFieldFocus = (loginUserFieldFocus ?? -1) + 1
+                                                                }
+                                                            }
+                                                    }
                                                 }
                                             }
                                             .padding()
@@ -287,15 +300,30 @@ struct LoginView: View {
                                                         .multilineTextAlignment(.center)
                                                         .font(.largeTitle)
                                                         .focused($loginDeviceFieldFocus, equals: i)
-                                                        .onChange(of: userPairKey[i]) {
-                                                            if userPairKey[i].count != 0 {
-                                                                if userPairKey[i].count != 1 {
-                                                                    userPairKey[i] = String(userPairKey[i].last!)
+                                                        
+                                                    
+                                                    
+                                                    if #available(iOS 17, *) {
+                                                        Text(i == 2 ? "-" : "")
+                                                            .onChange(of: userPairKey[i]) {
+                                                                if userPairKey[i].count != 0 {
+                                                                    if userPairKey[i].count != 1 {
+                                                                        userPairKey[i] = String(userPairKey[i].last!)
+                                                                    }
+                                                                    loginDeviceFieldFocus = (loginDeviceFieldFocus ?? -1) + 1
                                                                 }
-                                                                loginDeviceFieldFocus = (loginDeviceFieldFocus ?? -1) + 1
                                                             }
-                                                        }
-                                                    Text(i == 2 ? "-" : "")
+                                                    } else {
+                                                        Text(i == 2 ? "-" : "")
+                                                            .onChange(of: userPairKey[i]) { _ in
+                                                                if userPairKey[i].count != 0 {
+                                                                    if userPairKey[i].count != 1 {
+                                                                        userPairKey[i] = String(userPairKey[i].last!)
+                                                                    }
+                                                                    loginDeviceFieldFocus = (loginDeviceFieldFocus ?? -1) + 1
+                                                                }
+                                                            }
+                                                    }
                                                 }
                                             }
                                             .padding()
@@ -312,15 +340,15 @@ struct LoginView: View {
                                                     }
                                                 }
                                                 dataHandler.joinUser(code: userPairKey.joined()) { res in
-                                                    if !res {
+                                                    if res {
+                                                        withAnimation {
+                                                            waitingForDeviceAcceptance = true
+                                                        }
+                                                    } else {
                                                         for i in 0..<userPairKey.count {
                                                             userPairKey[i] = ""
                                                         }
                                                         loginDeviceFieldFocus = 0
-                                                    } else {
-                                                        withAnimation {
-                                                            waitingForDeviceAcceptance = true
-                                                        }
                                                     }
                                                 }
                                             }

@@ -26,7 +26,7 @@ struct ChangeTaskDetailView: View {
     
     var body: some View {
         Form {
-            Section("Details") {
+            Section {
                 Label("Name", systemImage: "keyboard")
                 if editTask {
                     HStack {
@@ -44,7 +44,7 @@ struct ChangeTaskDetailView: View {
                                 self.task.name = editTaskNewName
                                 editTask = false
                             }
-                        }
+                        }.buttonStyle(.borderedProminent)
                     }
                     
                 } else {
@@ -75,7 +75,7 @@ struct ChangeTaskDetailView: View {
                                 self.task.pointsToAdd = Float(editTaskNewPointsToAdd) ?? 1
                                 editTask = false
                             }
-                        }
+                        }.buttonStyle(.borderedProminent)
                     }
                 } else {
                     Text(functionsClass().floatToShortString(x: task.pointsToAdd) + " Points")
@@ -93,49 +93,6 @@ struct ChangeTaskDetailView: View {
                     Spacer()
                 }
             }
-            
-//            if dataHandler.family.premium {
-//                Section("Insights") {
-//                    Chart {
-//                        ForEach(chartData, id: \.self) { item in
-//                            
-//                            LineMark(
-//                                x: .value("Date", item.date),
-//                                y: .value("Count", item.count)
-//                            )
-//                            .annotation {
-//                                Text(String(item.count))
-//                                    .foregroundColor(Color.gray)
-//                                    .font(.system(size: 12, weight: .bold))
-//                            }
-//                            .foregroundStyle(Color.accentColor)
-//                            
-//                        }
-//                    }.frame(height: 500)
-//                        .chartXAxisLabel("Day", alignment: .center)
-//                        .chartYAxisLabel("Count")
-//                }
-//                .onAppear {
-//                    dataHandler.family.doneTasksHistory = [
-//                        TaskHistoryStruct(userId: "", taskId: "9buhkabuusldzl6596bym8kvrnjvz8", date: .now - 7 .days, count: 2),
-//                        TaskHistoryStruct(userId: "", taskId: "9buhkabuusldzl6596bym8kvrnjvz8", date: .now - 6 .days, count: 5),
-//                        TaskHistoryStruct(userId: "", taskId: "9buhkabuusldzl6596bym8kvrnjvz8", date: .now - 4 .days, count: 1),
-//                        TaskHistoryStruct(userId: "", taskId: "9buhkabuusldzl6596bym8kvrnjvz8", date: .now - 1 .days, count: 4),
-//                        TaskHistoryStruct(userId: "", taskId: "9buhkabuusldzl6596bym8kvrnjvz8", date: .now - 0 .days, count: 2)
-//                    ]
-//                    dataHandler.family.doneTasksHistory.forEach { i in
-//                        if i.taskId == task.id {
-//                            print(i)
-//                            if let j = chartData.firstIndex(where: { $0.date.day == i.date.day }) {
-//                                chartData[j].count += i.count
-//                            } else {
-//                                chartData.append(i)
-//                            }
-//                        }
-//                    }
-//                    print(chartData)
-//                }
-//            }
             
             
             if dataHandler.user.role == UserRole.parent {

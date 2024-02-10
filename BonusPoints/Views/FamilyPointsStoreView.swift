@@ -8,12 +8,13 @@
 import SwiftUI
 import StoreKit
 
-struct BonusPointsStoreView: View {
+struct FamilyPointsStoreView: View {
     
     @EnvironmentObject var dataHandler: AppDataHandler
     
     var body: some View {
 //        Form {
+        if #available(iOS 17, *) {
             Section {
                 ProductView(id: "org.hoeschen.bonusPoints.purchase.tasks20") {
                     Image(systemName: "note.text.badge.plus")
@@ -60,12 +61,17 @@ struct BonusPointsStoreView: View {
                             .foregroundStyle(Color.green)
                         Text("Unlimited Devices")
                     }
+                    HStack {
+                        Image(systemName: "plus.circle")
+                            .foregroundStyle(Color.green)
+                        Text("Unlimited Widgets (requires iOS 17.2)")
+                    }
                 }
                 
-                ProductView(id: "org.hoeschen.bonusPoints.subscribe.pro.monthly")
+                ProductView(id: "org.hoeschen.dev.familyPoints.pro.monthly")
                     .productViewStyle(.compact)
             } header: {
-                Text("Bonus Points PRO")
+                Text("Family Points PRO")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.accentColor)
@@ -85,25 +91,25 @@ struct BonusPointsStoreView: View {
                 }
                 .listRowBackground(EmptyView())
             }
-//        }
-        .navigationTitle("Upgrade Options")
+            //        }
+            .navigationTitle("Upgrade Options")
             .navigationBarTitleDisplayMode(.large)
             .toolbar(content: {
                 NavigationLink {
                     Form {
                         Section {
-                            Text("With the free version of Bonus Points, you enjoy the following features:")
+                            Text("With the free version of Family Points, you enjoy the following features:")
                                 .foregroundColor(.secondary)
-
+                            
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("• 30 complimentary tasks")
                                 Text("• 4 task lists")
                                 Text("• 4 family members, including yourself")
                             }
-
+                            
                             Text("**Please note:** Connecting multiple devices to your account is not available in the free version.")
                         }
-
+                        
                         Section("Current Utilisation") {
                             Label("\(dataHandler.countTasks())/\(dataHandler.family.maxTasks) Tasks", systemImage: "checkmark.circle")
                             Label("\(dataHandler.family.tasks.count)/4 Task Lists", systemImage: "tray.full")
@@ -114,10 +120,35 @@ struct BonusPointsStoreView: View {
                     Image(systemName: "info.circle")
                 }
             })
+        } else {
+            Section {
+                Text("Purchases can only be done on devices supporting iOS 17 or newer.")
+            }
+        }
     }
 }
 
+
+struct FamilyPointsSubscriptionView: View {
+    // TODO: this
+    
+    @Binding var isPresented: Bool
+    
+    var body: some View {
+        if #available(iOS 17, *) {
+            SubscriptionStoreView(productIDs: ["org.hoeschen.dev.familyPoints.pro.monthly", "org.hoeschen.dev.familyPoints.pro.annualy"])
+                .storeButton(.visible, for: .restorePurchases, .redeemCode)
+                .subscriptionStoreControlStyle(.prominentPicker)
+                .onInAppPurchaseCompletion { product, result in
+                    isPresented = false
+                }
+        }
+    }
+}
+
+
+
 #Preview {
-    BonusPointsStoreView()
+    FamilyPointsStoreView()
         .environmentObject(AppDataHandler())
 }

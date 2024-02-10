@@ -71,7 +71,6 @@ struct TasksTabView: View {
                                         }.padding(.horizontal)
                                             .refreshable {
                                                 dataHandler.fetchAllData()
-                                                print("refreshed list")
                                             }
                                 } else {
                                     VStack {
@@ -116,7 +115,7 @@ struct TasksTabView: View {
 #if !os(macOS)
                                     EditButton()
 #endif
-                                if dataHandler.user.role == UserRole.parent {
+                                if dataHandler.user.role == UserRole.parent && (dataHandler.family.premium || dataHandler.family.tasks.count < 4){
                                     HStack {
                                         Spacer()
                                         Button(action: {
@@ -130,30 +129,36 @@ struct TasksTabView: View {
                                     }.sheet(isPresented: $createNewTaskList) {
                                         NavigationStack {
                                             Form {
-                                                Section {
-                                                    Label("Name", systemImage: "keyboard")
-                                                        .foregroundColor(.green)
-                                                    HStack {
-                                                        Text("Name: ")
-                                                        TextField("Please enter a name", text: $createNewTaskListName)
-                                                    }
-                                                }
-                                                
-                                                Section {
-                                                    HStack {
-                                                        Spacer()
-                                                        Button(action: {
-                                                            dataHandler.updateTaskList(name: createNewTaskListName) { res in
-                                                            }
-                                                            withAnimation {
-                                                                createNewTaskListName = ""
-                                                                createNewTaskList = false
-                                                            }
-                                                        }) {
-                                                            Text("Create")
-                                                                .foregroundColor(.blue)
+                                                if dataHandler.family.tasks.count < 4 || dataHandler.family.premium {
+                                                    Section {
+                                                        Label("Name", systemImage: "keyboard")
+                                                            .foregroundColor(.green)
+                                                        HStack {
+                                                            Text("Name: ")
+                                                            TextField("Please enter a Name for your new List", text: $createNewTaskListName)
                                                         }
-                                                        Spacer()
+                                                    }
+                                                    
+                                                    Section {
+                                                        HStack {
+                                                            Spacer()
+                                                            Button(action: {
+                                                                dataHandler.updateTaskList(name: createNewTaskListName) { res in
+                                                                }
+                                                                withAnimation {
+                                                                    createNewTaskListName = ""
+                                                                    createNewTaskList = false
+                                                                }
+                                                            }) {
+                                                                Text("Create")
+                                                                    .foregroundColor(.blue)
+                                                            }
+                                                            Spacer()
+                                                        }
+                                                    }
+                                                } else {
+                                                    Section {
+                                                        Text("To create more Lists, please subscribe to Family Points Pro.")
                                                     }
                                                 }
                                             }
@@ -215,20 +220,38 @@ struct TasksTabView: View {
                             }) {
                                 Image(systemName: showOnlyPreferredTasks ? "heart.fill" : "heart")
                             }
-                            TextField("Search", text: $searchString)
-                                .onChange(of: searchString) { _ in
-                                    if searchString != "" {
-                                        self.searchTasks = []
-                                        dataHandler.family.tasks.forEach { l in
-                                            l.list.forEach { t in
-                                                if t.name.uppercased().contains(searchString.uppercased()) {
-                                                    self.searchTasks.append(t)
+                            
+                            if #available(iOS 17, *) {
+                                TextField("Search", text: $searchString)
+                                    .onChange(of: searchString) {
+                                        if searchString != "" {
+                                            self.searchTasks = []
+                                            dataHandler.family.tasks.forEach { l in
+                                                l.list.forEach { t in
+                                                    if t.name.uppercased().contains(searchString.uppercased()) {
+                                                        self.searchTasks.append(t)
+                                                    }
                                                 }
                                             }
                                         }
                                     }
-                                }
-                                .focused($focusedField, equals: true)
+                                    .focused($focusedField, equals: true)
+                            } else {
+                                TextField("Search", text: $searchString)
+                                    .onChange(of: searchString) { _ in
+                                        if searchString != "" {
+                                            self.searchTasks = []
+                                            dataHandler.family.tasks.forEach { l in
+                                                l.list.forEach { t in
+                                                    if t.name.uppercased().contains(searchString.uppercased()) {
+                                                        self.searchTasks.append(t)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .focused($focusedField, equals: true)
+                            }
                             
                             Spacer()
                             

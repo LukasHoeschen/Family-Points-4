@@ -1,5 +1,5 @@
 {
-  "identifier" : "7FBD9AA0",
+  "identifier" : "4E124A1C",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -7,17 +7,17 @@
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "D8246F1B",
+      "internalID" : "6475344148",
       "localizations" : [
         {
-          "description" : "20 more Tasks for your complete Family",
-          "displayName" : "20 Tasks",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "20 zusätzliche Aufgaben für deine Familie",
+          "description" : "20 weitere Aufgaben für deine Familie",
           "displayName" : "20 Aufgaben",
           "locale" : "de"
+        },
+        {
+          "description" : "20 more Tasks for your Family",
+          "displayName" : "20 Tasks",
+          "locale" : "en_US"
         }
       ],
       "productID" : "org.hoeschen.bonusPoints.purchase.tasks20",
@@ -26,7 +26,10 @@
     }
   ],
   "settings" : {
+    "_applicationInternalID" : "6475323840",
+    "_developerTeamID" : "R399ABRP7H",
     "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 726143912.11363006,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -79,37 +82,12 @@
   },
   "subscriptionGroups" : [
     {
-      "id" : "F518ABC0",
+      "id" : "21430283",
       "localizations" : [
 
       ],
-      "name" : "Bonus Points Pro",
+      "name" : "Family Points Pro",
       "subscriptions" : [
-        {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
-          "displayPrice" : "19.99",
-          "familyShareable" : false,
-          "groupNumber" : 1,
-          "internalID" : "05E5F0D4",
-          "introductoryOffer" : null,
-          "localizations" : [
-            {
-              "description" : "Unlimited Features on an annually basis",
-              "displayName" : "Bonus Points Pro - Annualy",
-              "locale" : "en_US"
-            }
-          ],
-          "productID" : "org.hoeschen.bonusPoints.subscription.pro",
-          "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Subscribe Annually",
-          "subscriptionGroupID" : "F518ABC0",
-          "type" : "RecurringSubscription"
-        },
         {
           "adHocOffers" : [
 
@@ -119,20 +97,25 @@
           ],
           "displayPrice" : "1.99",
           "familyShareable" : false,
-          "groupNumber" : 1,
-          "internalID" : "50FC0F1B",
+          "groupNumber" : 2,
+          "internalID" : "6475423364",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Unlimited Features on a monthly basis",
-              "displayName" : "Bonus Points Pro - Monthly",
+              "description" : "Alle Funktionen auf einer monatlichen Basis",
+              "displayName" : "Family Points Pro - Monatlich",
+              "locale" : "de"
+            },
+            {
+              "description" : "Get all Features on a monthly basis",
+              "displayName" : "Family Points Pro - Monthly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "org.hoeschen.bonusPoints.subscribe.pro.monthly",
+          "productID" : "org.hoeschen.dev.familyPoints.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Subscribe Monthly",
-          "subscriptionGroupID" : "F518ABC0",
+          "referenceName" : "Monthly Subscription",
+          "subscriptionGroupID" : "21430283",
           "type" : "RecurringSubscription"
         },
         {
@@ -142,22 +125,27 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "2.50",
+          "displayPrice" : "17.99",
           "familyShareable" : false,
           "groupNumber" : 1,
-          "internalID" : "25DA051A",
+          "internalID" : "6475423064",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Test - 1 week",
-              "displayName" : "Test - 1 week",
+              "description" : "Alle Features auf einer jährlichen Basis",
+              "displayName" : "Family Points Pro - Jährlich",
+              "locale" : "de"
+            },
+            {
+              "description" : "Get all Features on an annually basis",
+              "displayName" : "Family Points Pro - Annually",
               "locale" : "en_US"
             }
           ],
-          "productID" : "test",
-          "recurringSubscriptionPeriod" : "P1W",
-          "referenceName" : "test",
-          "subscriptionGroupID" : "F518ABC0",
+          "productID" : "org.hoeschen.dev.familyPoints.pro.annualy",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly Subscription",
+          "subscriptionGroupID" : "21430283",
           "type" : "RecurringSubscription"
         }
       ]

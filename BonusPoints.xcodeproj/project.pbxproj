@@ -10,57 +10,114 @@
 		B1072F2629881E07008E5AF7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B1072F2529881E07008E5AF7 /* SwiftDate */; };
 		B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C85092B2604BB00F38F0D /* AddFamilyMemberView.swift */; };
 		B11C850E2B261FC900F38F0D /* SetupMovie.mov in Resources */ = {isa = PBXBuildFile; fileRef = B11C850D2B261FC900F38F0D /* SetupMovie.mov */; };
-		B132BD312B3974880095763E /* StoreConfigurations.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B132BD302B3974880095763E /* StoreConfigurations.storekit */; };
-		B132BD332B39A9C90095763E /* BonusPointsStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132BD322B39A9C90095763E /* BonusPointsStoreView.swift */; };
+		B12564D72B3C6AE30084EA91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B12564D52B3C6AE30084EA91 /* InfoPlist.strings */; };
+		B12564DF2B3C75B70084EA91 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12564DE2B3C75B70084EA91 /* WidgetKit.framework */; };
+		B12564E12B3C75B70084EA91 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12564E02B3C75B70084EA91 /* SwiftUI.framework */; };
+		B12564E42B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12564E32B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift */; };
+		B12564E62B3C75B70084EA91 /* BonusPointsWidgetExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12564E52B3C75B70084EA91 /* BonusPointsWidgetExtention.swift */; };
+		B12564E82B3C75B70084EA91 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12564E72B3C75B70084EA91 /* AppIntent.swift */; };
+		B12564EA2B3C75B90084EA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12564E92B3C75B90084EA91 /* Assets.xcassets */; };
+		B12564EE2B3C75B90084EA91 /* BonusPointsWidgetExtentionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B12564DC2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B12564F42B3C77860084EA91 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563F83295DA707001359B5 /* Structs.swift */; };
+		B132BD332B39A9C90095763E /* FamilyPointsStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132BD322B39A9C90095763E /* FamilyPointsStoreView.swift */; };
 		B14C6C152B24FE6C00E31967 /* BonusPoints-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B14C6C132B24FE6B00E31967 /* BonusPoints-InfoPlist.strings */; };
 		B14E7FA929537989001DFEA0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E7FA829537989001DFEA0 /* LoginView.swift */; };
 		B1557C1E2B14F24A001D5273 /* SimpleSwiftCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = B1557C1D2B14F24A001D5273 /* SimpleSwiftCrypto */; };
 		B1563F84295DA707001359B5 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563F83295DA707001359B5 /* Structs.swift */; };
 		B16A0C18294397960035394E /* TasksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A0C17294397960035394E /* TasksTabView.swift */; };
-		B17EB19529411C7B009903E9 /* BonusPointsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19429411C7B009903E9 /* BonusPointsApp.swift */; };
+		B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */; };
 		B17EB19729411C7B009903E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19629411C7B009903E9 /* ContentView.swift */; };
 		B17EB19929411C7C009903E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B17EB19829411C7C009903E9 /* Assets.xcassets */; };
 		B17EB19D29411C7C009903E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B17EB19C29411C7C009903E9 /* Preview Assets.xcassets */; };
 		B17EB1A629411CCE009903E9 /* ObjectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB1A529411CCE009903E9 /* ObjectHandler.swift */; };
 		B183FB27298A89190018A739 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183FB26298A89190018A739 /* FamilyView.swift */; };
+		B19496F12B44C2BC00D1B906 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B19496F02B44C2BC00D1B906 /* SwiftDate */; };
 		B1B9A520297704900004CAE1 /* TasksDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A51F297704900004CAE1 /* TasksDetailView.swift */; };
 		B1B9A523297C29290004CAE1 /* ChangeTaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */; };
 		B1B9A527297C2D0D0004CAE1 /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */; };
 		B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A528297C2EA60004CAE1 /* SettingsView.swift */; };
 		B1D7A9DA2ACC4C5D0053BA35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1D7A9D92ACC4C5D0053BA35 /* Alamofire */; };
 		B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E0EE892B1E319300DBF92B /* Localizable.strings */; };
+		B1E407622B470785007B9463 /* Family Points.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B1E407612B470785007B9463 /* Family Points.storekit */; };
 		B1F2B27F294B1A700031A3F0 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */; };
 		B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */; };
+		B1F56AF72B77B729007ABB6E /* buyMeACoffeeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B12564EC2B3C75B90084EA91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B17EB18929411C7B009903E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B12564DB2B3C75B70084EA91;
+			remoteInfo = BonusPointsWidgetExtentionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B12564F22B3C75B90084EA91 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B12564EE2B3C75B90084EA91 /* BonusPointsWidgetExtentionExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B11C85092B2604BB00F38F0D /* AddFamilyMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberView.swift; sourceTree = "<group>"; };
 		B11C850D2B261FC900F38F0D /* SetupMovie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = SetupMovie.mov; sourceTree = "<group>"; };
-		B132BD302B3974880095763E /* StoreConfigurations.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreConfigurations.storekit; sourceTree = "<group>"; };
-		B132BD322B39A9C90095763E /* BonusPointsStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPointsStoreView.swift; sourceTree = "<group>"; };
+		B12564D62B3C6AE30084EA91 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B12564DC2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BonusPointsWidgetExtentionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12564DE2B3C75B70084EA91 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B12564E02B3C75B70084EA91 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B12564E32B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPointsWidgetExtentionBundle.swift; sourceTree = "<group>"; };
+		B12564E52B3C75B70084EA91 /* BonusPointsWidgetExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPointsWidgetExtention.swift; sourceTree = "<group>"; };
+		B12564E72B3C75B70084EA91 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		B12564E92B3C75B90084EA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B12564EB2B3C75B90084EA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B132BD322B39A9C90095763E /* FamilyPointsStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyPointsStoreView.swift; sourceTree = "<group>"; };
 		B14C6C142B24FE6B00E31967 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "de.lproj/BonusPoints-InfoPlist.strings"; sourceTree = "<group>"; };
 		B14E7FA829537989001DFEA0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1563F83295DA707001359B5 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		B16A0C17294397960035394E /* TasksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabView.swift; sourceTree = "<group>"; };
 		B17EB19129411C7B009903E9 /* BonusPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B17EB19429411C7B009903E9 /* BonusPointsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPointsApp.swift; sourceTree = "<group>"; };
+		B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyPointsApp.swift; sourceTree = "<group>"; };
 		B17EB19629411C7B009903E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B17EB19829411C7C009903E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B17EB19A29411C7C009903E9 /* BonusPoints.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPoints.entitlements; sourceTree = "<group>"; };
 		B17EB19C29411C7C009903E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B17EB1A529411CCE009903E9 /* ObjectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHandler.swift; sourceTree = "<group>"; };
 		B183FB26298A89190018A739 /* FamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyView.swift; sourceTree = "<group>"; };
+		B191B8EF2B3C7E740051426E /* BonusPointsWidgetExtentionExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsWidgetExtentionExtensionDebug.entitlements; sourceTree = "<group>"; };
+		B191B8F02B3C7F5F0051426E /* BonusPointsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsDebug.entitlements; sourceTree = "<group>"; };
 		B1B9A51F297704900004CAE1 /* TasksDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDetailView.swift; sourceTree = "<group>"; };
 		B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTaskDetailView.swift; sourceTree = "<group>"; };
 		B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
 		B1B9A528297C2EA60004CAE1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B1C9117D2B278737007AD509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1E0EE8A2B1E319300DBF92B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1E407612B470785007B9463 /* Family Points.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Family Points.storekit"; sourceTree = "<group>"; };
 		B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInListView.swift; sourceTree = "<group>"; };
+		B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyMeACoffeeButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B12564D92B3C75B70084EA91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B12564E12B3C75B70084EA91 /* SwiftUI.framework in Frameworks */,
+				B12564DF2B3C75B70084EA91 /* WidgetKit.framework in Frameworks */,
+				B19496F12B44C2BC00D1B906 /* SwiftDate in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B17EB18E29411C7B009903E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,12 +131,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B12564DD2B3C75B70084EA91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B12564DE2B3C75B70084EA91 /* WidgetKit.framework */,
+				B12564E02B3C75B70084EA91 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B12564E22B3C75B70084EA91 /* BonusPointsWidgetExtention */ = {
+			isa = PBXGroup;
+			children = (
+				B12564E32B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift */,
+				B12564E52B3C75B70084EA91 /* BonusPointsWidgetExtention.swift */,
+				B12564E72B3C75B70084EA91 /* AppIntent.swift */,
+				B12564E92B3C75B90084EA91 /* Assets.xcassets */,
+				B12564EB2B3C75B90084EA91 /* Info.plist */,
+			);
+			path = BonusPointsWidgetExtention;
+			sourceTree = "<group>";
+		};
 		B17EB18829411C7B009903E9 = {
 			isa = PBXGroup;
 			children = (
+				B191B8EF2B3C7E740051426E /* BonusPointsWidgetExtentionExtensionDebug.entitlements */,
 				B11C850D2B261FC900F38F0D /* SetupMovie.mov */,
+				B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */,
 				B14C6C132B24FE6B00E31967 /* BonusPoints-InfoPlist.strings */,
 				B17EB19329411C7B009903E9 /* BonusPoints */,
+				B12564E22B3C75B70084EA91 /* BonusPointsWidgetExtention */,
+				B12564DD2B3C75B70084EA91 /* Frameworks */,
 				B17EB19229411C7B009903E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				B17EB19129411C7B009903E9 /* BonusPoints.app */,
+				B12564DC2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,11 +178,13 @@
 		B17EB19329411C7B009903E9 /* BonusPoints */ = {
 			isa = PBXGroup;
 			children = (
+				B191B8F02B3C7F5F0051426E /* BonusPointsDebug.entitlements */,
 				B1C9117D2B278737007AD509 /* Info.plist */,
+				B12564D52B3C6AE30084EA91 /* InfoPlist.strings */,
 				B1E0EE892B1E319300DBF92B /* Localizable.strings */,
 				B17EB1A429411CA1009903E9 /* Core */,
 				B17EB1A329411C92009903E9 /* Views */,
-				B17EB19429411C7B009903E9 /* BonusPointsApp.swift */,
+				B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */,
 				B17EB19629411C7B009903E9 /* ContentView.swift */,
 				B17EB19829411C7C009903E9 /* Assets.xcassets */,
 				B17EB19A29411C7C009903E9 /* BonusPoints.entitlements */,
@@ -124,7 +209,7 @@
 				B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */,
 				B1B9A528297C2EA60004CAE1 /* SettingsView.swift */,
 				B183FB26298A89190018A739 /* FamilyView.swift */,
-				B132BD322B39A9C90095763E /* BonusPointsStoreView.swift */,
+				B132BD322B39A9C90095763E /* FamilyPointsStoreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,7 +219,7 @@
 			children = (
 				B17EB1A529411CCE009903E9 /* ObjectHandler.swift */,
 				B1563F83295DA707001359B5 /* Structs.swift */,
-				B132BD302B3974880095763E /* StoreConfigurations.storekit */,
+				B1E407612B470785007B9463 /* Family Points.storekit */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -163,6 +248,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B12564DB2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B12564EF2B3C75B90084EA91 /* Build configuration list for PBXNativeTarget "BonusPointsWidgetExtentionExtension" */;
+			buildPhases = (
+				B12564D82B3C75B70084EA91 /* Sources */,
+				B12564D92B3C75B70084EA91 /* Frameworks */,
+				B12564DA2B3C75B70084EA91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BonusPointsWidgetExtentionExtension;
+			packageProductDependencies = (
+				B19496F02B44C2BC00D1B906 /* SwiftDate */,
+			);
+			productName = BonusPointsWidgetExtentionExtension;
+			productReference = B12564DC2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B17EB19029411C7B009903E9 /* BonusPoints */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B17EB1A029411C7C009903E9 /* Build configuration list for PBXNativeTarget "BonusPoints" */;
@@ -170,10 +275,12 @@
 				B17EB18D29411C7B009903E9 /* Sources */,
 				B17EB18E29411C7B009903E9 /* Frameworks */,
 				B17EB18F29411C7B009903E9 /* Resources */,
+				B12564F22B3C75B90084EA91 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B12564ED2B3C75B90084EA91 /* PBXTargetDependency */,
 			);
 			name = BonusPoints;
 			packageProductDependencies = (
@@ -192,9 +299,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					B12564DB2B3C75B70084EA91 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					B17EB19029411C7B009903E9 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -220,19 +330,30 @@
 			projectRoot = "";
 			targets = (
 				B17EB19029411C7B009903E9 /* BonusPoints */,
+				B12564DB2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B12564DA2B3C75B70084EA91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B12564EA2B3C75B90084EA91 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B17EB18F29411C7B009903E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F56AF72B77B729007ABB6E /* buyMeACoffeeButton.png in Resources */,
 				B17EB19D29411C7C009903E9 /* Preview Assets.xcassets in Resources */,
+				B12564D72B3C6AE30084EA91 /* InfoPlist.strings in Resources */,
 				B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */,
 				B14C6C152B24FE6C00E31967 /* BonusPoints-InfoPlist.strings in Resources */,
-				B132BD312B3974880095763E /* StoreConfigurations.storekit in Resources */,
+				B1E407622B470785007B9463 /* Family Points.storekit in Resources */,
 				B11C850E2B261FC900F38F0D /* SetupMovie.mov in Resources */,
 				B17EB19929411C7C009903E9 /* Assets.xcassets in Resources */,
 			);
@@ -241,6 +362,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B12564D82B3C75B70084EA91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B12564E62B3C75B70084EA91 /* BonusPointsWidgetExtention.swift in Sources */,
+				B12564E42B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift in Sources */,
+				B12564F42B3C77860084EA91 /* Structs.swift in Sources */,
+				B12564E82B3C75B70084EA91 /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B17EB18D29411C7B009903E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,7 +382,7 @@
 				B1563F84295DA707001359B5 /* Structs.swift in Sources */,
 				B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */,
 				B17EB19729411C7B009903E9 /* ContentView.swift in Sources */,
-				B17EB19529411C7B009903E9 /* BonusPointsApp.swift in Sources */,
+				B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */,
 				B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */,
 				B1B9A520297704900004CAE1 /* TasksDetailView.swift in Sources */,
 				B17EB1A629411CCE009903E9 /* ObjectHandler.swift in Sources */,
@@ -258,14 +390,30 @@
 				B183FB27298A89190018A739 /* FamilyView.swift in Sources */,
 				B14E7FA929537989001DFEA0 /* LoginView.swift in Sources */,
 				B1B9A523297C29290004CAE1 /* ChangeTaskDetailView.swift in Sources */,
-				B132BD332B39A9C90095763E /* BonusPointsStoreView.swift in Sources */,
+				B132BD332B39A9C90095763E /* FamilyPointsStoreView.swift in Sources */,
 				B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B12564ED2B3C75B90084EA91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B12564DB2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension */;
+			targetProxy = B12564EC2B3C75B90084EA91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		B12564D52B3C6AE30084EA91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B12564D62B3C6AE30084EA91 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B14C6C132B24FE6B00E31967 /* BonusPoints-InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +434,75 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B12564F02B3C75B90084EA91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BonusPointsWidgetExtentionExtensionDebug.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R399ABRP7H;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BonusPointsWidgetExtention/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BonusPointsWidgetExtention;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DevHoeschen.BonusPoints.BonusPointsWidgetExtention;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B12564F12B3C75B90084EA91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R399ABRP7H;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BonusPointsWidgetExtention/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BonusPointsWidgetExtention;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DevHoeschen.BonusPoints.BonusPointsWidgetExtention;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		B17EB19E29411C7C009903E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -408,21 +625,23 @@
 		B17EB1A129411C7C009903E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BonusPoints/BonusPoints.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BonusPoints/BonusPointsDebug.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BonusPoints/Preview Content\"";
-				DEVELOPMENT_TEAM = A5N43JD8DA;
+				DEVELOPMENT_TEAM = R399ABRP7H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BonusPoints/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Bonus Points";
+				INFOPLIST_KEY_CFBundleDisplayName = "Family Points";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -433,16 +652,17 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = LukasHoeschen.BonusPoints;
+				PRODUCT_BUNDLE_IDENTIFIER = DevHoeschen.BonusPoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,6 +672,7 @@
 		B17EB1A229411C7C009903E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BonusPoints/BonusPoints.entitlements;
@@ -461,12 +682,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BonusPoints/Preview Content\"";
-				DEVELOPMENT_TEAM = A5N43JD8DA;
+				DEVELOPMENT_TEAM = R399ABRP7H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BonusPoints/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Bonus Points";
+				INFOPLIST_KEY_CFBundleDisplayName = "Family Points";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -477,16 +699,17 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = LukasHoeschen.BonusPoints;
+				PRODUCT_BUNDLE_IDENTIFIER = DevHoeschen.BonusPoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +719,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B12564EF2B3C75B90084EA91 /* Build configuration list for PBXNativeTarget "BonusPointsWidgetExtentionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B12564F02B3C75B90084EA91 /* Debug */,
+				B12564F12B3C75B90084EA91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B17EB18C29411C7B009903E9 /* Build configuration list for PBXProject "BonusPoints" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -553,6 +785,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1557C1C2B14F24A001D5273 /* XCRemoteSwiftPackageReference "SimpleSwiftCrypto" */;
 			productName = SimpleSwiftCrypto;
+		};
+		B19496F02B44C2BC00D1B906 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1072F2429881E07008E5AF7 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 		B1D7A9D92ACC4C5D0053BA35 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
