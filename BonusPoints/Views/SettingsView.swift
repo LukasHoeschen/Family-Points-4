@@ -115,11 +115,11 @@ struct SettingsView: View {
                         .bold()
                 }
                 
-                Button("No-pro") {
-                    dataHandler.family.premium = false
-                    dataHandler.family.maxTasks = 4
-                    dataHandler.storeFamily()
-                }
+//                Button("No-pro") {
+//                    dataHandler.family.premium = false
+//                    dataHandler.family.maxTasks = 4
+//                    dataHandler.storeFamily()
+//                }
                 
                 NavigationLink(destination: {
                     

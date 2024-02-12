@@ -1,0 +1,139 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "A Widget to access your favourite Tasks on your Home screen" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Widget um deine Aufgaben auf dem Home Screen zu sehen"
+          }
+        }
+      }
+    },
+    "Complete selected task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erledige die ausgewählte Aufgabe"
+          }
+        }
+      }
+    },
+    "Complete Task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufgabe erledigen"
+          }
+        }
+      }
+    },
+    "Configuration" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfiguration"
+          }
+        }
+      }
+    },
+    "Family Points Widget" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Family Points Widget"
+          }
+        }
+      }
+    },
+    "Long press to configure" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum konfigurieren lang pressen"
+          }
+        }
+      }
+    },
+    "Not supported" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht unterstützt"
+          }
+        }
+      }
+    },
+    "Please subscribe to use widgets" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte abonniere, um Widgets zu nutzen"
+          }
+        }
+      }
+    },
+    "Select Tasks to display" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle Aufgaben aus"
+          }
+        }
+      }
+    },
+    "Selected Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgewählte Aufgaben"
+          }
+        }
+      }
+    },
+    "TaskItemId" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TaskItemId"
+          }
+        }
+      }
+    },
+    "Widget Size not yet supported" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget Größe noch nicht unterstützt"
+          }
+        }
+      }
+    },
+    "Widget Task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget Aufgabe"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

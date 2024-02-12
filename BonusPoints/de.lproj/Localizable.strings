@@ -20,16 +20,10 @@
 "**Proceed with caution.**" = "**Bitte mache mit Vorsicht weiter.**";
 
 /* No comment provided by engineer. */
-"%@P" = "%@P";
-
-/* No comment provided by engineer. */
 "%lld" = "%lld";
 
 /* No comment provided by engineer. */
 "%lld Tasks done" = "%lld Aufgaben erledigt";
-
-/* No comment provided by engineer. */
-"%lld Times Completed" = "%lld mal erledigt";
 
 /* No comment provided by engineer. */
 "%lld/%lld Tasks" = "%lld/%lld Aufgaben";
@@ -98,9 +92,6 @@
 "Account Created" = "Account erstellt";
 
 /* No comment provided by engineer. */
-"Add %@ Points" = "%@ Punkte hinzufügen";
-
-/* No comment provided by engineer. */
 "Add a new List" = "Erstelle eine neue Liste";
 
 /* No comment provided by engineer. */
@@ -128,15 +119,6 @@
 "Alternatively, you can simply tap the file, and it should automatically open here." = "Alternativ können Sie auch einfach auf die Datei tippen, die dann automatisch geöffnet wird.";
 
 /* No comment provided by engineer. */
-"Family Points PRO" = "Bonus Punkte PRO";
-
-/* No comment provided by engineer. */
-"Family Points User Export" = "Bonus Punkte Benutzer-Export";
-
-/* No comment provided by engineer. */
-"Buy me a Coffee" = "Kauf mir einen Kaffee";
-
-/* No comment provided by engineer. */
 "Cancel" = "Abbrechen";
 
 /* No comment provided by engineer. */
@@ -162,6 +144,9 @@
 
 /* No comment provided by engineer. */
 "Completed" = "Erledigt";
+
+/* No comment provided by engineer. */
+"Completed: " = "Erledigt:";
 
 /* No comment provided by engineer. */
 "Connect new Device" = "Ein neues Gerät verbinden";
@@ -275,6 +260,9 @@
 "Done" = "Fertig";
 
 /* No comment provided by engineer. */
+"Done Tasks" = "Erledigte Aufgaben";
+
+/* No comment provided by engineer. */
 "Encryption" = "Verschlüsselung";
 
 /* No comment provided by engineer. */
@@ -303,6 +291,15 @@
 
 /* No comment provided by engineer. */
 "Family members can also be added through the settings." = "Familienmitglieder können auch in den Einstellungen hinzugefügt werden.";
+
+/* No comment provided by engineer. */
+"Family Points PRO" = "Bonus Punkte PRO";
+
+/* No comment provided by engineer. */
+"Family Points User Export" = "Bonus Punkte Benutzer-Export";
+
+/* No comment provided by engineer. */
+"for %@ Points" = "für %@ Punkte";
 
 /* No comment provided by engineer. */
 "For adding more Family Members, please subscribe." = "Um weitere Familienmitglieder hinzuzufügen, bitte abonnieren Sie Family Points Pro.";
@@ -383,6 +380,9 @@
 "Logging out will delete all your data on this device. Your account (%@) won't be deleted on our servers, but you'll need to export your account information and import it on your new device. If you have a second device connected to your account, you can use it to set up your new device." = "Wenn Sie sich abmelden, werden alle Ihre Daten auf diesem Gerät gelöscht. Ihr Konto (%@) wird nicht auf unseren Servern gelöscht, aber Sie müssen Ihre Kontoinformationen exportieren und auf Ihr neues Gerät importieren. Wenn Sie ein zweites Gerät haben, das mit Ihrem Konto verbunden ist, können Sie dieses zum Einrichten Ihres neuen Geräts verwenden.";
 
 /* No comment provided by engineer. */
+"Manage your Subscription" = "Verwalte dein Abonnement";
+
+/* No comment provided by engineer. */
 "Members wanting to join" = "Mitglieder, die beitreten möchten";
 
 /* No comment provided by engineer. */
@@ -416,6 +416,9 @@
 "No Tasks in this list yet" = "Keine Aufgaben in dieser Liste";
 
 /* No comment provided by engineer. */
+"No-pro" = "Kein-Pro";
+
+/* No comment provided by engineer. */
 "Not necessary" = "Nicht erforderlich";
 
 /* No comment provided by engineer. */
@@ -436,6 +439,9 @@
 /* No comment provided by engineer. */
 "Parent" = "Eltern";
 
+/* Initialised Tasks */
+"Play Video Games for 30 Minutes" = "Videospiele spielen";
+
 /* No comment provided by engineer. */
 "Please accept this Device in the Settings of your other Device." = "Bitte akzeptiere dieses Gerät in den Einstellungen deines anderen Geräts.";
 
@@ -446,7 +452,7 @@
 "Please ask your Parents for help." = "Bitte deine Eltern um Hilfe.";
 
 /* No comment provided by engineer. */
-"Please enter a name" = "Bitte gib einen Namen ein";
+"Please enter a Name for your new List" = "Bitte gebe der neuen Liste einen Namen";
 
 /* No comment provided by engineer. */
 "Please enter the Task Name" = "Bitte geben Sie den Aufgabennamen ein";
@@ -456,6 +462,9 @@
 
 /* No comment provided by engineer. */
 "Please note that your data is exported without encryption, and your family's secret encryption key is stored in plain text.\n**Please do not delete your device or logout in this App on this device!**" = "Bitte beachten Sie, dass Ihre Daten unverschlüsselt exportiert werden und der geheime Verschlüsselungscode Ihrer Familie im Klartext gespeichert wird.\n**Bitte löschen Sie Ihr Gerät nicht und melden Sie sich in dieser App auf diesem Gerät nicht ab!**";
+
+/* No comment provided by engineer. */
+"Please subscribe to see all Tasks in Statistics" = "Bitte abonniere, um alle Aufgaben in den Statistiken zu sehen";
 
 /* No comment provided by engineer. */
 "Points" = "Punkte";
@@ -474,6 +483,9 @@
 
 /* No comment provided by engineer. */
 "Purchases and subscriptions are synchronised across all family members." = "Käufe und Abonnements werden zwischen allen Familienmitgliedern synchronisiert.";
+
+/* No comment provided by engineer. */
+"Purchases can only be done on devices supporting iOS 17 or newer." = "Käufe können nur auf Geräten mit iOs 17 oder neuer durchgeführt werden.";
 
 /* No comment provided by engineer. */
 "Rate Family Points" = "Bewerte Bonus Punkte";
@@ -498,6 +510,9 @@
 
 /* No comment provided by engineer. */
 "Sat" = "Sa";
+
+/* No comment provided by engineer. */
+"Save" = "Speichern";
 
 /* No comment provided by engineer. */
 "Save Changes" = "Änderungen speichern";
@@ -531,6 +546,9 @@
 
 /* No comment provided by engineer. */
 "Setup" = "Setup";
+
+/* No comment provided by engineer. */
+"Sorry, subscriptions can only be made on devices running at least iOS 17." = "Käufe können nur auf Geräten mit iOs 17 oder neuer durchgeführt werden.";
 
 /* No comment provided by engineer. */
 "Submit" = "Absenden";
@@ -575,6 +593,9 @@
 "Time" = "Zeit";
 
 /* No comment provided by engineer. */
+"To create more Lists, please subscribe to Family Points Pro." = "Um mehr Listen zu erstellen, abonniere bitte Family Points Pro.";
+
+/* No comment provided by engineer. */
 "To create more tasks, please kindly request your parents to unlock them." = "Um weitere Aufgaben zu erstellen, bitte deine Eltern, sie freizuschalten.";
 
 /* No comment provided by engineer. */
@@ -608,6 +629,9 @@
 "Unlimited Tasks" = "Unbegrenzte Aufgaben";
 
 /* No comment provided by engineer. */
+"Unlimited Widgets (requires iOS 17.2)" = "Unbegrenzte Widgets (benötigt iOS 17.2)";
+
+/* No comment provided by engineer. */
 "Unlock premium features:" = "Schalten Sie Premium-Funktionen frei:";
 
 /* No comment provided by engineer. */
@@ -635,6 +659,9 @@
 "With the free version of Family Points, you enjoy the following features:" = "Mit der kostenlosen Version von Family Points genießen Sie die folgenden Funktionen:";
 
 /* No comment provided by engineer. */
+"Write a comment (optional)..." = "Schreibe einen Kommentar (optional)...";
+
+/* No comment provided by engineer. */
 "Write me an Email" = "Schreibe mir eine Email";
 
 /* No comment provided by engineer. */
@@ -645,6 +672,9 @@
 
 /* No comment provided by engineer. */
 "Your Devices" = "Deine Geräte";
+
+/* No comment provided by engineer. */
+"Your done Tasks" = "Deine erledigten Aufgaben";
 
 /* No comment provided by engineer. */
 "Your Family" = "Deine Familie";

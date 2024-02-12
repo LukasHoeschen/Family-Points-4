@@ -115,11 +115,11 @@ struct TaskInListView: View {
                 NavigationLink(destination: ChangeTaskDetailView(task: task)) {
                     Text("Details")
                 }
-                Text("Delete")
+//                Text("Delete")
                 Button {
                     dataHandler.showOptionsForTaskId = task.id
                 } label: {
-                    Text("Options to select time")
+                    Text("More Options")
                 }
             }))
     }
