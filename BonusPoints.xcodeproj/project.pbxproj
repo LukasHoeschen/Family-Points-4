@@ -42,6 +42,7 @@
 		B1F2B27F294B1A700031A3F0 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */; };
 		B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */; };
 		B1F56AF72B77B729007ABB6E /* buyMeACoffeeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */; };
+		B1F56AF92B78E0EB007ABB6E /* DoneTasksInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F56AF82B78E0EB007ABB6E /* DoneTasksInListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInListView.swift; sourceTree = "<group>"; };
 		B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyMeACoffeeButton.png; sourceTree = "<group>"; };
+		B1F56AF82B78E0EB007ABB6E /* DoneTasksInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksInListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				B1B9A51F297704900004CAE1 /* TasksDetailView.swift */,
 				B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */,
 				B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */,
+				B1F56AF82B78E0EB007ABB6E /* DoneTasksInListView.swift */,
 			);
 			path = TaskViews;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				B1563F84295DA707001359B5 /* Structs.swift in Sources */,
 				B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */,
 				B17EB19729411C7B009903E9 /* ContentView.swift in Sources */,
+				B1F56AF92B78E0EB007ABB6E /* DoneTasksInListView.swift in Sources */,
 				B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */,
 				B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */,
 				B1B9A520297704900004CAE1 /* TasksDetailView.swift in Sources */,

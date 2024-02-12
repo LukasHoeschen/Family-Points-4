@@ -22,7 +22,7 @@ struct myWidgetLoadTasksHelper {
                 }
             }
         }
-        return widgetDataStruct(deviceId: "", userId: "", familyId: "", tasks: [TaskStruct(name: "Example Task", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0)])
+        return widgetDataStruct(deviceId: "", userId: "", familyId: "", tasks: [TaskStruct(name: "Example Task", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0)])
     }
 }
 

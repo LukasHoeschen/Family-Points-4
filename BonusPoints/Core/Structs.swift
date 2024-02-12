@@ -50,9 +50,11 @@ struct UserStruct: Codable, Hashable {
     }
 }
 
-struct TaskDoneStruct: Codable, Hashable {
+struct TaskDoneStruct: Codable, Hashable, Identifiable {
+    var doneId: String
     var id: String
-    var count: Int
+    var time: Date
+    var message: String
 }
 
 enum UserRole: Codable {
@@ -93,11 +95,8 @@ struct TaskStruct: Codable, Hashable {
     var created: Date = Date.now
     var pointsToAdd: Float
     var howManyTimesDidAllUsers: Int
-    var counter: Int
+    var counter: Date
     var orderWeight: Int
-    var archivedPoints: Float {
-        return Float(self.counter) * self.pointsToAdd
-    }
     
     func getDate() -> String {
         let formatter = DateFormatter()
@@ -250,8 +249,10 @@ struct fetchTaskResponseStruct: Codable {
 }
 
 struct fetchTaskDoneResponseStruct: Codable {
+    var id: String
     var taskId: String
     var count: String
+    var message: String
 }
 
 

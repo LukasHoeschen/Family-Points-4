@@ -20,6 +20,7 @@ class AppDataHandler: ObservableObject {
     @Published var showProgress = false
     @Published var showSubscriptionStore = false
     @Published var familyBadge = 0
+    @Published var showOptionsForTaskId: String? = nil
     
     @Published var AESCryptoKey = SimpleSwiftCrypto.generateRandomAES256Key()!
     @AppStorage("aesCryptoKeyAppStorage") var AESCryptoKeyData: Data?
@@ -496,7 +497,7 @@ class AppDataHandler: ObservableObject {
                 DispatchQueue.main.async {
                     if let response = res {
                         if taskId == "null" {
-                            self.family.tasks[self.family.tasks.firstIndex { $0.id == taskListId} ?? 0].list.append(TaskStruct(name: name, id: response.id, listId: taskListId, pointsToAdd: pointsToAdd, howManyTimesDidAllUsers: allUsersCounter, counter: 0, orderWeight: orderWeight))
+                            self.family.tasks[self.family.tasks.firstIndex { $0.id == taskListId} ?? 0].list.append(TaskStruct(name: name, id: response.id, listId: taskListId, pointsToAdd: pointsToAdd, howManyTimesDidAllUsers: allUsersCounter, counter: .now, orderWeight: orderWeight))
                         } else {
                             // No new Task, just updated
                             for i in 0..<self.family.tasks.count {
@@ -522,35 +523,46 @@ class AppDataHandler: ObservableObject {
         return nil
     }
     
-    func updateTaskDone(taskId: String, count: Int) {
+    func updateTaskDone(taskId: String, time: Date, message: String) {
         // MARK: Update Task Done - Count
-        self.sendData(data: ["taskId": taskId, "count":self.encryptInt(i: count)], file: "update/taskDone.php") { (res: idResponseStruct?) in
+        self.sendData(data: ["taskId": taskId, "count":self.encryptDate(date: time), "message":self.encryptString(s: message)], file: "update/taskDone.php") { (res: idResponseStruct?) in
             DispatchQueue.main.async {
                 if res != nil {
+                    self.user.tasksDone.append(TaskDoneStruct(doneId: res!.id, id: taskId, time: time, message: message))
 //                    self.family.tasks[listNum].list[self.family.tasks[listNum].list.firstIndex { $0.id == taskId} ?? 0].counter = count
-                    for i in 0..<self.family.tasks.count {
-                        for j in 0..<self.family.tasks[i].list.count {
-                            if self.family.tasks[i].list[j].id == taskId {
-                                self.family.tasks[i].list[j].counter = count
-                            }
-                        }
+                    
+//                    Not needed to show a counter if just complete tasks
+//                    for i in 0..<self.family.tasks.count {
+//                        for j in 0..<self.family.tasks[i].list.count {
+//                            if self.family.tasks[i].list[j].id == taskId {
+//                                self.family.tasks[i].list[j].counter = count
+//                            }
+//                        }
+//                    }
+                }
+            }
+        }
+    }
+    
+    func deleteTaskDone(id: String, userId: String) {
+        self.sendData(data: ["id": id], file: "remove/taskDone.php") { (res: someResponseStruct?) in
+            DispatchQueue.main.async {
+                if res != nil {
+                    self.family.users[self.family.users.firstIndex {$0.id == userId}!].tasksDone.removeAll {$0.doneId == id}
+                    if userId == self.user.id {
+                        self.user.tasksDone.removeAll {$0.doneId == id}
                     }
                 }
             }
         }
     }
     
-    func deleteTaskDone(taskId: String, userId: String) {
-        self.sendData(data: ["taskId": taskId, "userDoneTheTaskId":userId], file: "remove/taskDone.php") { (res: someResponseStruct?) in
-            DispatchQueue.main.async {
-                if res != nil {
-                    self.family.users[self.family.users.firstIndex {$0.id == userId}!].tasksDone.removeAll {$0.id == taskId}
-                    if userId == self.user.id {
-                        self.user.tasksDone.removeAll {$0.id == taskId}
-                    }
-                }
-            }
-        }
+    func acceptTaskDone(taskId: String, userId: String, doneId: String) { // userWhoDidTheTaskId
+        let task = getTask(id: taskId)
+        family.users[family.users.firstIndex {$0.id == userId}!].actualPoints += task!.pointsToAdd
+        userUpdate(id: userId)
+        updateTaskAllUsersCount(taskId: taskId, allUsersCounter: task!.howManyTimesDidAllUsers + 1)
+        deleteTaskDone(id: doneId, userId: userId)
     }
     
 //    func addToHistory(taskId: String, userId: String, count: Int, date: Date) {
@@ -670,8 +682,9 @@ class AppDataHandler: ObservableObject {
                         }
                         
                         u.doneTasks.forEach { t in
-                            userHere.tasksDone.append(TaskDoneStruct(id: t.taskId, count: decryptToInt(d: t.count)))
+                            userHere.tasksDone.append(TaskDoneStruct(doneId: t.id, id: t.taskId, time: decryptToDate(d: t.count), message: decryptToString(d: t.message)))
                         }
+                        userHere.tasksDone.sort {$0.time < $1.time}
                         
                         if u.doneTasks.count != 0 {
                             familyBadge += 1
@@ -695,7 +708,7 @@ class AppDataHandler: ObservableObject {
                         if let l = response.taskLists.first(where: {$0.id == pref}) {
                             var list: [TaskStruct] = []
                             l.tasks.forEach { t in        // for each task in list
-                                list.append(TaskStruct(name: decryptToString(d: t.name), id: t.id, listId: l.id, created: decryptToDate(d: t.created), pointsToAdd: decryptToFloat(d: t.points), howManyTimesDidAllUsers: decryptToInt(d: t.allUsersCount), counter:  user.tasksDone.first {$0.id == t.id}?.count ?? 0, orderWeight: decryptToInt(d: t.orderWeight)))
+                                list.append(TaskStruct(name: decryptToString(d: t.name), id: t.id, listId: l.id, created: decryptToDate(d: t.created), pointsToAdd: decryptToFloat(d: t.points), howManyTimesDidAllUsers: decryptToInt(d: t.allUsersCount), counter:  user.tasksDone.first {$0.id == t.id}?.time ?? .now, orderWeight: decryptToInt(d: t.orderWeight)))
                             }
                             
                             list.sort{$0.orderWeight > $1.orderWeight}
@@ -1100,7 +1113,8 @@ class AppDataHandler: ObservableObject {
                     }
 
                     for (key, value) in counts {
-                        self.updateTaskDone(taskId: key, count: (self.getTask(id: key)?.counter ?? 0) + value)
+//                        TODO: Widget
+//                        self.updateTaskDone(taskId: key, count: (self.getTask(id: key)?.counter ?? 0) + value)
                     }
                     
                     DispatchQueue.global().async {
@@ -1143,5 +1157,15 @@ class functionsClass {
     func randomString(length: Int) -> String {
       let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
       return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
+    func dateAsString(d: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d HH:mm"
+        return formatter.string(from: d)
+    }
+    
+    func dateToRelative(d: Date) -> String {
+        return d.toRelative(since: nil)
     }
 }

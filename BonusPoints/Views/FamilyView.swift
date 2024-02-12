@@ -34,48 +34,12 @@ struct FamilyView: View {
                         }
                         
                         List(user.tasksDone, id: \.self) { t in
-                            let task: TaskStruct = dataHandler.getTask(id: t.id) ?? TaskStruct(name: "error", id: "dd", listId: "dd", pointsToAdd: 1, howManyTimesDidAllUsers: 1, counter: 1, orderWeight: 1)
-                            GroupBox {
-                                VStack {
-                                    HStack {
-                                        Text("\(t.count) Times Completed")
-                                        Spacer()
-                                        Text("Add \(functionsClass().floatToShortString(x: Float(t.count) * task.pointsToAdd)) Points")
-                                    }
-                                    if dataHandler.user.role == .parent {
-                                        HStack {
-                                            Button("Accept") {
-                                                dataHandler.family.users[i].actualPoints += Float(t.count) * task.pointsToAdd
-                                                dataHandler.userUpdate(id: user.id)
-                                                dataHandler.deleteTaskDone(taskId: t.id, userId: user.id)
-                                                dataHandler.updateTaskAllUsersCount(taskId: t.id, allUsersCounter: task.howManyTimesDidAllUsers + t.count)
-//                                                dataHandler.addToHistory(taskId: t.id, userId: user.id, count: t.count, date: .now)
-                                            }.foregroundStyle(Color.green)
-                                            Spacer()
-                                            Button("Deny") {
-                                                dataHandler.deleteTaskDone(taskId: t.id, userId: user.id)
-                                            }.foregroundStyle(Color.red)
-                                        }.buttonStyle(.bordered)
-                                    }
-                                }
-                            } label: {
-                                HStack {
-                                    Text(task.name)
-                                        .foregroundStyle(Color.accentColor)
-                                    Spacer()
-                                    Text("\(functionsClass().floatToShortString(x: task.pointsToAdd))P")
-                                        .foregroundStyle(Color.yellow)
-                                }
-                            }
+                            DoneTasksInListView(taskDone: t, showRemoveButton: false, userId: user.id)
                                 .listRowSeparator(.hidden)
                                 .swipeActions(edge: .leading) {
                                     if dataHandler.user.role == .parent {
                                         Button {
-                                            dataHandler.family.users[i].actualPoints += Float(t.count) * task.pointsToAdd
-                                            dataHandler.userUpdate(id: user.id)
-                                            dataHandler.deleteTaskDone(taskId: t.id, userId: user.id)
-                                            dataHandler.updateTaskAllUsersCount(taskId: t.id, allUsersCounter: task.howManyTimesDidAllUsers + t.count)
-//                                            dataHandler.addToHistory(taskId: t.id, userId: user.id, count: t.count, date: .now)
+                                            dataHandler.acceptTaskDone(taskId: t.id, userId: user.id, doneId: t.doneId)
                                         } label: {
                                             Image(systemName: "checkmark.circle")
                                         }.tint(Color.green)
@@ -84,7 +48,7 @@ struct FamilyView: View {
                                 .swipeActions(edge: .trailing) {
                                     if dataHandler.user.role == .parent {
                                         Button(role: .destructive) {
-                                            dataHandler.deleteTaskDone(taskId: t.id, userId: user.id)
+                                            dataHandler.deleteTaskDone(id: t.doneId, userId: user.id)
                                         } label: {
                                             Image(systemName: "xmark.square")
                                         }

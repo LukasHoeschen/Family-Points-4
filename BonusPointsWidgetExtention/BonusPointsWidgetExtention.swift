@@ -11,11 +11,11 @@ import SwiftUI
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         print("1")
-        return SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), widgetData: widgetDataStruct(deviceId: "", userId: "", familyId: "", tasks: [TaskStruct(name: "Example Task", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0)]))
+        return SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), widgetData: widgetDataStruct(deviceId: "", userId: "", familyId: "", tasks: [TaskStruct(name: "Example Task", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0)]))
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration, widgetData: widgetDataStruct(deviceId: "", userId: "preview", familyId: "", tasks: [TaskStruct(name: "Example Task", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0), TaskStruct(name: "Do Homework", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0), TaskStruct(name: "Set the Table", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0), TaskStruct(name: "Tidy my Room", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0)]))
+        SimpleEntry(date: Date(), configuration: configuration, widgetData: widgetDataStruct(deviceId: "", userId: "preview", familyId: "", tasks: [TaskStruct(name: "Example Task", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0), TaskStruct(name: "Do Homework", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0), TaskStruct(name: "Set the Table", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0), TaskStruct(name: "Tidy my Room", id: "e", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0)]))
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
@@ -448,5 +448,5 @@ struct BonusPointsWidgetExtentionSecond: Widget {
 #Preview(as: .systemSmall) {
     BonusPointsWidgetExtention()
 } timeline: {
-    SimpleEntry(date: .now, configuration: ConfigurationAppIntent(), widgetData: widgetDataStruct(deviceId: "", userId: "", familyId: "", tasks: [TaskStruct(name: "Do Homework", id: "", listId: "", pointsToAdd: 1, howManyTimesDidAllUsers: 0, counter: 2, orderWeight: 5)]))
+    SimpleEntry(date: .now, configuration: ConfigurationAppIntent(), widgetData: widgetDataStruct(deviceId: "", userId: "", familyId: "", tasks: [TaskStruct(name: "Do Homework", id: "", listId: "", pointsToAdd: 1, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 5)]))
 }

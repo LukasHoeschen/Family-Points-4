@@ -20,7 +20,7 @@ struct Number_Picker_View: View {
     
     func setTo(x: Int) {
 //        dataHandler.tasks.setPoint(taskListNum: taskListNum, taskNum: taskNum, count: x)
-        dataHandler.updateTaskDone(taskId: task.id, count: x)
+//        dataHandler.updateTaskDone(taskId: task.id, count: x)
         dismiss()
     }
     
@@ -179,7 +179,7 @@ struct Number_Picker_View: View {
 
 struct Number_Picker_View_Previews: PreviewProvider {
     static var previews: some View {
-        Number_Picker_View(task: TaskStruct(name: "", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0))
+        Number_Picker_View(task: TaskStruct(name: "", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0))
             .environmentObject(AppDataHandler())
     }
 }

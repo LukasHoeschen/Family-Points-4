@@ -130,7 +130,7 @@ struct ChangeTaskDetailView: View {
 
 struct ChangeTaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ChangeTaskDetailView(task: TaskStruct(name: "", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: 0, orderWeight: 0))
+        ChangeTaskDetailView(task: TaskStruct(name: "", id: "", listId: "", pointsToAdd: 0, howManyTimesDidAllUsers: 0, counter: .now, orderWeight: 0))
             .environmentObject(AppDataHandler())
     }
 }

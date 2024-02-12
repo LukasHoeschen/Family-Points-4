@@ -15,7 +15,14 @@ struct ContentView: View {
     @Environment(\.requestReview) var requestReview
     @Environment(\.scenePhase) var scenePhase
     
+    @State var taskDoneMessage = ""
+    @State var moveTaskDoneOptions = false
+    
     @AppStorage("AppOpenCount") var appOpenCount = 0
+    
+    @State var time = Date()
+    
+    
     
     var body: some View {
         ZStack {
@@ -63,59 +70,127 @@ struct ContentView: View {
             if dataHandler.family.id == "" || dataHandler.device.apiId == "" || dataHandler.user.id == "" {
                 LoginView()
             } else {
-                TabView {
-                    TasksTabView()
-                        .tabItem {
-                            Label("Tasks", systemImage: "person")
+                ZStack {
+                    TabView {
+                        TasksTabView()
+                            .tabItem {
+                                Label("Tasks", systemImage: "person")
+                            }
+                        
+                        NavigationStack {
+                            ScrollView {
+                                ForEach(dataHandler.user.tasksDone) { t in
+                                    DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dataHandler.user.id)
+                                }
+                            }.padding(.horizontal)
+                                .navigationTitle("Your done Tasks")
                         }
-                    
-                    FamilyView()
-                        .tabItem {
-                            Label("Family", systemImage: "person.3")
+                            .tabItem {
+                                Label("Done Tasks", systemImage: "list.bullet.rectangle")
+                            }
+                        
+                        FamilyView()
+                            .tabItem {
+                                Label("Family", systemImage: "person.3")
+                            }
+                            .badge(dataHandler.familyBadge)
+                    }.sheet(isPresented: $dataHandler.settings.firstLogin, onDismiss: {
+                        dataHandler.settings.firstLogin = false
+                        dataHandler.storeSettings()
+                    }) {
+                        NavigationStack {
+                            AddFamilyMemberView()
                         }
-                        .badge(dataHandler.familyBadge)
-                }.sheet(isPresented: $dataHandler.settings.firstLogin, onDismiss: {
-                    dataHandler.settings.firstLogin = false
-                    dataHandler.storeSettings()
-                }) {
-                    NavigationStack {
-                        AddFamilyMemberView()
+                        .presentationDetents([.fraction(0.7), .large])
+                        
                     }
-                    .presentationDetents([.fraction(0.7), .large])
-
-                }
-                .sheet(isPresented: $dataHandler.showSubscriptionStore, content: {
+                    .sheet(isPresented: $dataHandler.showSubscriptionStore, content: {
+                        if #available(iOS 17, *) {
+                            SubscriptionStoreView(productIDs: ["org.hoeschen.dev.familyPoints.pro.monthly", "org.hoeschen.dev.familyPoints.pro.annualy"])
+                                .storeButton(.visible, for: .restorePurchases, .redeemCode)
+                                .subscriptionStoreControlStyle(.prominentPicker)
+                                .onInAppPurchaseCompletion { product, result in
+                                    dataHandler.showSubscriptionStore = false
+                                }
+                        } else {
+                            Text("Sorry, subscriptions can only be made on devices running at least iOS 17.")
+                        }
+                    })
+                    
                     if #available(iOS 17, *) {
-                        SubscriptionStoreView(productIDs: ["org.hoeschen.dev.familyPoints.pro.monthly", "org.hoeschen.dev.familyPoints.pro.annualy"])
-                            .storeButton(.visible, for: .restorePurchases, .redeemCode)
-                            .subscriptionStoreControlStyle(.prominentPicker)
-                            .onInAppPurchaseCompletion { product, result in
-                                dataHandler.showSubscriptionStore = false
+                        Text("")
+                            .onChange(of: scenePhase) {
+                                if scenePhase == .active {
+                                    print("active")
+                                    dataHandler.fetchAllData()
+                                }
                             }
                     } else {
-                        Text("Sorry, subscriptions can only be made on devices running at least iOS 17.")
+                        Text("")
+                            .onChange(of: scenePhase) { _ in
+                                if scenePhase == .active {
+                                    print("active")
+                                    dataHandler.fetchAllData()
+                                }
+                            }
                     }
-                })
-                
-                if #available(iOS 17, *) {
-                    Text("")
-                        .onChange(of: scenePhase) {
-                            if scenePhase == .active {
-                                print("active")
-                                dataHandler.fetchAllData()
+                    
+                    if dataHandler.showOptionsForTaskId != nil {
+                        let task = dataHandler.getTask(id: dataHandler.showOptionsForTaskId!)!
+                        
+                        VStack {
+                            Spacer()
+                            GroupBox {
+                                DatePicker("Completed: ", selection: $time, displayedComponents: [.date, .hourAndMinute])
+                                
+                                TextField("Write a comment (optional)...", text: $taskDoneMessage, axis: .vertical)
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(3, reservesSpace: true)
+                                    .textFieldStyle(.roundedBorder)
+                                
+                                HStack {
+                                    Button("Cancel") {
+                                        withAnimation(.easeInOut(duration: 0.2)) {
+                                            moveTaskDoneOptions = false
+                                        }
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                            dataHandler.showOptionsForTaskId = nil
+                                        }
+                                    }.buttonStyle(.borderedProminent)
+                                        .tint(Color.blue)
+                                    
+                                    
+                                    Button("Save") {
+                                        dataHandler.updateTaskDone(taskId: task.id, time: time, message: taskDoneMessage)
+                                        withAnimation(.easeInOut(duration: 0.2)) {
+                                            moveTaskDoneOptions = false
+                                        }
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                            dataHandler.showOptionsForTaskId = nil
+                                        }
+                                    }.buttonStyle(.borderedProminent)
+                                }
+                            } label: {
+                                Text(task.name)
                             }
-                        }
-                } else {
-                    Text("")
-                        .onChange(of: scenePhase) { _ in
-                            if scenePhase == .active {
-                                print("active")
-                                dataHandler.fetchAllData()
+                            .clipped()
+                            .shadow(radius: 20)
+                            .onAppear {
+                                taskDoneMessage = ""
+                                time = .now
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    moveTaskDoneOptions = true
+                                }
                             }
-                        }
+                        }.padding()
+                            .offset(y: moveTaskDoneOptions ? 0 : 300)
+                            .background(Color(red: 0.3, green: 0.3, blue: 0.3, opacity: 0.6))
+                    }
                 }
+                    
             }
-            
+                
+
             if dataHandler.showProgress {
                 VStack {
                     HStack {
@@ -129,6 +204,7 @@ struct ContentView: View {
                     Spacer()
                 }.background(Color.init(red: 0.4, green: 0.4, blue: 0.4, opacity: 0.7))
             }
+            
             
         }.onAppear {
             self.appOpenCount = self.appOpenCount + 1
