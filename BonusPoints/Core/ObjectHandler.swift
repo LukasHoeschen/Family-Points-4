@@ -31,6 +31,8 @@ class AppDataHandler: ObservableObject {
 //    @AppStorage("tasksAppStorage") var tasksAppStorage: Data = Data()
     @AppStorage("settingsAppStorage") var settingsAppStorage: Data = Data()
     
+    @AppStorage("firstUsersPro") var firstUsersPro = true
+    
     
     
     init() {
@@ -426,6 +428,7 @@ class AppDataHandler: ObservableObject {
                             self.updateTask(taskListId: self.family.tasks.first!.id, name: NSLocalizedString("Play Video Games for 30 Minutes", comment: "Initialised Tasks"), pointsToAdd: -5, orderWeight: 0, created: .now)
                         }
                     }
+                    self.subscriptionToPro(status: true)
                     completion(true)
                     return
                 }
@@ -1086,13 +1089,16 @@ class AppDataHandler: ObservableObject {
     // MARK: Widget stuff
     func saveDataForWidget() {
         var data = widgetDataStruct(deviceId: device.apiId, userId: user.id, familyId: family.premium ? "premium" : "no", tasks: [])
+        print("-----")
+        print(family.premium)
+        print("-----")
         family.tasks.forEach { l in
             l.list.forEach { t in
                 data.tasks.append(t)
             }
         }
         DispatchQueue.global().async {
-            if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+            if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
                 if let encoded = try? JSONEncoder().encode(data) {
                     defaults.setValue(encoded, forKey: "widgetData")
                     defaults.synchronize()
@@ -1102,23 +1108,28 @@ class AppDataHandler: ObservableObject {
     }
     
     func loadDataFromWidget() {
-        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
             if let storedData = defaults.data(forKey: "widgetAddedCount") {
                 if let data = try? JSONDecoder().decode(widgetChangesStruct.self, from: storedData) {
                     
-                    var counts: [String: Int] = [:]
-
+//                    var counts: [String: Int] = [:]
+//
+//                    for item in data.list {
+//                        counts[item] = (counts[item] ?? 0) + 1
+//                    }
+//
+//                    for (key, value) in counts {
+////                        TODO: Widget
+////                        self.updateTaskDone(taskId: key, count: (self.getTask(id: key)?.counter ?? 0) + value)
+//                        self.updateTaskDone(taskId: key, time: .now, message: "")
+//                    }
+                    
                     for item in data.list {
-                        counts[item] = (counts[item] ?? 0) + 1
-                    }
-
-                    for (key, value) in counts {
-//                        TODO: Widget
-//                        self.updateTaskDone(taskId: key, count: (self.getTask(id: key)?.counter ?? 0) + value)
+                        self.updateTaskDone(taskId: item, time: .now, message: "")
                     }
                     
                     DispatchQueue.global().async {
-                        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+                        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
                             if let encoded = try? JSONEncoder().encode(widgetChangesStruct(list: [])) {
                                 defaults.setValue(encoded, forKey: "widgetAddedCount")
                                 defaults.synchronize()

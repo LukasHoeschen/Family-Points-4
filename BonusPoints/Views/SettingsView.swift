@@ -252,21 +252,23 @@ struct SettingsView: View {
             }
             
             Section {
-                if !dataHandler.family.premium && dataHandler.user.role == .parent {
-                    NavigationLink {
-                        Form {
-                            FamilyPointsStoreView()
+                if dataHandler.user.role == .parent && !dataHandler.firstUsersPro {
+                    if !dataHandler.family.premium {
+                        NavigationLink {
+                            Form {
+                                FamilyPointsStoreView()
+                            }
+                        } label: {
+                            Text("Upgrade Options")
+                                .foregroundStyle(Color.accentColor)
                         }
-                    } label: {
-                        Text("Upgrade Options")
-                            .foregroundStyle(Color.accentColor)
+                    } else {
+                        Button("Manage your Subscription") {
+                            showManageSubscription = true
+                        }
+                        .foregroundStyle(Color.accentColor)
+                        .manageSubscriptionsSheet(isPresented: $showManageSubscription)
                     }
-                } else {
-                    Button("Manage your Subscription") {
-                        showManageSubscription = true
-                    }
-                    .foregroundStyle(Color.accentColor)
-                    .manageSubscriptionsSheet(isPresented: $showManageSubscription)
                 }
                 
                 NavigationLink {

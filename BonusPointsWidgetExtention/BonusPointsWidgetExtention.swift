@@ -23,6 +23,7 @@ struct Provider: AppIntentTimelineProvider {
         var entries: [SimpleEntry] = []
         
         let data = myWidgetLoadTasksHelper.loadDataForWidget() 
+        print(data)
         
         entries.append(SimpleEntry(date: Date(), configuration: configuration, widgetData: data))
 
@@ -231,6 +232,9 @@ struct BonusPointsWidgetExtentionEntryView : View {
             }
         } else {
             Text("Please subscribe to use widgets")
+                .onAppear {
+//                    print(entry.widgetData)
+                }
         }
     }
 }

@@ -13,7 +13,7 @@ import SwiftUI
 
 struct myWidgetLoadTasksHelper {
     static func loadDataForWidget() -> widgetDataStruct {
-        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
             if let storedData = defaults.data(forKey: "widgetData") {
                 if let data = try? JSONDecoder().decode(widgetDataStruct.self, from: storedData) {
                     if !data.tasks.isEmpty {
@@ -38,7 +38,7 @@ struct widgetSelectedTasksStruct: AppEntity {
     
     static var allWidgetTasks: [widgetSelectedTasksStruct] {
         var result: [widgetSelectedTasksStruct] = []
-        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
             if let storedData = defaults.data(forKey: "widgetData") {
                 if let data = try? JSONDecoder().decode(widgetDataStruct.self, from: storedData) {
                     data.tasks.forEach { t in
@@ -99,7 +99,7 @@ struct TaskIntend: AppIntent {
     func perform() async throws -> some IntentResult {
         print("pressed")
         var data: widgetChangesStruct?
-        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
             if let storedData = defaults.data(forKey: "widgetAddedCount") {
                 if let d = try? JSONDecoder().decode(widgetChangesStruct.self, from: storedData) {
                     data = d
@@ -115,7 +115,7 @@ struct TaskIntend: AppIntent {
         let l = list
         
         DispatchQueue.global().async {
-            if let defaults = UserDefaults(suiteName: "group.org.hoeschen.development.bonusPoints") {
+            if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
                 if let encoded = try? JSONEncoder().encode(widgetChangesStruct(list: l)) {
                     showTapped = item
                     defaults.setValue(encoded, forKey: "widgetAddedCount")
