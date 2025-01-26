@@ -31,7 +31,7 @@ class AppDataHandler: ObservableObject {
 //    @AppStorage("tasksAppStorage") var tasksAppStorage: Data = Data()
     @AppStorage("settingsAppStorage") var settingsAppStorage: Data = Data()
     
-    @AppStorage("firstUsersPro") var firstUsersPro = true
+    @AppStorage("firstUsersPro") var firstUsersPro = false
     
     
     
@@ -446,6 +446,7 @@ class AppDataHandler: ObservableObject {
     
     func subscriptionToPro(status: Bool) {
         // MARK: Subscribe to Pro
+        print("subscriptionToPro()")
         print(status)
         print(family.premium)
         if self.family.premium != status {
@@ -454,6 +455,7 @@ class AppDataHandler: ObservableObject {
             }
             self.family.premium = status
             self.familyUpdate()
+            self.storeFamily()
             print("Stored Premium on Server")
         }
     }

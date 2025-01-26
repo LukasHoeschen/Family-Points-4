@@ -29,7 +29,8 @@ struct ContentView: View {
             
             if #available(iOS 17, *) {
                 Text("")
-                    .subscriptionStatusTask(for: "21430283") { taskState in
+                    .subscriptionStatusTask(for: "21626865") { taskState in
+                        print("Fetched SubscriptionnState From Apple Or Like This")
                         if let statuses = taskState.value {
                             for status in statuses {
                                 switch status.state {
@@ -42,7 +43,9 @@ struct ContentView: View {
             //                            return
             //                        }
                                     print(status.state.localizedDescription)
+                                    print("---")
                                     dataHandler.subscriptionToPro(status: true)
+                                    return
                                 case .inBillingRetryPeriod:
                                     debugPrint("getSubscriptionStatus user subscription is in billing retry period.")
                                     dataHandler.subscriptionToPro(status: false)
@@ -64,6 +67,9 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        print("no status from subscription -> no premium")
+                        dataHandler.subscriptionToPro(status: false)
+                        return
                     }
             }
             
@@ -129,7 +135,6 @@ struct ContentView: View {
                         Text("")
                             .onChange(of: scenePhase) { _ in
                                 if scenePhase == .active {
-                                    print("active")
                                     dataHandler.fetchAllData()
                                 }
                             }

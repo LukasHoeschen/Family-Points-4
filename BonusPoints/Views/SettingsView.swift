@@ -119,6 +119,7 @@ struct SettingsView: View {
 //                    dataHandler.family.premium = false
 //                    dataHandler.family.maxTasks = 4
 //                    dataHandler.storeFamily()
+//                    dataHandler.familyUpdate()
 //                }
                 
                 NavigationLink(destination: {
@@ -252,6 +253,9 @@ struct SettingsView: View {
             }
             
             Section {
+//                Button("Press Me") {
+//                    print(dataHandler.family.premium)
+//                }
                 if dataHandler.user.role == .parent && !dataHandler.firstUsersPro {
                     if !dataHandler.family.premium {
                         NavigationLink {
@@ -333,6 +337,15 @@ struct SettingsView: View {
                         .foregroundStyle(Color.accentColor)
                 }
 
+            }
+            
+            Section("Legal") {
+                Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!, label: {
+                    Text("Terms of Use")
+                })
+                Link(destination: URL(string: "https://lukas.hoeschen.org/apps/bonusPoints/privacyPolicy/index.html")!, label: {
+                    Text("Privacy Policy")
+                })
             }
             
             Section {

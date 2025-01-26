@@ -362,6 +362,9 @@
 "Kid" = "Kind";
 
 /* No comment provided by engineer. */
+"Legal" = "Rechtliches";
+
+/* No comment provided by engineer. */
 "Link Device" = "Verbinde ein Gerät";
 
 /* No comment provided by engineer. */
@@ -389,6 +392,9 @@
 "Mon" = "Mo";
 
 /* No comment provided by engineer. */
+"More Options" = "Mehr Optionen";
+
+/* No comment provided by engineer. */
 "Most Completed Tasks" = "Am meisten erledigte Aufgaben";
 
 /* No comment provided by engineer. */
@@ -414,9 +420,6 @@
 
 /* No comment provided by engineer. */
 "No Tasks in this list yet" = "Keine Aufgaben in dieser Liste";
-
-/* No comment provided by engineer. */
-"No-pro" = "Kein-Pro";
 
 /* No comment provided by engineer. */
 "Not necessary" = "Nicht erforderlich";
@@ -480,6 +483,9 @@
 
 /* No comment provided by engineer. */
 "Points:" = "Punkte:";
+
+/* No comment provided by engineer. */
+"Privacy Policy" = "Datenschutzerklärung";
 
 /* No comment provided by engineer. */
 "Purchases and subscriptions are synchronised across all family members." = "Käufe und Abonnements werden zwischen allen Familienmitgliedern synchronisiert.";
@@ -561,6 +567,9 @@
 
 /* No comment provided by engineer. */
 "Tasks" = "Aufgaben";
+
+/* No comment provided by engineer. */
+"Terms of Use" = "AGB";
 
 /* No comment provided by engineer. */
 "The Idea Behind Family Points" = "Die Idee hinter Family Points";

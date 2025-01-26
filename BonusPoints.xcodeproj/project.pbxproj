@@ -20,7 +20,6 @@
 		B12564EE2B3C75B90084EA91 /* BonusPointsWidgetExtentionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B12564DC2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B12564F42B3C77860084EA91 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563F83295DA707001359B5 /* Structs.swift */; };
 		B132BD332B39A9C90095763E /* FamilyPointsStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B132BD322B39A9C90095763E /* FamilyPointsStoreView.swift */; };
-		B14C6C152B24FE6C00E31967 /* BonusPoints-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B14C6C132B24FE6B00E31967 /* BonusPoints-InfoPlist.strings */; };
 		B14E7FA929537989001DFEA0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E7FA829537989001DFEA0 /* LoginView.swift */; };
 		B1557C1E2B14F24A001D5273 /* SimpleSwiftCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = B1557C1D2B14F24A001D5273 /* SimpleSwiftCrypto */; };
 		B1563F84295DA707001359B5 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563F83295DA707001359B5 /* Structs.swift */; };
@@ -32,13 +31,13 @@
 		B17EB1A629411CCE009903E9 /* ObjectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB1A529411CCE009903E9 /* ObjectHandler.swift */; };
 		B183FB27298A89190018A739 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183FB26298A89190018A739 /* FamilyView.swift */; };
 		B19496F12B44C2BC00D1B906 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B19496F02B44C2BC00D1B906 /* SwiftDate */; };
+		B19A16502D46A871002563B2 /* Family Points App.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B19A164F2D46A871002563B2 /* Family Points App.storekit */; };
 		B1B9A520297704900004CAE1 /* TasksDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A51F297704900004CAE1 /* TasksDetailView.swift */; };
 		B1B9A523297C29290004CAE1 /* ChangeTaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */; };
 		B1B9A527297C2D0D0004CAE1 /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */; };
 		B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A528297C2EA60004CAE1 /* SettingsView.swift */; };
 		B1D7A9DA2ACC4C5D0053BA35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1D7A9D92ACC4C5D0053BA35 /* Alamofire */; };
 		B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E0EE892B1E319300DBF92B /* Localizable.strings */; };
-		B1E407622B470785007B9463 /* Family Points.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B1E407612B470785007B9463 /* Family Points.storekit */; };
 		B1F2B27F294B1A700031A3F0 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */; };
 		B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */; };
 		B1F56AF72B77B729007ABB6E /* buyMeACoffeeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */; };
@@ -98,13 +97,13 @@
 		B183FB26298A89190018A739 /* FamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyView.swift; sourceTree = "<group>"; };
 		B191B8EF2B3C7E740051426E /* BonusPointsWidgetExtentionExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsWidgetExtentionExtensionDebug.entitlements; sourceTree = "<group>"; };
 		B191B8F02B3C7F5F0051426E /* BonusPointsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsDebug.entitlements; sourceTree = "<group>"; };
+		B19A164F2D46A871002563B2 /* Family Points App.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Family Points App.storekit"; sourceTree = "<group>"; };
 		B1B9A51F297704900004CAE1 /* TasksDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDetailView.swift; sourceTree = "<group>"; };
 		B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTaskDetailView.swift; sourceTree = "<group>"; };
 		B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
 		B1B9A528297C2EA60004CAE1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B1C9117D2B278737007AD509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1E0EE8A2B1E319300DBF92B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B1E407612B470785007B9463 /* Family Points.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Family Points.storekit"; sourceTree = "<group>"; };
 		B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInListView.swift; sourceTree = "<group>"; };
 		B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyMeACoffeeButton.png; sourceTree = "<group>"; };
@@ -226,7 +225,7 @@
 			children = (
 				B17EB1A529411CCE009903E9 /* ObjectHandler.swift */,
 				B1563F83295DA707001359B5 /* Structs.swift */,
-				B1E407612B470785007B9463 /* Family Points.storekit */,
+				B19A164F2D46A871002563B2 /* Family Points App.storekit */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -308,7 +307,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					B12564DB2B3C75B70084EA91 = {
 						CreatedOnToolsVersion = 15.1;
@@ -361,8 +360,7 @@
 				B17EB19D29411C7C009903E9 /* Preview Assets.xcassets in Resources */,
 				B12564D72B3C6AE30084EA91 /* InfoPlist.strings in Resources */,
 				B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */,
-				B14C6C152B24FE6C00E31967 /* BonusPoints-InfoPlist.strings in Resources */,
-				B1E407622B470785007B9463 /* Family Points.storekit in Resources */,
+				B19A16502D46A871002563B2 /* Family Points App.storekit in Resources */,
 				B11C850E2B261FC900F38F0D /* SetupMovie.mov in Resources */,
 				B17EB19929411C7C009903E9 /* Assets.xcassets in Resources */,
 			);
@@ -636,7 +634,6 @@
 		B17EB1A129411C7C009903E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BonusPoints/BonusPointsDebug.entitlements;
@@ -667,12 +664,13 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.hoeschen.lukas.familyPoints.App;
+				PRODUCT_BUNDLE_IDENTIFIER = org.hoeschen.lukas.familyPoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,7 +680,6 @@
 		B17EB1A229411C7C009903E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BonusPoints/BonusPoints.entitlements;
@@ -713,12 +710,13 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.hoeschen.lukas.familyPoints.App;
+				PRODUCT_BUNDLE_IDENTIFIER = org.hoeschen.lukas.familyPoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

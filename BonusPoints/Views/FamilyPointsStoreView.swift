@@ -16,7 +16,7 @@ struct FamilyPointsStoreView: View {
 //        Form {
         if #available(iOS 17, *) {
             Section {
-                ProductView(id: "org.hoeschen.bonusPoints.purchase.tasks20") {
+                ProductView(id: "org.hoeschen.lukas.FamilyPoints.Store.tasks20") {
                     Image(systemName: "note.text.badge.plus")
                         .symbolRenderingMode(.multicolor)
                         .resizable()
@@ -141,7 +141,8 @@ struct FamilyPointsSubscriptionView: View {
                 .subscriptionStoreControlStyle(.prominentPicker)
                 .onInAppPurchaseCompletion { product, result in
                     isPresented = false
-                }
+                }.subscriptionStorePolicyDestination(url: URL(string: "https://lukas.hoeschen.org/apps/bonusPoints/privacyPolicy/index.html")!, for: .privacyPolicy)
+                .subscriptionStorePolicyDestination(url: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!, for: .termsOfService)
         }
     }
 }

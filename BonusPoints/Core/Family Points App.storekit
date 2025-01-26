@@ -1,5 +1,15 @@
 {
-  "identifier" : "4E124A1C",
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "814317F8",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -7,29 +17,24 @@
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "6475344148",
+      "internalID" : "6741047000",
       "localizations" : [
         {
-          "description" : "20 weitere Aufgaben für deine Familie",
-          "displayName" : "20 Aufgaben",
-          "locale" : "de"
-        },
-        {
-          "description" : "20 more Tasks for your Family",
+          "description" : "20 more Tasks for your Family to create",
           "displayName" : "20 Tasks",
           "locale" : "en_US"
         }
       ],
-      "productID" : "org.hoeschen.bonusPoints.purchase.tasks20",
+      "productID" : "org.hoeschen.lukas.FamilyPoints.Store.tasks20",
       "referenceName" : "20 Tasks",
       "type" : "Consumable"
     }
   ],
   "settings" : {
-    "_applicationInternalID" : "6475323840",
-    "_developerTeamID" : "R399ABRP7H",
+    "_applicationInternalID" : "6741044966",
+    "_developerTeamID" : "6M9RLHG794",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 726143912.11363006,
+    "_lastSynchronizedDate" : 759606842.54841101,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -82,11 +87,11 @@
   },
   "subscriptionGroups" : [
     {
-      "id" : "21430283",
+      "id" : "21626865",
       "localizations" : [
 
       ],
-      "name" : "Family Points Pro",
+      "name" : "Family Points Premium Subscription",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -98,25 +103,23 @@
           "displayPrice" : "1.99",
           "familyShareable" : false,
           "groupNumber" : 2,
-          "internalID" : "6475423364",
+          "internalID" : "6741046706",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Funktionen auf einer monatlichen Basis",
-              "displayName" : "Family Points Pro - Monatlich",
-              "locale" : "de"
-            },
-            {
-              "description" : "Get all Features on a monthly basis",
-              "displayName" : "Family Points Pro - Monthly",
+              "description" : "Subscribe for all Features and pay monthly",
+              "displayName" : "Monthly Subscription",
               "locale" : "en_US"
             }
           ],
           "productID" : "org.hoeschen.dev.familyPoints.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Monthly Subscription",
-          "subscriptionGroupID" : "21430283",
-          "type" : "RecurringSubscription"
+          "subscriptionGroupID" : "21626865",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         },
         {
           "adHocOffers" : [
@@ -128,31 +131,29 @@
           "displayPrice" : "17.99",
           "familyShareable" : false,
           "groupNumber" : 1,
-          "internalID" : "6475423064",
+          "internalID" : "6741046614",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Alle Features auf einer jährlichen Basis",
-              "displayName" : "Family Points Pro - Jährlich",
-              "locale" : "de"
-            },
-            {
-              "description" : "Get all Features on an annually basis",
-              "displayName" : "Family Points Pro - Annually",
+              "description" : "Subscribe for all Features and pay annually",
+              "displayName" : "Yearly Subscription",
               "locale" : "en_US"
             }
           ],
           "productID" : "org.hoeschen.dev.familyPoints.pro.annualy",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Yearly Subscription",
-          "subscriptionGroupID" : "21430283",
-          "type" : "RecurringSubscription"
+          "subscriptionGroupID" : "21626865",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 3,
+    "major" : 4,
     "minor" : 0
   }
 }
