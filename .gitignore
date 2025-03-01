@@ -1,0 +1,31 @@
+
+Secrets.swift
+
+
+
+
+# Xcode-Projektdateien
+*.xcworkspace/
+*.xcuserdata/
+DerivedData/
+.idea/
+Pods/
+Carthage/
+
+# API-Schlüssel und Konfigurationsdateien
+Secrets.swift
+.env
+*.key
+*.pem
+
+# Build- und Cache-Dateien
+build/
+*.DS_Store
+*.lock
+*.log
+
+# AppStorage-Daten (falls lokal gespeichert)
+*.sqlite
+*.db
+*.json
+*.plist

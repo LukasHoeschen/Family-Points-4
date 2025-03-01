@@ -119,6 +119,9 @@
 "Alternatively, you can simply tap the file, and it should automatically open here." = "Alternativ können Sie auch einfach auf die Datei tippen, die dann automatisch geöffnet wird.";
 
 /* No comment provided by engineer. */
+"As a student, I don’t earn much, and keeping apps available on the App Store comes with costs. If you enjoy using \"Family Points\", I’d really appreciate your support!" = "Als Student verdiene ich nicht viel, und die Apps im App Store verfügbar zu halten, kostet Geld. Wenn dir Family Points gefällt, würde ich mich sehr über deine Unterstützung freuen!";
+
+/* No comment provided by engineer. */
 "Cancel" = "Abbrechen";
 
 /* No comment provided by engineer. */
@@ -257,6 +260,12 @@
 "Do you really want to remove this Device?" = "Möchtest du wirklich dieses Gerät löschen?";
 
 /* No comment provided by engineer. */
+"Donate via [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)" = "Spende über [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)";
+
+/* No comment provided by engineer. */
+"Donate via [PayPal](https://paypal.me/hoeschenDevelopment)" = "Spende über [PayPal](https://paypal.me/hoeschenDevelopment)";
+
+/* No comment provided by engineer. */
 "Done" = "Fertig";
 
 /* No comment provided by engineer. */
@@ -314,7 +323,10 @@
 "Hide" = "Ausblenden";
 
 /* No comment provided by engineer. */
-"I'm Lukas, a 17-year-old boy from Germany (2023). If you have ideas for new features or any suggestions, please feel free to contact me. Thank you so much for using my app." = "Mein Name ist Lukas und ich bin ein 17 jähriger Schüler aus Deutschland. Wenn Sie Ideen für neue Funktionen oder sonstige Anmerkungen haben, kontaktieren Sie mich bitte.\nDanke dass Sie meine App benutzen!";
+"I'm a Mechatronics student developing this app in my free time. It's kinda expensive to host servers storing your data and making Apps available at the App Store. That's actually the only reason im working with in App-Purchases. So, if you like my App, I'd really appreciate your support and I would love to hear your Feedback!" = "Ich bin Mechatronik-Student und entwickle diese App in meiner Freizeit. Es ist ziemlich teuer, Server zu betreiben, die deine Daten speichern, und Apps im App Store verfügbar zu halten. Das ist eigentlich der einzige Grund, warum ich In-App-Käufe anbiete. Wenn dir meine App gefällt, würde ich mich wirklich über deine Unterstützung freuen und würde gerne dein Feedback hören!";
+
+/* No comment provided by engineer. */
+"I'm Lukas, a 18-year-old boy from Germany (2025). If you have ideas for new features or any suggestions, please feel free to contact me. Thank you so much for using my app." = "Ich bin Lukas, ein 18-jähriger Junge aus Deutschland (2025). Wenn du Ideen für neue Funktionen hast oder Vorschläge machen möchtest, kannst du dich gerne bei mir melden. Vielen Dank, dass du meine App benutzt!";
 
 /* No comment provided by engineer. */
 "If a family member has already created a family, you can join that family." = "Wenn ein Familienmitglied schon eine Familie erstellt hat, kannst du dieser beitreten.";
@@ -494,6 +506,9 @@
 "Purchases can only be done on devices supporting iOS 17 or newer." = "Käufe können nur auf Geräten mit iOs 17 oder neuer durchgeführt werden.";
 
 /* No comment provided by engineer. */
+"Rate \"Family Points\"" = "Bewerte „Familien Punkte“";
+
+/* No comment provided by engineer. */
 "Rate Family Points" = "Bewerte Bonus Punkte";
 
 /* No comment provided by engineer. */
@@ -554,7 +569,13 @@
 "Setup" = "Setup";
 
 /* No comment provided by engineer. */
+"Share with Friends" = "Teile die App mit Freunden";
+
+/* No comment provided by engineer. */
 "Sorry, subscriptions can only be made on devices running at least iOS 17." = "Käufe können nur auf Geräten mit iOs 17 oder neuer durchgeführt werden.";
+
+/* No comment provided by engineer. */
+"Storing your data on my server is kinda expensive, so I decided to make this Store to earn a little money. If you wish, you could support me also via [PayPal](https://paypal.me/hoeschenDevelopment) or [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)" = "Das Speichern deiner Daten auf meinem Server ist ziemlich teuer, also habe ich beschlossen, diesen Store zu erstellen, um ein wenig Geld zu verdienen. Wenn du möchtest, kannst du mich auch über [PayPal](https://paypal.me/hoeschenDevelopment) oder [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment) unterstützen.";
 
 /* No comment provided by engineer. */
 "Submit" = "Absenden";
@@ -564,6 +585,9 @@
 
 /* No comment provided by engineer. */
 "Sun" = "So";
+
+/* No comment provided by engineer. */
+"Support Me" = "Unterstütze Mich";
 
 /* No comment provided by engineer. */
 "Tasks" = "Aufgaben";
