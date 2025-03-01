@@ -297,7 +297,7 @@ struct SettingsView: View {
                         }
                         
                         Section("About Me") {
-                            Text("I'm Lukas, a 17-year-old boy from Germany (2023). If you have ideas for new features or any suggestions, please feel free to contact me. Thank you so much for using my app.")
+                            Text("I'm Lukas, a 18-year-old boy from Germany (2025). If you have ideas for new features or any suggestions, please feel free to contact me. Thank you so much for using my app.")
                             NavigationLink("Contact me") {
                                 ScrollView {
                                     TextField("Write something...", text: $contactMessage, axis: .vertical)
@@ -322,13 +322,11 @@ struct SettingsView: View {
                             Link("Write me an Email", destination: URL(string: "mailto:heirs.airmail.0s@icloud.com")!)
                         }
                         
-                        Section {
+                        Section("Support Me") {
+                            Text("I'm a Mechatronics student developing this app in my free time. It's kinda expensive to host servers storing your data and making Apps available at the App Store. That's actually the only reason im working with in App-Purchases. So, if you like my App, I'd really appreciate your support and I would love to hear your Feedback!")
+                            Text("Donate via [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)")
+                            Text("Donate via [PayPal](https://paypal.me/hoeschenDevelopment)")
                             RateThisAppHelperViewForSettingsView()
-                            Link(destination: URL(string: "https://www.buymeacoffee.com/hoeschendevelopment")!, label: {
-                                Image("buyMeACoffeeButton")
-                                    .resizable()
-                                    .scaledToFit()
-                            })
                         }
                     }
                     .navigationTitle("About")

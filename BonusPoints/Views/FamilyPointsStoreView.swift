@@ -115,6 +115,10 @@ struct FamilyPointsStoreView: View {
                             Label("\(dataHandler.family.tasks.count)/4 Task Lists", systemImage: "tray.full")
                             Label("\(dataHandler.family.users.count)/4 Family Members", systemImage: "person.3.fill")
                         }
+                        
+                        Section("Information") {
+                            Text("Storing your data on my server is kinda expensive, so I decided to make this Store to earn a little money. If you wish, you could support me also via [PayPal](https://paypal.me/hoeschenDevelopment) or [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)")
+                        }
                     }.navigationTitle("Information")
                 } label: {
                     Image(systemName: "info.circle")

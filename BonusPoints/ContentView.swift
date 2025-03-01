@@ -23,6 +23,9 @@ struct ContentView: View {
     @State var time = Date()
     
     
+    @AppStorage("showSupportMe") var showSupportMe: Bool = false
+//    @State var showSupportMe: Bool = true
+    
     
     var body: some View {
         ZStack {
@@ -48,11 +51,11 @@ struct ContentView: View {
                                     return
                                 case .inBillingRetryPeriod:
                                     debugPrint("getSubscriptionStatus user subscription is in billing retry period.")
-                                    dataHandler.subscriptionToPro(status: false)
+                                    dataHandler.subscriptionToPro(status: true)
                                     return
                                 case .inGracePeriod:
                                     debugPrint("getSubscriptionStatus user subscription is in grace period.")
-                                    dataHandler.subscriptionToPro(status: false)
+                                    dataHandler.subscriptionToPro(status: true)
                                     return
                                 case .expired:
                                     debugPrint("getSubscriptionStatus user subscription is expired.")
@@ -68,7 +71,7 @@ struct ContentView: View {
                             }
                         }
                         print("no status from subscription -> no premium")
-                        dataHandler.subscriptionToPro(status: false)
+                        //dataHandler.subscriptionToPro(status: false)
                         return
                     }
             }
@@ -109,6 +112,41 @@ struct ContentView: View {
                         }
                         .presentationDetents([.fraction(0.7), .large])
                         
+                    }
+                    .sheet(isPresented: $showSupportMe) {
+                        NavigationStack {
+                            HStack(alignment: .top) {
+                                VStack(alignment: .leading, spacing: 20) {
+                                    
+                                    Text("As a student, I don’t earn much, and keeping apps available on the App Store comes with costs. If you enjoy using \"Family Points\", I’d really appreciate your support!")
+                                        .font(.body)
+                                    
+                                    Text("Donate via [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)")
+                                        .font(.headline)
+                                    Text("Donate via [PayPal](https://paypal.me/hoeschenDevelopment)")
+                                        .font(.headline)
+                                    
+                                    Button(action: {
+                                        requestReview()
+                                    }) {
+                                        Label("Rate \"Family Points\"", systemImage: "star.fill")
+                                            .font(.headline)
+                                            .foregroundColor(.yellow)
+                                    }
+                                    
+                                    ShareLink(item: URL(string: "https://apps.apple.com/us/app/family-points-app/id6741044966")!) {
+                                        Label("Share with Friends", systemImage: "square.and.arrow.up")
+                                            .font(.headline)
+                                            .foregroundColor(.blue)
+                                    }
+                                    
+                                    Spacer()
+                                }
+                            }
+                            .padding(.horizontal)
+                            .navigationTitle("Support Me")
+                        }
+                        .presentationDetents([.height(400), .large])
                     }
                     .sheet(isPresented: $dataHandler.showSubscriptionStore, content: {
                         if #available(iOS 17, *) {
@@ -213,8 +251,11 @@ struct ContentView: View {
             
         }.onAppear {
             self.appOpenCount = self.appOpenCount + 1
-            if self.appOpenCount == 100 {
+            if self.appOpenCount % 200 == 50 {
                 requestReview()
+            }
+            if self.appOpenCount % 400 == 70 {
+                showSupportMe = true
             }
         }
     }

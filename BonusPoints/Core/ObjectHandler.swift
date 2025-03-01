@@ -170,9 +170,6 @@ class AppDataHandler: ObservableObject {
     
     func sendData<T: Codable>(data: [String:Any], file: String, completion: @escaping (T?) -> ()) {
         // MARK: Send Data
-        let url = "https://lukas.hoeschen.org/apps/bonusPoints2/api1/"
-//        let url = "http://10.102.250.41/Webseiten/Lukas.hoeschen.org/apps/bonusPoints2/api1/"
-//        let url = "http://10.1.5.14/Webseiten/Lukas.hoeschen.org/apps/bonusPoints2/api1/"
         
         var sendData = data
         sendData["userId"] = self.user.id
@@ -428,7 +425,7 @@ class AppDataHandler: ObservableObject {
                             self.updateTask(taskListId: self.family.tasks.first!.id, name: NSLocalizedString("Play Video Games for 30 Minutes", comment: "Initialised Tasks"), pointsToAdd: -5, orderWeight: 0, created: .now)
                         }
                     }
-                    self.subscriptionToPro(status: true)
+                    //self.subscriptionToPro(status: true)
                     completion(true)
                     return
                 }
