@@ -39,7 +39,6 @@
 		B1D7A9DA2ACC4C5D0053BA35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1D7A9D92ACC4C5D0053BA35 /* Alamofire */; };
 		B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E0EE892B1E319300DBF92B /* Localizable.strings */; };
 		B1F06C9C2D74729400918345 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1F06C9B2D74728100918345 /* .gitignore */; };
-		B1F06CA02D7473F200918345 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F06C9F2D7473F200918345 /* Secrets.swift */; };
 		B1F2B27F294B1A700031A3F0 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */; };
 		B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */; };
 		B1F56AF72B77B729007ABB6E /* buyMeACoffeeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */; };
@@ -107,7 +106,6 @@
 		B1C9117D2B278737007AD509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1E0EE8A2B1E319300DBF92B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B1F06C9B2D74728100918345 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		B1F06C9F2D7473F200918345 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInListView.swift; sourceTree = "<group>"; };
 		B1F56AF62B77B729007ABB6E /* buyMeACoffeeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyMeACoffeeButton.png; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 				B17EB1A529411CCE009903E9 /* ObjectHandler.swift */,
 				B1563F83295DA707001359B5 /* Structs.swift */,
 				B19A164F2D46A871002563B2 /* Family Points App.storekit */,
-				B1F06C9F2D7473F200918345 /* Secrets.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -396,7 +393,6 @@
 				B1563F84295DA707001359B5 /* Structs.swift in Sources */,
 				B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */,
 				B17EB19729411C7B009903E9 /* ContentView.swift in Sources */,
-				B1F06CA02D7473F200918345 /* Secrets.swift in Sources */,
 				B1F56AF92B78E0EB007ABB6E /* DoneTasksInListView.swift in Sources */,
 				B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */,
 				B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */,
