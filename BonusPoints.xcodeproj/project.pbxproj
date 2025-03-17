@@ -23,6 +23,7 @@
 		B14E7FA929537989001DFEA0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E7FA829537989001DFEA0 /* LoginView.swift */; };
 		B1557C1E2B14F24A001D5273 /* SimpleSwiftCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = B1557C1D2B14F24A001D5273 /* SimpleSwiftCrypto */; };
 		B1563F84295DA707001359B5 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563F83295DA707001359B5 /* Structs.swift */; };
+		B15A3EB62D7477830075E86F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A3EB52D74777F0075E86F /* Secrets.swift */; };
 		B16A0C18294397960035394E /* TasksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A0C17294397960035394E /* TasksTabView.swift */; };
 		B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */; };
 		B17EB19729411C7B009903E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19629411C7B009903E9 /* ContentView.swift */; };
@@ -87,6 +88,7 @@
 		B14C6C142B24FE6B00E31967 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "de.lproj/BonusPoints-InfoPlist.strings"; sourceTree = "<group>"; };
 		B14E7FA829537989001DFEA0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1563F83295DA707001359B5 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		B15A3EB52D74777F0075E86F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		B16A0C17294397960035394E /* TasksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabView.swift; sourceTree = "<group>"; };
 		B17EB19129411C7B009903E9 /* BonusPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyPointsApp.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		B17EB1A429411CA1009903E9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B15A3EB52D74777F0075E86F /* Secrets.swift */,
 				B17EB1A529411CCE009903E9 /* ObjectHandler.swift */,
 				B1563F83295DA707001359B5 /* Structs.swift */,
 				B19A164F2D46A871002563B2 /* Family Points App.storekit */,
@@ -393,6 +396,7 @@
 				B1563F84295DA707001359B5 /* Structs.swift in Sources */,
 				B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */,
 				B17EB19729411C7B009903E9 /* ContentView.swift in Sources */,
+				B15A3EB62D7477830075E86F /* Secrets.swift in Sources */,
 				B1F56AF92B78E0EB007ABB6E /* DoneTasksInListView.swift in Sources */,
 				B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */,
 				B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */,
@@ -644,7 +648,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BonusPoints/Preview Content\"";
 				DEVELOPMENT_TEAM = 6M9RLHG794;
@@ -690,7 +694,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BonusPoints/Preview Content\"";
 				DEVELOPMENT_TEAM = 6M9RLHG794;

@@ -50,156 +50,137 @@ struct BonusPointsWidgetExtentionEntryView : View {
         if entry.widgetData.familyId == "premium" || entry.widgetData.userId == "preview" {
             VStack {
                 if tasks.count == 16 {
-                    switch family {
-                    case .systemSmall, .systemMedium:
-                        ForEach(0..<3, id: \.self) { t in
-                            if let task = tasks[t] {
-                                HStack {
-                                    Button(intent: TaskIntend(item: task.id)) {
-                                        Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
-                                            .foregroundColor(.blue)
-                                            .font(.largeTitle)
-                                    }.buttonStyle(.plain)
-                                        .onAppear {
-                                            if showTapped == task.id {
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                                    withAnimation {
-                                                        showTapped = ""
-                                                        WidgetCenter.shared.reloadAllTimelines()
+                    if tasks[0] == nil {
+                        Text("Long press to configure")
+                    } else {
+                        switch family {
+                        case .systemSmall, .systemMedium:
+                            ForEach(0..<3, id: \.self) { t in
+                                if let task = tasks[t] {
+                                    HStack {
+                                        Button(intent: TaskIntend(item: task.id)) {
+                                            Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
+                                                .foregroundColor(.blue)
+                                                .font(.largeTitle)
+                                        }.buttonStyle(.plain)
+                                            .onAppear {
+                                                if showTapped == task.id {
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                        withAnimation {
+                                                            showTapped = ""
+                                                            WidgetCenter.shared.reloadAllTimelines()
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                    Text(task.name)
-                                        .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
-                                    Spacer()
-                                }.bold()
-                                    .font(.title2)
+                                        Text(task.name)
+                                            .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
+                                        Spacer()
+                                    }.bold()
+                                        .font(.title2)
+                                }
                             }
-                        }
-                        Spacer()
-                        
-                    case .systemLarge:
-                        ForEach(0..<8, id: \.self) { t in
-                            if let task = tasks[t] {
-                                HStack {
-                                    Button(intent: TaskIntend(item: task.id)) {
-                                        Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
-                                            .foregroundColor(.blue)
-                                            .font(.largeTitle)
-                                    }.buttonStyle(.plain)
-                                        .onAppear {
-                                            if showTapped == task.id {
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                                    withAnimation {
-                                                        showTapped = ""
-                                                        WidgetCenter.shared.reloadAllTimelines()
+                            Spacer()
+                            
+                        case .systemLarge:
+                            ForEach(0..<8, id: \.self) { t in
+                                if let task = tasks[t] {
+                                    HStack {
+                                        Button(intent: TaskIntend(item: task.id)) {
+                                            Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
+                                                .foregroundColor(.blue)
+                                                .font(.largeTitle)
+                                        }.buttonStyle(.plain)
+                                            .onAppear {
+                                                if showTapped == task.id {
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                        withAnimation {
+                                                            showTapped = ""
+                                                            WidgetCenter.shared.reloadAllTimelines()
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                    Text(task.name)
-                                        .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
-                                    Spacer()
-                                }.bold()
-                                    .font(.title2)
+                                        Text(task.name)
+                                            .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
+                                        Spacer()
+                                    }.bold()
+                                        .font(.title2)
+                                }
                             }
-                        }
-                        Spacer()
-                    case .systemExtraLarge:
-                        HStack {
-                            VStack {
-                                ForEach(0..<16, id: \.self) { t in
-                                    if t % 2 == 0 {
-                                        if let task = tasks[t], t % 2 == 0 {
-                                            HStack {
-                                                Button(intent: TaskIntend(item: task.id)) {
-                                                    Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
-                                                        .foregroundColor(.blue)
-                                                        .font(.largeTitle)
-                                                }.buttonStyle(.plain)
-                                                    .onAppear {
-                                                        if showTapped == task.id {
-                                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                                                withAnimation {
-                                                                    showTapped = ""
-                                                                    WidgetCenter.shared.reloadAllTimelines()
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                Text(task.name)
-                                                    .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
-                                                Spacer()
-                                            }.bold()
-                                                .font(.title2)
-                                        }
-                                    }
-                                }
-                                Spacer()
-                            }.frame(maxWidth: .infinity)
-                            Divider()
-                            VStack {
-                                ForEach(0..<16, id: \.self) { t in
-                                    if t % 2 == 1 {
-                                        if let task = tasks[t] {
-                                            HStack {
-                                                Button(intent: TaskIntend(item: task.id)) {
-                                                    Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
-                                                        .foregroundColor(.blue)
-                                                        .font(.largeTitle)
-                                                }.buttonStyle(.plain)
-                                                    .onAppear {
-                                                        if showTapped == task.id {
-                                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                                                withAnimation {
-                                                                    showTapped = ""
-                                                                    WidgetCenter.shared.reloadAllTimelines()
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                Text(task.name)
-                                                    .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
-                                                Spacer()
-                                            }.bold()
-                                                .font(.title2)
-                                        }
-                                    }
-                                }
-                                Spacer()
-                            }.frame(maxWidth: .infinity)
-                        }
-                        
-                    case .accessoryCircular:
-                        if let t = tasks.first, let task = t {
-                            Button(intent: TaskIntend(item: task.id)) {
-                                Image(systemName: showTapped == task.id ? "checkmark" : "plus.circle.fill")
-                                    .resizable()
-                                    .scaledToFill()
-                            }.buttonStyle(.plain)
-                                .onAppear {
-                                    if showTapped == task.id {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                            withAnimation {
-                                                showTapped = ""
-                                                WidgetCenter.shared.reloadAllTimelines()
-                                            }
-                                        }
-                                    }
-                                }
-                        }
-                        
-                    case .accessoryInline, .accessoryRectangular:
-                        if let t = tasks.first, let task = t {
+                            Spacer()
+                        case .systemExtraLarge:
                             HStack {
-                                Text(task.name)
-                                Spacer()
+                                VStack {
+                                    ForEach(0..<16, id: \.self) { t in
+                                        if t % 2 == 0 {
+                                            if let task = tasks[t], t % 2 == 0 {
+                                                HStack {
+                                                    Button(intent: TaskIntend(item: task.id)) {
+                                                        Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
+                                                            .foregroundColor(.blue)
+                                                            .font(.largeTitle)
+                                                    }.buttonStyle(.plain)
+                                                        .onAppear {
+                                                            if showTapped == task.id {
+                                                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                                    withAnimation {
+                                                                        showTapped = ""
+                                                                        WidgetCenter.shared.reloadAllTimelines()
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    Text(task.name)
+                                                        .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
+                                                    Spacer()
+                                                }.bold()
+                                                    .font(.title2)
+                                            }
+                                        }
+                                    }
+                                    Spacer()
+                                }.frame(maxWidth: .infinity)
+                                Divider()
+                                VStack {
+                                    ForEach(0..<16, id: \.self) { t in
+                                        if t % 2 == 1 {
+                                            if let task = tasks[t] {
+                                                HStack {
+                                                    Button(intent: TaskIntend(item: task.id)) {
+                                                        Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
+                                                            .foregroundColor(.blue)
+                                                            .font(.largeTitle)
+                                                    }.buttonStyle(.plain)
+                                                        .onAppear {
+                                                            if showTapped == task.id {
+                                                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                                    withAnimation {
+                                                                        showTapped = ""
+                                                                        WidgetCenter.shared.reloadAllTimelines()
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    Text(task.name)
+                                                        .foregroundStyle(Color.init(red: 246/256, green: 81/256, blue: 1/256))
+                                                    Spacer()
+                                                }.bold()
+                                                    .font(.title2)
+                                            }
+                                        }
+                                    }
+                                    Spacer()
+                                }.frame(maxWidth: .infinity)
+                            }
+                            
+                        case .accessoryCircular:
+                            if let t = tasks.first, let task = t {
                                 Button(intent: TaskIntend(item: task.id)) {
-                                    Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
+                                    Image(systemName: showTapped == task.id ? "checkmark" : "plus.circle.fill")
+                                        .resizable()
+                                        .scaledToFill()
                                 }.buttonStyle(.plain)
-                                    .font(.title2)
-                                    .bold()
                                     .onAppear {
                                         if showTapped == task.id {
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -211,9 +192,32 @@ struct BonusPointsWidgetExtentionEntryView : View {
                                         }
                                     }
                             }
+                            
+                        case .accessoryInline, .accessoryRectangular:
+                            if let t = tasks.first, let task = t {
+                                HStack {
+                                    Text(task.name)
+                                    Spacer()
+                                    Button(intent: TaskIntend(item: task.id)) {
+                                        Image(systemName: showTapped == task.id ? "checkmark" : "plus.square.fill")
+                                    }.buttonStyle(.plain)
+                                        .font(.title2)
+                                        .bold()
+                                        .onAppear {
+                                            if showTapped == task.id {
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                    withAnimation {
+                                                        showTapped = ""
+                                                        WidgetCenter.shared.reloadAllTimelines()
+                                                    }
+                                                }
+                                            }
+                                        }
+                                }
+                            }
+                        @unknown default:
+                            Text("Widget Size not yet supported")
                         }
-                    @unknown default:
-                        Text("Widget Size not yet supported")
                     }
                 } else {
                     Text("Long press to configure")
