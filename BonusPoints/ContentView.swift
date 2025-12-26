@@ -21,6 +21,7 @@ struct ContentView: View {
     @AppStorage("AppOpenCount") var appOpenCount = 0
     
     @State var time = Date()
+    @State var searchText: String = ""
     
     
     @AppStorage("showSupportMe") var showSupportMe: Bool = false
@@ -81,28 +82,33 @@ struct ContentView: View {
             } else {
                 ZStack {
                     TabView {
-                        TasksTabView()
-                            .tabItem {
-                                Label("Tasks", systemImage: "person")
-                            }
-                        
-                        NavigationStack {
-                            ScrollView {
-                                ForEach(dataHandler.user.tasksDone) { t in
-                                    DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dataHandler.user.id)
-                                }
-                            }.padding(.horizontal)
-                                .navigationTitle("Your done Tasks")
+                        Tab("Tasks", systemImage: "person") {
+                            TasksTabView()
                         }
-                            .tabItem {
-                                Label("Done Tasks", systemImage: "list.bullet.rectangle")
-                            }
                         
-                        FamilyView()
-                            .tabItem {
-                                Label("Family", systemImage: "person.3")
+                        
+                        Tab("Done Tasks", systemImage: "list.bullet.rectangle") {
+                            NavigationStack {
+                                ScrollView {
+                                    ForEach(dataHandler.user.tasksDone) { t in
+                                        DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dataHandler.user.id)
+                                    }
+                                }.padding(.horizontal)
+                                    .navigationTitle("Your done Tasks")
                             }
-                            .badge(dataHandler.familyBadge)
+                        }
+                        
+                        Tab("Family", systemImage: "person.3") {
+                            FamilyView()
+                        }
+                        .badge(dataHandler.familyBadge)
+                        
+                        Tab(role: .search) {
+                            NavigationStack {
+                                Text("Searching for: \(searchText)")
+                            }.searchable(text: $searchText)
+                        }
+                        
                     }.sheet(isPresented: $dataHandler.settings.firstLogin, onDismiss: {
                         dataHandler.settings.firstLogin = false
                         dataHandler.storeSettings()
@@ -160,22 +166,11 @@ struct ContentView: View {
                             Text("Sorry, subscriptions can only be made on devices running at least iOS 17.")
                         }
                     })
-                    
-                    if #available(iOS 17, *) {
-                        Text("")
-                            .onChange(of: scenePhase) {
-                                if scenePhase == .active {
-                                    print("active")
-                                    dataHandler.fetchAllData()
-                                }
-                            }
-                    } else {
-                        Text("")
-                            .onChange(of: scenePhase) { _ in
-                                if scenePhase == .active {
-                                    dataHandler.fetchAllData()
-                                }
-                            }
+                    .onChange(of: scenePhase) {
+                        if scenePhase == .active {
+                            print("active")
+                            dataHandler.fetchAllData()
+                        }
                     }
                     
                     if dataHandler.showOptionsForTaskId != nil {
@@ -261,3 +256,7 @@ struct ContentView: View {
     }
 }
 
+#Preview {
+    ContentView()
+        .environmentObject(AppDataHandler())
+}

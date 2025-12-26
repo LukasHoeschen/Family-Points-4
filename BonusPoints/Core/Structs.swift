@@ -62,7 +62,7 @@ enum UserRole: Codable {
     case parent
 }
 
-struct FamilyStruct: Codable {
+struct FamilyStruct: Codable, Hashable {
     var id: String
     var name: String
     var tasks: [TaskList]
@@ -88,7 +88,7 @@ struct TaskHistoryStruct: Codable, Hashable {
     var count: Int
 }
 
-struct TaskStruct: Codable, Hashable {
+struct TaskStruct: Codable, Hashable, Identifiable {
     var name: String
     var id: String
     var listId: String
@@ -110,7 +110,7 @@ struct MultipleTaskListStruct: Codable {
     var list: [TaskList] = []
 }
 
-struct TaskList: Codable, Hashable {
+struct TaskList: Codable, Hashable, Identifiable {
     var id: String
     var name: String
     var list: [TaskStruct]

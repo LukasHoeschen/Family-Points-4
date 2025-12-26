@@ -9,12 +9,12 @@ import SwiftUI
 
 struct TasksTabView: View {
     
-    @EnvironmentObject var dataHandler: AppDataHandler
+    @EnvironmentObject var dm: AppDataHandler
     @Environment(\.colorScheme) var colorScheme
 
     @State private var searchString = ""
     @State private var showNewTaskSheet = false
-    @State private var actualTaskList = 0
+    @AppStorage("currentSeenTaskList") var actualTaskList: Int = 0
     
     @State private var createNewTaskList = false
     @State private var createNewTaskListName = ""
@@ -28,7 +28,7 @@ struct TasksTabView: View {
     @State private var showOnlyPreferredTasks = false
     
     func deleteList(at offsets: IndexSet) {
-        if dataHandler.user.role == .parent {
+        if dm.user.role == .parent {
             deleteListSet = offsets
             showDeleteListButton = true
         } else {
@@ -37,278 +37,195 @@ struct TasksTabView: View {
     }
     
     func onMoveAction(source: IndexSet, destination: Int) {
-        dataHandler.family.tasks.move(fromOffsets: source, toOffset: destination)
-        dataHandler.settings.taskListSequence.move(fromOffsets: source, toOffset: destination)
-        dataHandler.storeSettings()
+        dm.family.tasks.move(fromOffsets: source, toOffset: destination)
+        dm.settings.taskListSequence.move(fromOffsets: source, toOffset: destination)
+        dm.storeSettings()
     }
     
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                if searchString.isEmpty {
-                    TabView(selection: $actualTaskList) {
-                        
-                        //MARK: Task List
-                        ForEach(0..<dataHandler.family.tasks.count, id: \.self) { TaskList in
-                            Group {
-                                if dataHandler.family.tasks[TaskList].list.count > 0 {
-                                        ScrollView {
-                                            ForEach(dataHandler.family.tasks[TaskList].list, id: \.self) { t in
-                                                if !showOnlyPreferredTasks || dataHandler.user.lovedTasks.contains(t.id) {
-                                                    TaskInListView(task: t)
-                                                        .contextMenu {
-                                                            if dataHandler.user.role == .parent {
-                                                                Button("Delete", role: .destructive) {
-                                                                    dataHandler.deleteTask(taskId: t.id)
-                                                                }
-                                                            }
-                                                        }
-                                                }
-                                            }
-                                            Spacer()
-                                                .frame(height: 30)
-                                        }.padding(.horizontal)
-                                            .refreshable {
-                                                dataHandler.fetchAllData()
-                                            }
-                                } else {
-                                    VStack {
-                                        Text("No Tasks in this list yet")
-                                        Spacer()
-                                            .frame(height: 10)
-                                        Button(action: {
-                                            showNewTaskSheet = true
-                                        }) {
-                                            Text("Add a new Task")
-                                        }
-                                    }
-                                }
-                                
-                            }
-//                            .onAppear {
-//                                actualTaskList = TaskList
-//                            }
-                            .tag(TaskList)
-                            .navigationTitle(dataHandler.family.tasks[TaskList].name)
-                        }
-                        
-                        // MARK: Add new TaskListList
-                        VStack {
-                            List {
-                                Section {
-                                    ForEach(0..<dataHandler.family.tasks.count, id: \.self) { listIndex in
-                                        let list = dataHandler.family.tasks[listIndex]
-                                        Button(list.name) {
-                                            withAnimation {
-                                                actualTaskList = listIndex
-                                            }
-                                        }.foregroundStyle(Color.primary)
-                                    }
-                                    .onDelete(perform: deleteList)
-                                    .onMove(perform: onMoveAction)
-                                } footer: {
-                                    Text("Lists can help you to organise your tasks based on specific topics. For instance, you could create a list for each family member or for categories such as cleaning or work.\nHere you can create new lists, sort or delete them.")
-                                }
-                            }.toolbar {
-
-#if !os(macOS)
-                                    EditButton()
-#endif
-                                if dataHandler.user.role == UserRole.parent && (dataHandler.family.premium || dataHandler.family.tasks.count < 4){
-                                    HStack {
-                                        Spacer()
-                                        Button(action: {
-                                            withAnimation {
-                                                createNewTaskList.toggle()
-                                            }
-                                        }) {
-                                            Image(systemName: "plus.circle.fill")
-                                        }
-                                        Spacer()
-                                    }.sheet(isPresented: $createNewTaskList) {
-                                        NavigationStack {
-                                            Form {
-                                                if dataHandler.family.tasks.count < 4 || dataHandler.family.premium {
-                                                    Section {
-                                                        Label("Name", systemImage: "keyboard")
-                                                            .foregroundColor(.green)
-                                                        HStack {
-                                                            Text("Name: ")
-                                                            TextField("Please enter a Name for your new List", text: $createNewTaskListName)
-                                                        }
-                                                    }
-                                                    
-                                                    Section {
-                                                        HStack {
-                                                            Spacer()
-                                                            Button(action: {
-                                                                dataHandler.updateTaskList(name: createNewTaskListName) { res in
-                                                                }
-                                                                withAnimation {
-                                                                    createNewTaskListName = ""
-                                                                    createNewTaskList = false
-                                                                }
-                                                            }) {
-                                                                Text("Create")
-                                                                    .foregroundColor(.blue)
-                                                            }
-                                                            Spacer()
-                                                        }
-                                                    }
-                                                } else {
-                                                    Section {
-                                                        Text("To create more Lists, please subscribe to Family Points Pro.")
-                                                    }
-                                                }
-                                            }
-                                        }.presentationDetents([.fraction(0.3)])
-                                            .presentationDragIndicator(.visible)
-                                    }
-                                }
-                            }
-                            .alert("Delete List?", isPresented: $showDeleteListButton, actions: {
-                                Button("Cancel", role: .cancel, action: {})
-                                Button("Delete", role: .destructive) {
-                                    withAnimation {
-                                        deleteListSet.forEach { i in
-                                            dataHandler.deleteList(listId: dataHandler.family.tasks[i].id)
-                                        }
-                                    }
-                                }
-                            }, message: {
-                                Text("Do you really want to delete this list with all tasks? This can't be undo.")
-                            })
-                            .alert("Delete List", isPresented: $showDeleteListOnlyByParents, actions: {
-                                Button("OK", role: .cancel, action: {})
-                            }, message: {
-                                Text("Only parents can delete Lists.")
-                            })
-                        }.navigationTitle(dataHandler.user.role == .parent ? "Add a new List" : "Lists")
-                            .tag(-1)
-                    }
-#if !os(macOS)
-                    .tabViewStyle(.page(indexDisplayMode: .always))
-#endif
-                } else {
-                    // MARK: Search Section
-                    if searchTasks.count > 0 {
-                        ScrollView {
-                            ForEach(searchTasks, id: \.self) { i in
-                                TaskInListView(task: i)
-                                    .listRowInsets(EdgeInsets())
+        NavigationSplitView {
+            List {
+                Section {
+                    ForEach(dm.family.tasks) { taskList in
+                        NavigationLink(value: TasksViewRoute.taskList(taskList)) {
+                            VStack(alignment: .leading) {
+                                Text(taskList.name)
+                                    .foregroundStyle(Color.accent)
+                                    .font(.title2)
+                                Text("\(taskList.list.count) Tasks")
                             }
                         }
-                        .padding(.horizontal)
-                    } else {
-                        Text("No matching Tasks found.")
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                    }
-                    .navigationTitle("Searching for: \(searchString)")
+                    }.onMove(perform: onMoveAction)
+                        .onDelete(perform: deleteList)
                 }
                 
-                if actualTaskList != -1 {
-                    VStack {
-                        HStack {
-                            Button(action: {
-                                withAnimation {
-                                    self.showOnlyPreferredTasks.toggle()
-                                }
-                            }) {
-                                Image(systemName: showOnlyPreferredTasks ? "heart.fill" : "heart")
-                            }
-                            
-                            if #available(iOS 17, *) {
-                                TextField("Search", text: $searchString)
-                                    .onChange(of: searchString) {
-                                        if searchString != "" {
-                                            self.searchTasks = []
-                                            dataHandler.family.tasks.forEach { l in
-                                                l.list.forEach { t in
-                                                    if t.name.uppercased().contains(searchString.uppercased()) {
-                                                        self.searchTasks.append(t)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .focused($focusedField, equals: true)
-                            } else {
-                                TextField("Search", text: $searchString)
-                                    .onChange(of: searchString) { _ in
-                                        if searchString != "" {
-                                            self.searchTasks = []
-                                            dataHandler.family.tasks.forEach { l in
-                                                l.list.forEach { t in
-                                                    if t.name.uppercased().contains(searchString.uppercased()) {
-                                                        self.searchTasks.append(t)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .focused($focusedField, equals: true)
-                            }
-                            
-                            Spacer()
-                            
-                            if searchString == "" {
-                                Button(action: {
-                                    showNewTaskSheet.toggle()
-                                }, label: {
-                                    Image(systemName: "plus")
-                                        .font(.title2)
-                                    //                                        .symbolRenderingMode(.palette)
-                                    //                                        .foregroundStyle(Color.yellow, colorScheme == .light ? Color.gray : Color.clear)
-                                }).sheet(isPresented: $showNewTaskSheet) {
-                                    AddNewTaskView(actualTaskList: actualTaskList)
-                                }
-                            } else {
-                                Button(action: {
-                                    withAnimation {
-                                        focusedField = nil
-                                        searchString = ""
-                                    }
-                                }) {
-                                    Text("Cancel")
-                                }
-                            }
+                Section {
+                    Button {
+                        withAnimation {
+                            createNewTaskList.toggle()
                         }
-                        .padding([.leading, .trailing, .top], 7)
-                        
-                        Divider()
+                    } label: {
+                        Label("Add List", systemImage: "plus")
+                    }.sheet(isPresented: $createNewTaskList) {
+                        NavigationStack {
+                            Form {
+                                if dm.family.tasks.count < 4 || dm.family.premium {
+                                    Section {
+                                        Label("Name", systemImage: "keyboard")
+                                            .foregroundColor(.green)
+                                        HStack {
+                                            Text("Name: ")
+                                            TextField("Name new List", text: $createNewTaskListName)
+                                                .onSubmit {
+                                                    dm.updateTaskList(name: createNewTaskListName) { res in
+                                                    }
+                                                    withAnimation {
+                                                        createNewTaskListName = ""
+                                                        createNewTaskList = false
+                                                    }
+                                                }
+                                        }
+                                    }
+                                    
+                                    Section {
+                                        HStack {
+                                            Spacer()
+                                            Button(action: {
+                                                dm.updateTaskList(name: createNewTaskListName) { res in
+                                                }
+                                                withAnimation {
+                                                    createNewTaskListName = ""
+                                                    createNewTaskList = false
+                                                }
+                                            }) {
+                                                Text("Create")
+                                                    .foregroundColor(.blue)
+                                            }
+                                            Spacer()
+                                        }
+                                    }.navigationTitle("New List")
+                                } else {
+                                    Section {
+                                        Text("To create more Lists, please subscribe to Family Points Pro.")
+                                    }
+                                    if dm.user.role == .parent {
+                                        Section {
+                                            FamilyPointsStoreView()
+                                        }
+                                    }
+                                }
+                            }.toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button(role: .close) {
+                                        createNewTaskList = false
+                                    }
+                                }
+                            }
+                        }.presentationDetents([.fraction(0.4), .large])
+                            .presentationDragIndicator(.visible)
+                    }
+                    
+                    
+                    EditButton()
+                }
+            }
+            .navigationTitle("My Lists")
+            .alert("Delete List?", isPresented: $showDeleteListButton, actions: {
+                Button("Cancel", role: .cancel, action: {})
+                Button("Delete", role: .destructive) {
+                    withAnimation {
+                        deleteListSet.forEach { i in
+                            dm.deleteList(listId: dm.family.tasks[i].id)
+                        }
+                    }
+                }
+            }, message: {
+                Text("Do you really want to delete this list with all tasks? This can't be undo.")
+            })
+            .alert("Delete List", isPresented: $showDeleteListOnlyByParents, actions: {
+                Button("OK", role: .cancel, action: {})
+            }, message: {
+                Text("Only parents can delete Lists.")
+            })
+            
+            //MARK: Detail View
+            .navigationDestination(for: TasksViewRoute.self) { route in
+                switch route {
+                case .taskList(let taskList):
+                    NavigationStack {
+                        if let index = dm.family.tasks.firstIndex(where: { $0.id == taskList.id }) {
+                            if dm.family.tasks[index].list.count > 0 {
+                                ScrollView {
+                                    ForEach(dm.family.tasks[index].list, id: \.self) { t in
+                                        if !showOnlyPreferredTasks || dm.user.lovedTasks.contains(t.id) {
+                                            TaskInListView(task: t)
+                                                .contextMenu {
+                                                    if dm.user.role == .parent {
+                                                        Button("Delete", role: .destructive) {
+                                                            dm.deleteTask(taskId: t.id)
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                    }
+                                    Spacer()
+                                        .frame(height: 30)
+                                }.padding(.horizontal)
+                                    .refreshable {
+                                        dm.fetchAllData()
+                                    }
+                            } else {
+                                VStack {
+                                    Text("No Tasks in this list yet")
+                                    Spacer()
+                                        .frame(height: 10)
+                                    Button(action: {
+                                        showNewTaskSheet = true
+                                    }) {
+                                        Text("Add a new Task")
+                                    }
+                                }
+                            }
+                        } else {
+                            Text("List not found")
+                        }
+                    }
+                case .statistics:
+                    NavigationStack {
+                        TasksDetailView()
                     }
                 }
             }
-            .animation(.easeInOut, value: actualTaskList)
-//            .navigationTitle("Your Tasks")
             .toolbar {
-                ToolbarItem() {
+                ToolbarItem {
                     Button {
-                        dataHandler.fetchAllData()
+                        dm.fetchAllData()
                     } label: {
                         Image(systemName: "arrow.circlepath")
                             .bold()
                     }
                 }
-                ToolbarItem() {
-                    NavigationLink("\(Int(dataHandler.user.actualPoints))P", destination: {
-                        TasksDetailView()
-                    })
+                ToolbarItem {
+                    NavigationLink(value: TasksViewRoute.statistics) {
+                        Text("\(Int(dm.user.actualPoints))P")
                         .bold()
                         .foregroundColor(.yellow)
                         .font(.title)
+                    }
                 }
             }
-            #if !os(macOS)
-            .navigationBarTitleDisplayMode(.large)
-            #endif
+        } detail: {
+            Text("Please select a List")
         }
     }
 }
+
+enum TasksViewRoute: Hashable {
+    case taskList(TaskList)
+    case statistics
+}
+
 
 struct TasksTabView_Previews: PreviewProvider {
     static var previews: some View {
