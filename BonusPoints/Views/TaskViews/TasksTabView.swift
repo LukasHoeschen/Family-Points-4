@@ -12,20 +12,13 @@ struct TasksTabView: View {
     @EnvironmentObject var dm: AppDataHandler
     @Environment(\.colorScheme) var colorScheme
 
-    @State private var searchString = ""
-    @State private var showNewTaskSheet = false
-    @AppStorage("currentSeenTaskList") var actualTaskList: Int = 0
+    @AppStorage("currentSeenTaskList") var actualTaskListId: String = ""
     
     @State private var createNewTaskList = false
     @State private var createNewTaskListName = ""
     @State private var showDeleteListButton = false
     @State private var showDeleteListOnlyByParents = false
     @State private var deleteListSet: IndexSet = IndexSet()
-    
-    @State private var searchTasks: [TaskStruct] = []
-    @FocusState private var focusedField: Bool?
-
-    @State private var showOnlyPreferredTasks = false
     
     func deleteList(at offsets: IndexSet) {
         if dm.user.role == .parent {
@@ -48,7 +41,7 @@ struct TasksTabView: View {
             List {
                 Section {
                     ForEach(dm.family.tasks) { taskList in
-                        NavigationLink(value: TasksViewRoute.taskList(taskList)) {
+                        NavigationLink(value: TasksViewRoute.taskList(id: taskList.id)) {
                             VStack(alignment: .leading) {
                                 Text(taskList.name)
                                     .foregroundStyle(Color.accent)
@@ -152,49 +145,13 @@ struct TasksTabView: View {
             //MARK: Detail View
             .navigationDestination(for: TasksViewRoute.self) { route in
                 switch route {
-                case .taskList(let taskList):
-                    NavigationStack {
-                        if let index = dm.family.tasks.firstIndex(where: { $0.id == taskList.id }) {
-                            if dm.family.tasks[index].list.count > 0 {
-                                ScrollView {
-                                    ForEach(dm.family.tasks[index].list, id: \.self) { t in
-                                        if !showOnlyPreferredTasks || dm.user.lovedTasks.contains(t.id) {
-                                            TaskInListView(task: t)
-                                                .contextMenu {
-                                                    if dm.user.role == .parent {
-                                                        Button("Delete", role: .destructive) {
-                                                            dm.deleteTask(taskId: t.id)
-                                                        }
-                                                    }
-                                                }
-                                        }
-                                    }
-                                    Spacer()
-                                        .frame(height: 30)
-                                }.padding(.horizontal)
-                                    .refreshable {
-                                        dm.fetchAllData()
-                                    }
-                            } else {
-                                VStack {
-                                    Text("No Tasks in this list yet")
-                                    Spacer()
-                                        .frame(height: 10)
-                                    Button(action: {
-                                        showNewTaskSheet = true
-                                    }) {
-                                        Text("Add a new Task")
-                                    }
-                                }
-                            }
-                        } else {
-                            Text("List not found")
+                case .taskList(let id):
+                    TasksListListView(taskListId: id)
+                        .onAppear {
+                            actualTaskListId = id
                         }
-                    }
                 case .statistics:
-                    NavigationStack {
-                        TasksDetailView()
-                    }
+                    TasksDetailView()
                 }
             }
             .toolbar {
@@ -216,14 +173,95 @@ struct TasksTabView: View {
                 }
             }
         } detail: {
-            Text("Please select a List")
+            if dm.family.tasks.contains(where: {$0.id == actualTaskListId}) {
+                TasksListListView(taskListId: actualTaskListId)
+            } else if !dm.family.tasks.isEmpty  {
+                TasksListListView(taskListId: dm.family.tasks.first?.id ?? "")
+            } else {
+                Text("Please select a List")
+            }
         }
     }
 }
 
 enum TasksViewRoute: Hashable {
-    case taskList(TaskList)
+    case taskList(id: String)
     case statistics
+}
+
+struct TasksListListView: View {
+    
+    @EnvironmentObject var dm: AppDataHandler
+    
+    var taskListId: String
+    
+    @State private var showOnlyPreferredTasks = false
+    @State private var showNewTaskSheet = false
+    
+    var body: some View {
+        NavigationStack {
+            if let index = dm.family.tasks.firstIndex(where: { $0.id == taskListId }) {
+                let taskList = dm.family.tasks[index]
+                Group {
+                    if dm.family.tasks[index].list.count > 0 {
+                        ScrollView {
+                            ForEach(dm.family.tasks[index].list, id: \.self) { t in
+                                if !showOnlyPreferredTasks || dm.user.lovedTasks.contains(t.id) {
+                                    TaskInListView(task: t)
+                                        .contextMenu {
+                                            if dm.user.role == .parent {
+                                                Button("Delete", role: .destructive) {
+                                                    dm.deleteTask(taskId: t.id)
+                                                }
+                                            }
+                                        }
+                                }
+                            }
+                            Spacer()
+                                .frame(height: 30)
+                        }.padding(.horizontal)
+                            .refreshable {
+                                dm.fetchAllData()
+                            }
+                            .navigationTitle(taskList.name)
+                    } else {
+                        VStack {
+                            Text("No Tasks in this list yet")
+                            Spacer()
+                                .frame(height: 10)
+                            Button(action: {
+                                showNewTaskSheet = true
+                            }) {
+                                Text("Add a new Task")
+                            }
+                        }
+                    }
+                }
+                .sheet(isPresented: $showNewTaskSheet) {
+                    AddNewTaskView(actualTaskList: index)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(action: {
+                            showNewTaskSheet = true
+                        }) {
+                            Image(systemName: "plus")
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            showOnlyPreferredTasks.toggle()
+                        } label: {
+                            Image(systemName: showOnlyPreferredTasks ? "heart.fill" : "heart")
+                        }
+                    }
+                }
+            } else {
+                Text("List not found")
+            }
+        }
+    }
 }
 
 

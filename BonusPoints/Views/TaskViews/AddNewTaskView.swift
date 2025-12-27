@@ -58,7 +58,7 @@ struct AddNewTaskView: View {
                             .foregroundColor(.green)
                         HStack {
                             Text("Name:")
-                            TextField("Please enter the Task Name", text: $createNewTaskName)
+                            TextField("", text: $createNewTaskName)
                                 .focused($fieldFocus, equals: 0)
                                 .onSubmit {
                                     createNewTask()
@@ -70,7 +70,7 @@ struct AddNewTaskView: View {
                             .foregroundColor(.blue)
                         HStack {
                             Text("Points:")
-                            TextField("Enter points value (e.g., -0.5)", text: $createNewTaskPointsToAdd)
+                            TextField("Number", text: $createNewTaskPointsToAdd)
                                 .focused($fieldFocus, equals: 1)
 #if !os(macOS)
                                 .keyboardType(.numbersAndPunctuation)
@@ -92,7 +92,7 @@ struct AddNewTaskView: View {
                             Slider(value: $createNewTaskImportantNum, in: -5...5, step: 1)
                         }
                     } footer: {
-                        Text("Adjust the importance level to prioritise or de-prioritise your tasks. Tasks will be sorted based on their importance.")
+                        Text("Adjust the importance level to priorities or de-priorities your tasks. Tasks will be sorted based on their importance.")
                     }
                     
                     HStack {
@@ -109,7 +109,7 @@ struct AddNewTaskView: View {
                 
             }.navigationTitle("Create a new Task")
 
-        }.presentationDetents([.fraction(0.7), .large])
+        }.presentationDetents([.large, .fraction(0.7)])
             .presentationDragIndicator(.visible)
     }
 }

@@ -19,60 +19,60 @@ struct TasksDetailView: View {
     @State private var allTasks3: [TaskStruct] = []
     
     var body: some View {
-        
-        VStack {
-            Picker("", selection: $selectedChart) {
-                Text("Completed").tag(0)
-                Text("Points").tag(1)
-                Text("Total Achieved").tag(2)
-            }.pickerStyle(.segmented)
-            
-            TabView(selection: $selectedChart) {
-                List {
-                    
-                    Label("Most Completed Tasks", systemImage: "chart.bar.fill")
-
-                    Chart {
-                        ForEach(allTasks1, id: \.self) { task in
-                            
-                            BarMark(
-                                x: .value("Total Count", task.howManyTimesDidAllUsers),
-                                y: .value("Name", task.name)
-                            )
-                            .annotation(position: .trailing) {
-                                Text(String(task.howManyTimesDidAllUsers))
-                                    .foregroundColor(Color.gray)
-                                    .font(.system(size: 12, weight: .bold))
-                            }
-                            .foregroundStyle(Color.accentColor)
-                            .cornerRadius(6)
-                            
-                        }
-                    }.frame(height: CGFloat(allTasks1.count * 60))
-                    
-                    Section(content: {
-                        Text("This section displays tasks that have been completed most frequently among all family members.")
-                    }, header: {
-                        Text("Info")
-                    }, footer: {
-                        if !dataHandler.family.premium {
-                            Text("Please subscribe to see all Tasks in Statistics")
-                        }
-                    })
-                    
-                }.tag(0)
+        NavigationStack {
+            VStack {
+                Picker("", selection: $selectedChart) {
+                    Text("Completed").tag(0)
+                    Text("Points").tag(1)
+                    Text("Total Achieved").tag(2)
+                }.pickerStyle(.segmented)
                 
-                List {
-    
-                    Label("Points", systemImage: "chart.bar.fill")
-    
-                    Chart {
-                        ForEach(allTasks2, id: \.self) { task in
-    
-                            BarMark(
-                                x: .value("Points to Add", task.pointsToAdd),
-                                y: .value("Name", task.name)
-                            )
+                TabView(selection: $selectedChart) {
+                    List {
+                        
+                        Label("Most Completed Tasks", systemImage: "chart.bar.fill")
+                        
+                        Chart {
+                            ForEach(allTasks1, id: \.self) { task in
+                                
+                                BarMark(
+                                    x: .value("Total Count", task.howManyTimesDidAllUsers),
+                                    y: .value("Name", task.name)
+                                )
+                                .annotation(position: .trailing) {
+                                    Text(String(task.howManyTimesDidAllUsers))
+                                        .foregroundColor(Color.gray)
+                                        .font(.system(size: 12, weight: .bold))
+                                }
+                                .foregroundStyle(Color.accentColor)
+                                .cornerRadius(6)
+                                
+                            }
+                        }.frame(height: CGFloat(allTasks1.count * 60))
+                        
+                        Section(content: {
+                            Text("This section displays tasks that have been completed most frequently among all family members.")
+                        }, header: {
+                            Text("Info")
+                        }, footer: {
+                            if !dataHandler.family.premium {
+                                Text("Please subscribe to see all Tasks in Statistics")
+                            }
+                        })
+                        
+                    }.tag(0)
+                    
+                    List {
+                        
+                        Label("Points", systemImage: "chart.bar.fill")
+                        
+                        Chart {
+                            ForEach(allTasks2, id: \.self) { task in
+                                
+                                BarMark(
+                                    x: .value("Points to Add", task.pointsToAdd),
+                                    y: .value("Name", task.name)
+                                )
                                 .annotation(position: .trailing) {
                                     Text(functionsClass().floatToShortString(x: task.pointsToAdd))
                                         .foregroundColor(Color.gray)
@@ -80,32 +80,32 @@ struct TasksDetailView: View {
                                 }
                                 .foregroundStyle(Color.accentColor)
                                 .cornerRadius(6)
-
-                        }
-                    }.frame(height: CGFloat(allTasks1.count * 60))
+                                
+                            }
+                        }.frame(height: CGFloat(allTasks1.count * 60))
+                        
+                        Section(content: {
+                            Text("This section displays tasks that yield the highest number of points.")
+                        }, header: {
+                            Text("Info")
+                        }, footer: {
+                            if !dataHandler.family.premium {
+                                Text("Please subscribe to see all Tasks in Statistics")
+                            }
+                        })
+                    }.tag(1)
                     
-                    Section(content: {
-                        Text("This section displays tasks that yield the highest number of points.")
-                    }, header: {
-                        Text("Info")
-                    }, footer: {
-                        if !dataHandler.family.premium {
-                            Text("Please subscribe to see all Tasks in Statistics")
-                        }
-                    })
-                }.tag(1)
-                
-                List {
-                    
-                    Label("Total Achieved Points", systemImage: "chart.bar.fill")
-    
-                    Chart {
-                        ForEach(allTasks3, id: \.self) { task in
-    
-                            BarMark(
-                                x: .value("Total achieved Points", task.pointsToAdd * Float(task.howManyTimesDidAllUsers)),
-                                y: .value("Name", task.name)
-                            )
+                    List {
+                        
+                        Label("Total Achieved Points", systemImage: "chart.bar.fill")
+                        
+                        Chart {
+                            ForEach(allTasks3, id: \.self) { task in
+                                
+                                BarMark(
+                                    x: .value("Total achieved Points", task.pointsToAdd * Float(task.howManyTimesDidAllUsers)),
+                                    y: .value("Name", task.name)
+                                )
                                 .annotation(position: .trailing) {
                                     Text(functionsClass().floatToShortString(x: task.pointsToAdd * Float(task.howManyTimesDidAllUsers)))
                                         .foregroundColor(Color.gray)
@@ -113,32 +113,32 @@ struct TasksDetailView: View {
                                 }
                                 .foregroundStyle(Color.accentColor)
                                 .cornerRadius(6)
-
-                        }
-                    }.frame(height: CGFloat(allTasks1.count * 60))
-                    
-                    Section(content: {
-                        Text("This section displays tasks that have earned the most points.")
-                    }, header: {
-                        Text("Info")
-                    }, footer: {
-                        if !dataHandler.family.premium {
-                            Text("Please subscribe to see all Tasks in Statistics")
-                        }
-                    })
-                }.tag(2)
-            }
-        }
-        .toolbar {
-            ToolbarItem {
-                NavigationLink(destination: SettingsView()) {
-                    Image(systemName: "gear")
+                                
+                            }
+                        }.frame(height: CGFloat(allTasks1.count * 60))
+                        
+                        Section(content: {
+                            Text("This section displays tasks that have earned the most points.")
+                        }, header: {
+                            Text("Info")
+                        }, footer: {
+                            if !dataHandler.family.premium {
+                                Text("Please subscribe to see all Tasks in Statistics")
+                            }
+                        })
+                    }.tag(2)
                 }
             }
-        }
-        #if !os(macOS)
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
+                    }
+                }
+            }
+#if !os(macOS)
             .tabViewStyle(.page)
-        #endif
+#endif
             .navigationTitle("Insights")
             .animation(.easeInOut, value: selectedChart)
             .onAppear {
@@ -161,6 +161,7 @@ struct TasksDetailView: View {
                     }
                 }
             }
+        }
             
     }
 }
