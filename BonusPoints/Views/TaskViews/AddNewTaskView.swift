@@ -23,13 +23,16 @@ struct AddNewTaskView: View {
 
     
     func createNewTask() {
-        if createNewTaskName.isEmpty {
-            fieldFocus = 0
-            return
-        }
-        if createNewTaskPointsToAdd.isEmpty || Float(createNewTaskPointsToAdd) == nil {
+        if let d = Double(createNewTaskPointsToAdd) {
+            let clampedD = min(10000, max(-10000, d))
+            createNewTaskPointsToAdd = String((clampedD * 100).rounded() / 100)
+        } else {
             createNewTaskPointsToAdd = ""
             fieldFocus = 1
+            return
+        }
+        if createNewTaskName.isEmpty {
+            fieldFocus = 0
             return
         }
         dataHandler.updateTask(taskListId: dataHandler.family.tasks[actualTaskList].id, name: createNewTaskName, pointsToAdd: Float(createNewTaskPointsToAdd) ?? 1, orderWeight: Int(createNewTaskImportantNum), created: .now)
@@ -66,10 +69,6 @@ struct AddNewTaskView: View {
                         }
                     }
                     Section {
-                        Label("Points to add if the Task is completed", systemImage: "number.circle")
-                            .foregroundColor(.blue)
-                        HStack {
-                            Text("Points:")
                             TextField("Number", text: $createNewTaskPointsToAdd)
                                 .focused($fieldFocus, equals: 1)
 #if !os(macOS)
@@ -78,7 +77,11 @@ struct AddNewTaskView: View {
                                 .onSubmit {
                                     createNewTask()
                                 }
-                        }
+                                .submitLabel(.return)
+                    } header: {
+                        Text("Points")
+                    } footer: {
+                        Text("These Points will be added if the Task is complete. Enter both positive and negative numbers.")
                     }
                     
                     Section {
