@@ -17,9 +17,15 @@ struct DoneTasksInListView: View {
     let userId: String
     
     var body: some View {
-        ZStack {
-            if let task = dataHandler.getTask(id: taskDone.id) {
-                GroupBox {
+        if let task = dataHandler.getTask(id: taskDone.id) {
+            Section {
+                VStack {
+                    HStack {
+                        Text(task.name)
+                            .foregroundStyle(Color.accentColor)
+                        Spacer()
+                        Text(functionsClass().dateToRelative(d: taskDone.time))
+                    }.bold()
                     if taskDone.message != "" {
                         HStack {
                             Text(taskDone.message)
@@ -31,18 +37,18 @@ struct DoneTasksInListView: View {
                             .foregroundStyle(Color.yellow)
                         Spacer()
                         if showRemoveButton {
-                            Button("Remove") {
-                                dataHandler.deleteTaskDone(id: taskDone.doneId, userId: userId)
+                            Menu {
+                                Text("Remove? This task wasn't accepted yet.")
+                                Button(role: .destructive) {
+                                    dataHandler.deleteTaskDone(id: taskDone.doneId, userId: userId)
+                                }
+                            } label: {
+                                Text("Remove")
                             }.buttonStyle(.borderedProminent)
                         }
                         Spacer()
                         Text(functionsClass().dateAsString(d: taskDone.time))
                     }
-//                    if showRemoveButton {
-//                        Button("Remove") {
-//                            
-//                        }.buttonStyle(.borderedProminent)
-//                    } else
                     if dataHandler.user.role == .parent && !showRemoveButton {
                         HStack {
                             Spacer()
@@ -56,13 +62,6 @@ struct DoneTasksInListView: View {
                             }.tint(.red)
                             Spacer()
                         }.buttonStyle(.borderedProminent)
-                    }
-                } label: {
-                    HStack {
-                        Text(task.name)
-                            .foregroundStyle(Color.accentColor)
-                        Spacer()
-                        Text(functionsClass().dateToRelative(d: taskDone.time))
                     }
                 }
             }

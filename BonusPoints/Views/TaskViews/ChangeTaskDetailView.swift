@@ -26,10 +26,10 @@ struct ChangeTaskDetailView: View {
     
     var body: some View {
         Form {
-            Section {
-                Label("Name", systemImage: "keyboard")
-                if editTask {
-                    HStack {
+            Section("Details") {
+                HStack {
+                    Label("Name:", systemImage: "keyboard")
+                    if editTask {
                         TextField(task.name, text: $editTaskNewName)
                             .onSubmit {
                                 withAnimation {
@@ -45,17 +45,16 @@ struct ChangeTaskDetailView: View {
                                 editTask = false
                             }
                         }.buttonStyle(.borderedProminent)
+                        
+                    } else {
+                        Text(task.name)
                     }
-                    
-                } else {
-                    Text(task.name)
                 }
-            }
-            
-            Section {
-                Label("Points Earned Upon Completion", systemImage: "number")
-                if editTask {
-                    HStack {
+                
+                HStack {
+                    Image(systemName: "number")
+                        .foregroundStyle(.accent)
+                    if editTask {
                         TextField(functionsClass().floatToShortString(x: task.pointsToAdd), text: $editTaskNewPointsToAdd)
 #if os(iOS)
                             .keyboardType(.numberPad)
@@ -76,13 +75,13 @@ struct ChangeTaskDetailView: View {
                                 editTask = false
                             }
                         }.buttonStyle(.borderedProminent)
+                    } else {
+                        Text(functionsClass().floatToShortString(x: task.pointsToAdd) + " Points")
                     }
-                } else {
-                    Text(functionsClass().floatToShortString(x: task.pointsToAdd) + " Points")
                 }
             }
             
-            Section("Info") {
+            Section("Statistics") {
                 Text("**\(task.howManyTimesDidAllUsers) times** completed by all family members")
 
                 Text("**\(functionsClass().floatToShortString(x: task.pointsToAdd * Float(task.howManyTimesDidAllUsers)))** total achieved points with this task")

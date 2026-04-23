@@ -21,8 +21,6 @@ struct ContentView: View {
     @AppStorage("AppOpenCount") var appOpenCount = 0
     
     @State var time = Date()
-    @State var searchText: String = ""
-    
     
     @AppStorage("showSupportMe") var showSupportMe: Bool = false
 //    @State var showSupportMe: Bool = true
@@ -80,35 +78,118 @@ struct ContentView: View {
             if dataHandler.family.id == "" || dataHandler.device.apiId == "" || dataHandler.user.id == "" {
                 LoginView()
             } else {
-                ZStack {
-                    TabView {
-                        Tab("Tasks", systemImage: "person") {
+                GeometryReader { geo in
+                    ZStack {
+                        if geo.size.width < 800 {
+                            TabView {
+                                Tab("Tasks", systemImage: "person") {
+                                    TasksTabView()
+                                }
+                                
+                                
+                                Tab("Done Tasks", systemImage: "list.bullet.rectangle") {
+                                    NavigationStack {
+                                        Form {
+                                            ForEach(dataHandler.user.tasksDone) { t in
+                                                DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dataHandler.user.id)
+                                            }
+                                            if dataHandler.user.tasksDone.isEmpty {
+                                                ContentUnavailableView("No done tasks yet", systemImage: "xmark", description: Text("Mark some tasks as done to see them here."))
+                                            }
+                                        }.navigationTitle("Your done Tasks")
+                                            .listSectionSpacing(5)
+                                    }
+                                }
+                                
+                                Tab("Family", systemImage: "person.3") {
+                                    FamilyView()
+                                }
+                                .badge(dataHandler.familyBadge)
+                                
+                                Tab(role: .search) {
+                                    SearchView()
+                                }
+                                
+                            }
+                        } else {
                             TasksTabView()
                         }
                         
-                        
-                        Tab("Done Tasks", systemImage: "list.bullet.rectangle") {
-                            NavigationStack {
-                                ScrollView {
-                                    ForEach(dataHandler.user.tasksDone) { t in
-                                        DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dataHandler.user.id)
+                        if dataHandler.showOptionsForTaskId != nil {
+                            let task = dataHandler.getTask(id: dataHandler.showOptionsForTaskId!)!
+                            
+                            VStack {
+                                VStack {
+                                    Spacer()
+                                    HStack {
+                                        Spacer()
                                     }
-                                }.padding(.horizontal)
-                                    .navigationTitle("Your done Tasks")
-                            }
+                                }
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                        moveTaskDoneOptions = false
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                        dataHandler.showOptionsForTaskId = nil
+                                    }
+                                }
+                                VStack {
+                                    HStack {
+                                        Text(task.name)
+                                            .font(.headline)
+                                        Spacer()
+                                    }
+                                    
+                                    DatePicker("Completed at: ", selection: $time, displayedComponents: [.date, .hourAndMinute])
+                                    
+                                    TextField("Write a comment (optional)...", text: $taskDoneMessage, axis: .vertical)
+                                        .multilineTextAlignment(.leading)
+                                        .lineLimit(3, reservesSpace: true)
+                                        .padding(8)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                                        )
+                                    //                                    .textFieldStyle(.roundedBorder)
+                                    
+                                    HStack {
+                                        Button("Cancel") {
+                                            withAnimation(.easeInOut(duration: 0.2)) {
+                                                moveTaskDoneOptions = false
+                                            }
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                                dataHandler.showOptionsForTaskId = nil
+                                            }
+                                        }.buttonStyle(.bordered)
+                                            .tint(Color.blue)
+                                        
+                                        
+                                        Button("Save") {
+                                            dataHandler.updateTaskDone(taskId: task.id, time: time, message: taskDoneMessage)
+                                            withAnimation(.easeInOut(duration: 0.2)) {
+                                                moveTaskDoneOptions = false
+                                            }
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                                dataHandler.showOptionsForTaskId = nil
+                                            }
+                                        }.buttonStyle(.borderedProminent)
+                                    }
+                                }
+                                .frame(maxWidth: 600)
+                                .padding()
+                                .glassEffect(in: RoundedRectangle(cornerRadius: 20))
+                                .onAppear {
+                                    taskDoneMessage = ""
+                                    time = .now
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        moveTaskDoneOptions = true
+                                    }
+                                }
+                            }.padding(5)
+                                .offset(y: moveTaskDoneOptions ? 0 : 300)
+                                .background(Color(red: 0.3, green: 0.3, blue: 0.3, opacity: 0.2))
                         }
-                        
-                        Tab("Family", systemImage: "person.3") {
-                            FamilyView()
-                        }
-                        .badge(dataHandler.familyBadge)
-                        
-                        Tab(role: .search) {
-                            NavigationStack {
-                                Text("Searching for: \(searchText)")
-                            }.searchable(text: $searchText)
-                        }
-                        
                     }.sheet(isPresented: $dataHandler.settings.firstLogin, onDismiss: {
                         dataHandler.settings.firstLogin = false
                         dataHandler.storeSettings()
@@ -155,77 +236,19 @@ struct ContentView: View {
                         .presentationDetents([.height(400), .large])
                     }
                     .sheet(isPresented: $dataHandler.showSubscriptionStore, content: {
-                        if #available(iOS 17, *) {
-                            SubscriptionStoreView(productIDs: ["org.hoeschen.dev.familyPoints.pro.monthly", "org.hoeschen.dev.familyPoints.pro.annualy"])
-                                .storeButton(.visible, for: .restorePurchases, .redeemCode)
-                                .subscriptionStoreControlStyle(.prominentPicker)
-                                .onInAppPurchaseCompletion { product, result in
-                                    dataHandler.showSubscriptionStore = false
-                                }
-                        } else {
-                            Text("Sorry, subscriptions can only be made on devices running at least iOS 17.")
-                        }
+                        SubscriptionStoreView(productIDs: ["org.hoeschen.dev.familyPoints.pro.monthly", "org.hoeschen.dev.familyPoints.pro.annualy"])
+                            .storeButton(.visible, for: .restorePurchases, .redeemCode)
+                            .subscriptionStoreControlStyle(.prominentPicker)
+                            .onInAppPurchaseCompletion { product, result in
+                                dataHandler.showSubscriptionStore = false
+                            }
                     })
                     .onChange(of: scenePhase) {
                         if scenePhase == .active {
-                            print("active")
                             dataHandler.fetchAllData()
                         }
                     }
-                    
-                    if dataHandler.showOptionsForTaskId != nil {
-                        let task = dataHandler.getTask(id: dataHandler.showOptionsForTaskId!)!
-                        
-                        VStack {
-                            Spacer()
-                            GroupBox {
-                                DatePicker("Completed: ", selection: $time, displayedComponents: [.date, .hourAndMinute])
-                                
-                                TextField("Write a comment (optional)...", text: $taskDoneMessage, axis: .vertical)
-                                    .multilineTextAlignment(.leading)
-                                    .lineLimit(3, reservesSpace: true)
-                                    .textFieldStyle(.roundedBorder)
-                                
-                                HStack {
-                                    Button("Cancel") {
-                                        withAnimation(.easeInOut(duration: 0.2)) {
-                                            moveTaskDoneOptions = false
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                            dataHandler.showOptionsForTaskId = nil
-                                        }
-                                    }.buttonStyle(.borderedProminent)
-                                        .tint(Color.blue)
-                                    
-                                    
-                                    Button("Save") {
-                                        dataHandler.updateTaskDone(taskId: task.id, time: time, message: taskDoneMessage)
-                                        withAnimation(.easeInOut(duration: 0.2)) {
-                                            moveTaskDoneOptions = false
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                            dataHandler.showOptionsForTaskId = nil
-                                        }
-                                    }.buttonStyle(.borderedProminent)
-                                }
-                            } label: {
-                                Text(task.name)
-                            }
-                            .clipped()
-                            .shadow(radius: 20)
-                            .onAppear {
-                                taskDoneMessage = ""
-                                time = .now
-                                withAnimation(.easeInOut(duration: 0.3)) {
-                                    moveTaskDoneOptions = true
-                                }
-                            }
-                        }.padding()
-                            .offset(y: moveTaskDoneOptions ? 0 : 300)
-                            .background(Color(red: 0.3, green: 0.3, blue: 0.3, opacity: 0.6))
-                    }
                 }
-                    
             }
                 
 

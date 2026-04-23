@@ -25,6 +25,7 @@
 		B1557C1E2B14F24A001D5273 /* SimpleSwiftCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = B1557C1D2B14F24A001D5273 /* SimpleSwiftCrypto */; };
 		B1563F84295DA707001359B5 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563F83295DA707001359B5 /* Structs.swift */; };
 		B15A3EB62D7477830075E86F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A3EB52D74777F0075E86F /* Secrets.swift */; };
+		B162C6242F9A84DA00696D0F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B162C6232F9A84DA00696D0F /* SearchView.swift */; };
 		B16A0C18294397960035394E /* TasksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A0C17294397960035394E /* TasksTabView.swift */; };
 		B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */; };
 		B17EB19729411C7B009903E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EB19629411C7B009903E9 /* ContentView.swift */; };
@@ -34,7 +35,7 @@
 		B183FB27298A89190018A739 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183FB26298A89190018A739 /* FamilyView.swift */; };
 		B19496F12B44C2BC00D1B906 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B19496F02B44C2BC00D1B906 /* SwiftDate */; };
 		B19A16502D46A871002563B2 /* Family Points App.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B19A164F2D46A871002563B2 /* Family Points App.storekit */; };
-		B1B9A520297704900004CAE1 /* TasksDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A51F297704900004CAE1 /* TasksDetailView.swift */; };
+		B1B9A520297704900004CAE1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A51F297704900004CAE1 /* StatisticsView.swift */; };
 		B1B9A523297C29290004CAE1 /* ChangeTaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */; };
 		B1B9A527297C2D0D0004CAE1 /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */; };
 		B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A528297C2EA60004CAE1 /* SettingsView.swift */; };
@@ -91,6 +92,7 @@
 		B150CD0B2EFDDDF50053C268 /* TasksTabView old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTabView old.swift"; sourceTree = "<group>"; };
 		B1563F83295DA707001359B5 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		B15A3EB52D74777F0075E86F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		B162C6232F9A84DA00696D0F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B16A0C17294397960035394E /* TasksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabView.swift; sourceTree = "<group>"; };
 		B17EB19129411C7B009903E9 /* BonusPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonusPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyPointsApp.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		B191B8EF2B3C7E740051426E /* BonusPointsWidgetExtentionExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsWidgetExtentionExtensionDebug.entitlements; sourceTree = "<group>"; };
 		B191B8F02B3C7F5F0051426E /* BonusPointsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsDebug.entitlements; sourceTree = "<group>"; };
 		B19A164F2D46A871002563B2 /* Family Points App.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Family Points App.storekit"; sourceTree = "<group>"; };
-		B1B9A51F297704900004CAE1 /* TasksDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDetailView.swift; sourceTree = "<group>"; };
+		B1B9A51F297704900004CAE1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTaskDetailView.swift; sourceTree = "<group>"; };
 		B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
 		B1B9A528297C2EA60004CAE1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				B1B9A528297C2EA60004CAE1 /* SettingsView.swift */,
 				B183FB26298A89190018A739 /* FamilyView.swift */,
 				B132BD322B39A9C90095763E /* FamilyPointsStoreView.swift */,
+				B162C6232F9A84DA00696D0F /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,7 +247,7 @@
 				B16A0C17294397960035394E /* TasksTabView.swift */,
 				B150CD0B2EFDDDF50053C268 /* TasksTabView old.swift */,
 				B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */,
-				B1B9A51F297704900004CAE1 /* TasksDetailView.swift */,
+				B1B9A51F297704900004CAE1 /* StatisticsView.swift */,
 				B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */,
 				B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */,
 				B1F56AF82B78E0EB007ABB6E /* DoneTasksInListView.swift */,
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1B9A527297C2D0D0004CAE1 /* AddNewTaskView.swift in Sources */,
+				B162C6242F9A84DA00696D0F /* SearchView.swift in Sources */,
 				B16A0C18294397960035394E /* TasksTabView.swift in Sources */,
 				B1563F84295DA707001359B5 /* Structs.swift in Sources */,
 				B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */,
@@ -403,7 +407,7 @@
 				B1F56AF92B78E0EB007ABB6E /* DoneTasksInListView.swift in Sources */,
 				B17EB19529411C7B009903E9 /* FamilyPointsApp.swift in Sources */,
 				B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */,
-				B1B9A520297704900004CAE1 /* TasksDetailView.swift in Sources */,
+				B1B9A520297704900004CAE1 /* StatisticsView.swift in Sources */,
 				B17EB1A629411CCE009903E9 /* ObjectHandler.swift in Sources */,
 				B1F2B27F294B1A700031A3F0 /* NumberPickerView.swift in Sources */,
 				B183FB27298A89190018A739 /* FamilyView.swift in Sources */,

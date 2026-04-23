@@ -20,7 +20,7 @@ struct TasksDetailView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 Picker("", selection: $selectedChart) {
                     Text("Completed").tag(0)
                     Text("Points").tag(1)
@@ -161,7 +161,9 @@ struct TasksDetailView: View {
                     }
                 }
             }
-        }.background(Color(.secondarySystemBackground))
+        }
+        .ignoresSafeArea(edges: .bottom)
+        .background(Color(.secondarySystemBackground))
     }
 }
 

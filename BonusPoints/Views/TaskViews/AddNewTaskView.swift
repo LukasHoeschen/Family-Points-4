@@ -57,16 +57,15 @@ struct AddNewTaskView: View {
                     }
                 } else {
                     Section {
-                        Label("Name of new Task", systemImage: "keyboard")
-                            .foregroundColor(.green)
-                        HStack {
-                            Text("Name:")
-                            TextField("", text: $createNewTaskName)
-                                .focused($fieldFocus, equals: 0)
-                                .onSubmit {
-                                    createNewTask()
-                                }
-                        }
+                        TextField("e.g. Do homework", text: $createNewTaskName)
+                            .focused($fieldFocus, equals: 0)
+                            .onSubmit {
+                                createNewTask()
+                            }
+                            .submitLabel(.return)
+                    } header: {
+                        Text("Name")
+                            .foregroundStyle(.accent)
                     }
                     Section {
                             TextField("Number", text: $createNewTaskPointsToAdd)
@@ -80,20 +79,21 @@ struct AddNewTaskView: View {
                                 .submitLabel(.return)
                     } header: {
                         Text("Points")
+                            .foregroundStyle(.accent)
                     } footer: {
                         Text("These Points will be added if the Task is complete. Enter both positive and negative numbers.")
                     }
                     
                     Section {
-                        Label("Importance", systemImage: "exclamationmark.square")
-                            .foregroundColor(.red)
-                        
                         HStack {
                             Text(String(Int(createNewTaskImportantNum)))
                                 .bold()
                             
                             Slider(value: $createNewTaskImportantNum, in: -5...5, step: 1)
                         }
+                    } header: {
+                        Text("Importance")
+                            .foregroundStyle(.accent)
                     } footer: {
                         Text("Adjust the importance level to priorities or de-priorities your tasks. Tasks will be sorted based on their importance.")
                     }
@@ -110,8 +110,8 @@ struct AddNewTaskView: View {
                     
                 }
                 
-            }.navigationTitle("Create a new Task")
-
+            }.navigationTitle("New Task")
+                .navigationBarTitleDisplayMode(.inline)
         }.presentationDetents([.large, .fraction(0.7)])
             .presentationDragIndicator(.visible)
     }
