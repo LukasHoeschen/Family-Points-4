@@ -161,8 +161,7 @@ struct TasksDetailView: View {
                     }
                 }
             }
-        }
-            
+        }.background(Color(.secondarySystemBackground))
     }
 }
 
