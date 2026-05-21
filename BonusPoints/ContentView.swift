@@ -86,12 +86,11 @@ struct ContentView: View {
                                     TasksTabView()
                                 }
                                 
-                                
                                 Tab("Done Tasks", systemImage: "list.bullet.rectangle") {
                                     NavigationStack {
                                         Form {
                                             ForEach(dataHandler.user.tasksDone) { t in
-                                                DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dataHandler.user.id)
+                                                DoneTasksListView(showRemoveButton: true, userId: dataHandler.user.id)
                                             }
                                             if dataHandler.user.tasksDone.isEmpty {
                                                 ContentUnavailableView("No done tasks yet", systemImage: "xmark", description: Text("Mark some tasks as done to see them here."))
@@ -115,6 +114,7 @@ struct ContentView: View {
                             TasksTabView()
                         }
                         
+                        // MARK: Detailed add comment, change date etc
                         if dataHandler.showOptionsForTaskId != nil {
                             let task = dataHandler.getTask(id: dataHandler.showOptionsForTaskId!)!
                             

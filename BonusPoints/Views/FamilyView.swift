@@ -30,35 +30,15 @@ struct FamilyView: View {
                     Section {
                         NavigationLink(destination: {
                             
-                            if user.tasksDone.count == 0 {
-                                Text("When \(user.name) completes tasks, they will appear here for your approval. You can then choose to either accept or deny them. This way, you can award points only when the task has truly been completed.")
-                                    .padding(.horizontal)
-                            }
-                            
-                            List {
-                                ForEach(user.tasksDone, id: \.self) { t in
-                                    DoneTasksInListView(taskDone: t, showRemoveButton: false, userId: user.id)
-                                        .listRowSeparator(.hidden)
-                                        .swipeActions(edge: .leading) {
-                                            if dataHandler.user.role == .parent {
-                                                Button {
-                                                    dataHandler.acceptTaskDone(taskId: t.id, userId: user.id, doneId: t.doneId)
-                                                } label: {
-                                                    Image(systemName: "checkmark.circle")
-                                                }.tint(Color.green)
-                                            }
-                                        }
-                                        .swipeActions(edge: .trailing) {
-                                            if dataHandler.user.role == .parent {
-                                                Button(role: .destructive) {
-                                                    dataHandler.deleteTaskDone(id: t.doneId, userId: user.id)
-                                                } label: {
-                                                    Image(systemName: "xmark.square")
-                                                }
-                                            }
-                                        }
+                            Form {
+                                Section {
+                                    Text("When \(user.name) completes tasks, they will appear here for your approval. You can then choose to either accept or deny them. This way, you can award points only when the task has truly been completed.")
+                                        .padding(.horizontal)
                                 }
-                                ContentUnavailableView("No done tasks", systemImage: "checkmark", description: Text("\(user.name) has no completed tasks right now. Please try again later."))
+                            
+                                Section {
+                                    DoneTasksListView(showRemoveButton: false, userId: user.id)
+                                }
                             }
                                 .listSectionSpacing(5)
                                 .navigationTitle(user.name)
@@ -104,7 +84,7 @@ struct FamilyView: View {
                                             }
                                             
                                             if dataHandler.user.role == .parent {
-                                                Section("Change") {
+                                                Section {
                                                     HStack {
                                                         Label("Set Points", systemImage: "number")
                                                         Spacer()
@@ -154,7 +134,12 @@ struct FamilyView: View {
                                                                 .frame(width: 20, height: 20)
                                                         }
                                                     }
-                                                }.buttonStyle(.bordered)
+                                                } header: {
+                                                    Text("Change")
+                                                } footer: {
+                                                    Text("Enter an amount, then tap + to add or − to subtract points.")
+                                                }
+                                                .buttonStyle(.bordered)
                                                 
                                                 Section {
                                                     Button("Delete Family Member") {
@@ -195,16 +180,21 @@ struct FamilyView: View {
                                     changePoints = ""
                                 }
                         }) {
-                            VStack(alignment: .leading, spacing: 10) {
+                            VStack(alignment: .leading, spacing: 12) {
                                 Label(user.name, systemImage: "person.circle.fill")
                                     .foregroundColor(user.getColor())
+                                    .font(.title3)
                                     .bold()
                                 
                                 HStack {
-                                    Text(functionsClass().floatToShortString(x: user.actualPoints) + " Points")
+                                    Label(functionsClass().floatToShortString(x: user.actualPoints) + " Points", systemImage: "star.fill")
+                                        .foregroundStyle(.yellow)
+                                    
                                     Spacer()
-                                    Text("\(user.tasksDone.count) Tasks done")
-                                        .foregroundStyle(user.tasksDone.count > 0 ? .red : .secondary)
+                                    
+                                    Label("\(user.tasksDone.count) Tasks done", systemImage: "checkmark.circle.fill")
+                                        .foregroundStyle(user.tasksDone.count > 0 ? Color.accentColor : .secondary)
+                                        .font(.subheadline)
                                 }
                             }
                         }

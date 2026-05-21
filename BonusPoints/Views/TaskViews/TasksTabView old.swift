@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TasksTabViewOld: View {
+struct TasksTakkkkbViewOld: View {
     
     @EnvironmentObject var dataHandler: AppDataHandler
     @Environment(\.colorScheme) var colorScheme
@@ -296,7 +296,7 @@ struct TasksTabViewOld: View {
                 }
                 ToolbarItem() {
                     NavigationLink("\(Int(dataHandler.user.actualPoints))P", destination: {
-                        TasksDetailView()
+                        StatisticsView()
                     })
                         .bold()
                         .foregroundColor(.yellow)

@@ -8,11 +8,12 @@
 import SwiftUI
 import Charts
 
-struct TasksDetailView: View {
+struct StatisticsView: View {
     
     @EnvironmentObject var dataHandler: AppDataHandler
     
     @State private var selectedChart = 0
+    @State private var animate = false
     
     @State private var allTasks1: [TaskStruct] = []
     @State private var allTasks2: [TaskStruct] = []
@@ -36,7 +37,7 @@ struct TasksDetailView: View {
                             ForEach(allTasks1, id: \.self) { task in
                                 
                                 BarMark(
-                                    x: .value("Total Count", task.howManyTimesDidAllUsers),
+                                    x: .value("Total Count", animate ? task.howManyTimesDidAllUsers : 0),
                                     y: .value("Name", task.name)
                                 )
                                 .annotation(position: .trailing) {
@@ -49,6 +50,11 @@ struct TasksDetailView: View {
                                 
                             }
                         }.frame(height: CGFloat(allTasks1.count * 60))
+                            .chartXScale(domain: 0...(allTasks1.map(\.howManyTimesDidAllUsers).max() ?? 1))
+                            .animation(.spring(duration: 0.6), value: animate)
+                            .onAppear {
+                                animate = true
+                            }
                         
                         Section(content: {
                             Text("This section displays tasks that have been completed most frequently among all family members.")
@@ -153,12 +159,10 @@ struct TasksDetailView: View {
                     tasks = Array(tasks.prefix(3))
                 }
                 
-                withAnimation(.linear(duration: 2)) {
-                    self.allTasks1 = tasks.sorted { $0.howManyTimesDidAllUsers > $1.howManyTimesDidAllUsers }
-                    self.allTasks2 = tasks.sorted { $0.pointsToAdd > $1.pointsToAdd }
-                    self.allTasks3 = tasks.sorted { task1, task2 in
-                        (Float(task1.howManyTimesDidAllUsers) * task1.pointsToAdd) > (Float(task2.howManyTimesDidAllUsers) * task2.pointsToAdd)
-                    }
+                self.allTasks1 = tasks.sorted { $0.howManyTimesDidAllUsers > $1.howManyTimesDidAllUsers }
+                self.allTasks2 = tasks.sorted { $0.pointsToAdd > $1.pointsToAdd }
+                self.allTasks3 = tasks.sorted { task1, task2 in
+                    (Float(task1.howManyTimesDidAllUsers) * task1.pointsToAdd) > (Float(task2.howManyTimesDidAllUsers) * task2.pointsToAdd)
                 }
             }
         }
@@ -169,7 +173,7 @@ struct TasksDetailView: View {
 
 struct TasksDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TasksDetailView()
+        StatisticsView()
             .environmentObject(AppDataHandler())
     }
 }

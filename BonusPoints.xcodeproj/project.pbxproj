@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B100C5212FB3AAEF00A82D86 /* DoneTasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100C5202FB3AAEF00A82D86 /* DoneTasksListView.swift */; };
 		B1072F2629881E07008E5AF7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B1072F2529881E07008E5AF7 /* SwiftDate */; };
 		B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C85092B2604BB00F38F0D /* AddFamilyMemberView.swift */; };
 		B11C850E2B261FC900F38F0D /* SetupMovie.mov in Resources */ = {isa = PBXBuildFile; fileRef = B11C850D2B261FC900F38F0D /* SetupMovie.mov */; };
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B100C5202FB3AAEF00A82D86 /* DoneTasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksListView.swift; sourceTree = "<group>"; };
 		B10560D22D467830007321EC /* BonusPointsWidgetExtentionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsWidgetExtentionExtension.entitlements; sourceTree = "<group>"; };
 		B11C85092B2604BB00F38F0D /* AddFamilyMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberView.swift; sourceTree = "<group>"; };
 		B11C850D2B261FC900F38F0D /* SetupMovie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = SetupMovie.mov; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				B1B9A522297C29290004CAE1 /* ChangeTaskDetailView.swift */,
 				B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */,
 				B1F56AF82B78E0EB007ABB6E /* DoneTasksInListView.swift */,
+				B100C5202FB3AAEF00A82D86 /* DoneTasksListView.swift */,
 			);
 			path = TaskViews;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				B150CD0C2EFDDDF50053C268 /* TasksTabView old.swift in Sources */,
 				B14E7FA929537989001DFEA0 /* LoginView.swift in Sources */,
 				B1B9A523297C29290004CAE1 /* ChangeTaskDetailView.swift in Sources */,
+				B100C5212FB3AAEF00A82D86 /* DoneTasksListView.swift in Sources */,
 				B132BD332B39A9C90095763E /* FamilyPointsStoreView.swift in Sources */,
 				B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */,
 			);

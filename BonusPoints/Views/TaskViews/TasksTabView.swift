@@ -21,6 +21,8 @@ struct TasksTabView: View {
     @State private var showDeleteListOnlyByParents = false
     @State private var deleteListSet: IndexSet = IndexSet()
     
+    @State private var selection: TasksViewRoute? = nil
+    
     func deleteList(at offsets: IndexSet) {
         if dm.user.role == .parent {
             deleteListSet = offsets
@@ -39,177 +41,27 @@ struct TasksTabView: View {
     var body: some View {
         Group {
             GeometryReader { geo in
-                if geo.size.width < 800 {
+                if geo.size.width < 800 || UIDevice.current.userInterfaceIdiom == .phone{
+                    // small App Window / iPhone
                     NavigationStack {
-                        List {
-                            Section {
-                                ForEach(dm.family.tasks) { taskList in
-//                                    NavigationLink(value: taskList.id) {
-                                    Button {
-                                        currentTaskList = taskList.id
-                                    } label: {
-                                        VStack(alignment: .leading) {
-                                            Text(taskList.name)
-                                                .foregroundStyle(Color.accent)
-                                                .font(.title2)
-                                            Text("\(taskList.list.count) Tasks")
-                                        }
-                                    }.buttonStyle(.plain)
-                                }.onMove(perform: onMoveAction)
-                                    .onDelete(perform: deleteList)
-                            }
-                            
-                            Section {
-                                Button {
-                                    withAnimation {
-                                        createNewTaskList.toggle()
-                                    }
-                                } label: {
-                                    Label("Add new List", systemImage: "plus")
-                                }
-                                
-                                EditButton()
-                            }.buttonStyle(.plain)
-                        }
-                        .navigationDestination(item: $currentTaskList) { id in
-                            TasksListListView(taskListId: id)
-                                .onAppear {
-                                    actualTaskListId = id
-                                }
-                        }
-                        .onAppear {
-                            currentTaskList = actualTaskListId
+                        sideBar(geo: geo)
+                        .navigationDestination(item: $selection) { _ in
+                            detail(selection: selection)
                         }
                         .navigationTitle("My Lists")
-                        .toolbar {
-                            ToolbarItem(placement: .topBarLeading) {
-                                Button {
-                                    dm.fetchAllData()
-                                } label: {
-                                    Image(systemName: "arrow.circlepath")
-                                        .bold()
-                                }
-                            }
-                            ToolbarItem(placement: .topBarTrailing) {
-                                NavigationLink(destination: TasksDetailView()) {
-                                    Text("\(Int(dm.user.actualPoints))P")
-                                        .bold()
-                                        .foregroundColor(.yellow)
-                                        .font(.title)
-                                }
-                            }
-                        }
                     }
                 } else {
                     // MARK: For wide devices
                     NavigationSplitView {
-                        List {
-                            Section {
-                                ForEach(dm.family.tasks) { taskList in
-                                    NavigationLink(value: TasksViewRoute.taskList(id: taskList.id)) {
-                                        VStack(alignment: .leading) {
-                                            Text(taskList.name)
-                                                .foregroundStyle(Color.accent)
-                                                .font(.title2)
-                                            Text("\(taskList.list.count) Tasks")
-                                        }
-                                    }
-                                }.onMove(perform: onMoveAction)
-                                    .onDelete(perform: deleteList)
-                            }
-                            
-                            Section {
-                                Button {
-                                    withAnimation {
-                                        createNewTaskList.toggle()
-                                    }
-                                } label: {
-                                    Label("Add List", systemImage: "plus")
-                                }
-                                
-                                EditButton()
-                            }
-                        }
-                        .navigationTitle("My Lists")
-                        
-                        
-                        //MARK: Detail View
-                        .navigationDestination(for: TasksViewRoute.self) { route in
-                            switch route {
-                            case .taskList(let id):
-                                TasksListListView(taskListId: id)
-                                    .onAppear {
-                                        actualTaskListId = id
-                                    }
-                            case .statistics:
-                                TasksDetailView()
-                            }
-                        }
-                        .toolbar {
-                            ToolbarItem(placement: .topBarLeading) {
-                                Button {
-                                    dm.fetchAllData()
-                                } label: {
-                                    Image(systemName: "arrow.circlepath")
-                                        .bold()
-                                }
-                            }
-                            ToolbarItem(placement: .topBarTrailing) {
-                                NavigationLink(value: TasksViewRoute.statistics) {
-                                    Text("\(Int(dm.user.actualPoints))P")
-                                        .bold()
-                                        .foregroundColor(.yellow)
-                                        .font(.title)
-                                }
-                            }
-                            
-                            ToolbarItemGroup (placement: .bottomBar) {
-                                HStack {
-                                    NavigationLink {
-                                        NavigationStack {
-                                            Form {
-                                                ForEach(dm.user.tasksDone) { t in
-                                                    DoneTasksInListView(taskDone: t, showRemoveButton: true, userId: dm.user.id)
-                                                }
-                                                if dm.user.tasksDone.isEmpty {
-                                                    ContentUnavailableView("No done tasks yet", systemImage: "xmark", description: Text("Mark some tasks as done to see them here."))
-                                                }
-                                            }.navigationTitle("Your done Tasks")
-                                                .listSectionSpacing(5)
-                                        }
-                                    } label: {
-                                        IconWithBadge(systemName: "list.bullet.rectangle", text: "Done Tasks", badgeCount: 0)
-                                    }
-                                    
-                                    NavigationLink {
-                                        FamilyView()
-                                    } label: {
-                                        IconWithBadge(systemName: "person.3", text: "Family", badgeCount: dm.familyBadge)
-                                    }
-                                    
-                                    NavigationLink {
-                                        SearchView()
-                                    } label: {
-                                        IconWithBadge(systemName: "magnifyingglass", text: "Search", badgeCount: 0)
-                                    }
-                                }.font(.caption)
-                                    .padding()
-                                    .glassEffect()
-                                    .offset(x: 0, y: -10)
-                                    .padding(.bottom)
-                            }
-                        }
+                        sideBar(geo: geo)
                     } detail: {
-                        if dm.family.tasks.contains(where: {$0.id == actualTaskListId}) {
-                            TasksListListView(taskListId: actualTaskListId)
-                        } else if !dm.family.tasks.isEmpty  {
-                            TasksListListView(taskListId: dm.family.tasks.first?.id ?? "")
-                        } else {
-                            Text("Please select a List")
-                        }
+                        detail(selection: selection)
                     }
                 }
             }
+        }
+        .onAppear {
+            selection = .taskList(id: actualTaskListId)
         }
         .sheet(isPresented: $createNewTaskList) {
             NavigationStack {
@@ -286,11 +138,108 @@ struct TasksTabView: View {
             Text("Only parents can delete Lists.")
         })
     }
+    
+    func detail(selection: TasksViewRoute?) -> some View {
+        Group {
+            switch selection {
+            case .taskList(let id):
+                TasksListListView(taskListId: id)
+                    .onAppear { actualTaskListId = id }
+            case .statistics:
+                StatisticsView()
+            case .doneTasks:
+                Form {
+                    DoneTasksListView(showRemoveButton: true, userId: dm.user.id)
+                }.navigationTitle("Your done Tasks")
+            case .search:
+                SearchView()
+            case .family:
+                FamilyView()
+            case nil:
+                Text("Please select a List")
+            }
+        }
+    }
+    
+    func sideBar(geo: GeometryProxy) -> some View {
+        List {
+            Section {
+                ForEach(dm.family.tasks) { taskList in
+                    Button { selection = .taskList(id: taskList.id) } label: {
+                        VStack(alignment: .leading) {
+                            Text(taskList.name)
+                                .foregroundStyle(Color.accentColor)
+                                .font(.title2)
+                                .fontWeight(selection == .taskList(id: taskList.id) ? .bold : .regular)
+                            Text("\(taskList.list.count) Tasks")
+                                .foregroundStyle(selection == .taskList(id: taskList.id) ? Color.primary : Color.secondary)
+                        }
+                    }
+                }
+                .onMove(perform: onMoveAction)
+                .onDelete(perform: deleteList)
+            }
+            
+            Section {
+                Button {
+                    withAnimation { createNewTaskList.toggle() }
+                } label: {
+                    Label("Add List", systemImage: "plus")
+                }
+                EditButton()
+            }
+        }
+        .navigationTitle("My Lists")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button { dm.fetchAllData() } label: {
+                    Image(systemName: "arrow.circlepath").bold()
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button { selection = .statistics } label: {
+                    Text("\(Int(dm.user.actualPoints))P")
+                        .bold()
+                        .foregroundColor(.yellow)
+                        .font(.title)
+                }
+            }
+            if geo.size.width > 800 {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    HStack {
+                        Button { selection = .doneTasks } label: {
+                            IconWithBadge(systemName: "list.bullet.rectangle", text: "Done Tasks", badgeCount: 0)
+                        }
+                        .foregroundStyle(selection == .doneTasks ? Color.accentColor : Color.primary)
+                        .fontWeight(selection == .doneTasks ? .bold : .regular)
+                        
+                        Button { selection = .family } label: {
+                            IconWithBadge(systemName: "person.3", text: "Family", badgeCount: dm.familyBadge)
+                        }
+                        .foregroundStyle(selection == .family ? Color.accentColor : Color.primary)
+                        
+                        Button { selection = .search } label: {
+                            IconWithBadge(systemName: "magnifyingglass", text: "Search", badgeCount: 0)
+                        }
+                        .foregroundStyle(selection == .search ? Color.accentColor : Color.primary)
+                    }
+                    .font(.caption)
+                    .padding()
+                    .glassEffect()
+                    .offset(x: 0, y: -10)
+                    .padding(.bottom)
+                }
+            }
+        }
+    }
 }
 
 enum TasksViewRoute: Hashable {
     case taskList(id: String)
     case statistics
+    case doneTasks
+    case search
+    case family
 }
 
 struct TasksListListView: View {
@@ -363,27 +312,32 @@ struct TasksListListView: View {
 }
 
 struct IconWithBadge: View {
-  let systemName: String
-  let text: String
-  let badgeCount: Int
-
-  var body: some View {
-    ZStack(alignment: .topTrailing) {
-      VStack {
-        Image(systemName: systemName)
-        Text(text)
-      }
-      if badgeCount > 0 {
-        Text("\(badgeCount)")
-          .font(.caption2)
-          .foregroundColor(.white)
-          .padding(6)
-          .background(Circle().foregroundColor(.red))
-          .offset(x: 12, y: -8)
-      }
-    }
-  }
+    let systemName: String
+    let text: String
+    let badgeCount: Int
+    
+    var body: some View {
+        Group {
+            ZStack(alignment: .topTrailing) {
+                VStack {
+                    Image(systemName: systemName)
+                    Text(text)
+                }
+                if badgeCount > 0 {
+                    Text("\(badgeCount)")
+                        .font(.caption2)
+                        .foregroundColor(.white)
+                        .padding(6)
+                        .background(Circle().foregroundColor(.red))
+                        .offset(x: 12, y: -8)
+                }
+            }
+        }    }
 }
+
+
+
+
 
 struct TasksTabView_Previews: PreviewProvider {
     static var previews: some View {
