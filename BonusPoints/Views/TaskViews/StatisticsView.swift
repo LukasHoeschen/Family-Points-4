@@ -50,7 +50,7 @@ struct StatisticsView: View {
                                 
                             }
                         }.frame(height: CGFloat(allTasks1.count * 60))
-                            .chartXScale(domain: 0...(allTasks1.map(\.howManyTimesDidAllUsers).max() ?? 1))
+                            .chartXScale(domain: 0...((allTasks1.map(\.howManyTimesDidAllUsers).max() ?? 1) + 1))
                             .animation(.spring(duration: 0.6), value: animate)
                             .onAppear {
                                 animate = true
@@ -143,7 +143,7 @@ struct StatisticsView: View {
                 }
             }
 #if !os(macOS)
-            .tabViewStyle(.page)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
 #endif
             .navigationTitle("Insights")
             .animation(.easeInOut, value: selectedChart)

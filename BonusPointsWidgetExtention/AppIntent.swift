@@ -94,39 +94,40 @@ struct TaskIntend: AppIntent {
     }
     
     
-    @AppStorage("WidgetShowButtonWasTappedId") var showTapped = ""
     
     func perform() async throws -> some IntentResult {
-        print("pressed")
-        var data: widgetChangesStruct?
-        if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
-            if let storedData = defaults.data(forKey: "widgetAddedCount") {
-                if let d = try? JSONDecoder().decode(widgetChangesStruct.self, from: storedData) {
-                    data = d
-                }
-            }
-        }
-        
+        let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup")
+
         var list: [String] = []
-        if data != nil {
-            list = data!.list
+
+        if let storedData = defaults?.data(forKey: "widgetAddedCount"),
+           let data = try? JSONDecoder().decode(widgetChangesStruct.self, from: storedData) {
+            list = data.list
         }
+
         list.append(item)
-        let l = list
-        
-        DispatchQueue.global().async {
-            if let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup") {
-                if let encoded = try? JSONEncoder().encode(widgetChangesStruct(list: l)) {
-                    showTapped = item
-                    defaults.setValue(encoded, forKey: "widgetAddedCount")
-                    defaults.synchronize()
-                }
-            }
+
+        defaults?.set(item, forKey: "WidgetShowButtonWasTappedId")
+
+        if let encoded = try? JSONEncoder().encode(widgetChangesStruct(list: list)) {
+            defaults?.set(encoded, forKey: "widgetAddedCount")
         }
-        
-        
+
+        WidgetCenter.shared.reloadAllTimelines()
+
+        // Detached task
+        Task.detached {
+
+            try? await Task.sleep(for: .seconds(2))
+
+            let defaults = UserDefaults(suiteName: "group.org.hoeschen.lukas.familyPoints.App.AppGroup")
+
+            defaults?.removeObject(forKey: "WidgetShowButtonWasTappedId")
+
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+
         return .result()
     }
-    
     
 }
