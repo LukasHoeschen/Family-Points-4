@@ -21,23 +21,21 @@ struct SearchView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List {
-                if !filteredTasks.isEmpty {
-                    Section {
-                        ForEach(filteredTasks) { task in
-                            TaskInListView(task: task)
-                        }
-                    } header: {
-                        Text("Tasks")
+        List {
+            if !filteredTasks.isEmpty {
+                Section {
+                    ForEach(filteredTasks) { task in
+                        TaskInListView(task: task)
                     }
+                } header: {
+                    Text("Tasks")
                 }
-                if filteredTasks.isEmpty {
-                    ContentUnavailableView.search(text: searchText)
-                }
-            }.navigationTitle("Search")
-                .searchable(text: $searchText)
-        }
+            }
+            if filteredTasks.isEmpty {
+                ContentUnavailableView.search(text: searchText)
+            }
+        }.navigationTitle("Search")
+            .searchable(text: $searchText)
     }
     
     private func Summary(emoji: String, title: String, subTitle: String, detail: String?) -> some View {

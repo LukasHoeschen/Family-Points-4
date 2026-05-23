@@ -8,11 +8,175 @@
 import SwiftUI
 
 struct UserDetailView: View {
+    @EnvironmentObject var dataHandler: AppDataHandler
+    
+    let userId: String
+    @State private var setPoints = ""
+    @State private var changePoints = ""
+    
+    @State var showDeleteFamilyMember = false
+    
+    @State var userExportData: exportUserDataStruct = exportUserDataStruct(deviceId: "", userId: "", familyId: "", key: "noKey")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let user = dataHandler.family.users.first(where: { $0.id == userId }) {
+            Form {
+                Section {
+                    Text("When \(user.name) completes tasks, they will appear here for your approval. You can then choose to either accept or deny them. This way, you can award points only when the task has truly been completed.")
+                        .padding(.horizontal)
+                }
+                
+                Section {
+                    DoneTasksListView(showRemoveButton: false, userId: user.id)
+                }
+            }
+            .listSectionSpacing(5)
+            .navigationTitle(user.name)
+            .toolbar {
+                Button {
+                    dataHandler.fetchAllData()
+                } label: {
+                    Image(systemName: "arrow.circlepath")
+                        .bold()
+                }
+                NavigationLink {
+                    Form {
+                        Section("User Information") {
+                            HStack {
+                                Label("Role", systemImage: "person.2")
+                                Spacer()
+                                Text(user.role == .parent ? "Parent" : "Child")
+                            }
+                            
+                            HStack {
+                                Label("Account Created", systemImage: "calendar")
+                                Spacer()
+                                Text(user.getDate())
+                            }
+                            
+                            HStack {
+                                Label("Connected Devices", systemImage: "iphone")
+                                Spacer()
+                                Text(String(user.devices.count))
+                            }
+                            
+                            HStack {
+                                Label("Current Points", systemImage: "star.circle.fill")
+                                Spacer()
+                                Text(functionsClass().floatToShortString(x: user.actualPoints))
+                            }
+                            
+                            HStack {
+                                Label("Current Tasks Completed", systemImage: "checkmark.circle.fill")
+                                Spacer()
+                                Text(String(user.tasksDone.count))
+                            }
+                        }
+                        
+                        if dataHandler.user.role == .parent, let i = dataHandler.family.users.firstIndex(of: user) {
+                            Section {
+                                HStack {
+                                    Label("Set Points", systemImage: "number")
+                                    Spacer()
+                                    TextField(functionsClass().floatToShortString(x: user.actualPoints), text: $setPoints)
+#if !os(macOS)
+                                        .keyboardType(.numbersAndPunctuation)
+#endif
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .frame(width: 40, alignment: .center)
+                                        .multilineTextAlignment(.center)
+                                    Button {
+                                        if Float(setPoints) != nil {
+                                            dataHandler.family.users[i].actualPoints = Float(setPoints)!
+                                            dataHandler.userUpdate(id: user.id)
+                                        }
+                                    } label: {
+                                        Image(systemName: "checkmark")
+                                            .frame(width: 20, height: 20)
+                                    }
+                                }
+                                HStack {
+                                    Label("Change Points", systemImage: "arrow.right.circle")
+                                    Spacer()
+                                    Button {
+                                        if Float(changePoints) != nil {
+                                            dataHandler.family.users[i].actualPoints -= Float(changePoints)!
+                                            dataHandler.userUpdate(id: user.id)
+                                        }
+                                    } label: {
+                                        Image(systemName: "minus")
+                                            .frame(width: 20, height: 20)
+                                    }
+                                    TextField("0", text: $changePoints)
+#if !os(macOS)
+                                        .keyboardType(.numbersAndPunctuation)
+#endif
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .frame(width: 40)
+                                        .multilineTextAlignment(.center)
+                                    Button {
+                                        if Float(changePoints) != nil {
+                                            dataHandler.family.users[i].actualPoints += Float(changePoints)!
+                                            dataHandler.userUpdate(id: user.id)
+                                        }
+                                    } label: {
+                                        Image(systemName: "plus")
+                                            .frame(width: 20, height: 20)
+                                    }
+                                }
+                            } header: {
+                                Text("Change")
+                            } footer: {
+                                Text("Enter an amount, then tap + to add or − to subtract points.")
+                            }
+                            .buttonStyle(.bordered)
+                            
+                            Section {
+                                Button("Delete Family Member") {
+                                    showDeleteFamilyMember = true
+                                }.foregroundStyle(Color.red)
+                            }.confirmationDialog("", isPresented: $showDeleteFamilyMember, titleVisibility: Visibility.hidden) {
+                                Button("Delete", role: .destructive) {
+                                    dataHandler.deleteUser(id: user.id)
+                                }
+                            }
+                            
+                            NavigationLink {
+                                Form {
+                                    Section("Information") {
+                                        Text("**Proceed with caution.**")
+                                        Text("This feature allows you to export your user account along with all your private data and encryption key. While useful when transitioning to a new Apple device after selling your current one, it's essential to be mindful of the risks.")
+                                        Text("Please note that your data is exported without encryption, and your family's secret encryption key is stored in plain text.\n**Please do not delete your device or logout in this App on this device!**")
+                                    }
+                                    
+                                    Section {
+                                        ShareLink(item: userExportData, preview: SharePreview("Family Points User Export")) {
+                                            Label("Export", systemImage: "square.and.arrow.up")
+                                        }
+                                        Text("Just open the file on your new device to log in again.")
+                                    }.onAppear {
+                                        self.userExportData = exportUserDataStruct(deviceId: dataHandler.device.apiId, userId: user.id, familyId: dataHandler.family.id, key: dataHandler.AESCryptoKeyData?.base64EncodedString() ?? "noKey")
+                                    }
+                                }.navigationTitle("Export User")
+                            } label: {
+                                Text("Export your User")
+                            }
+                        }
+                    }.navigationTitle("Info")
+                } label: {
+                    Image(systemName: "info.circle")
+                }
+            }
+            .onAppear {
+                setPoints = ""
+                changePoints = ""
+            }
+        } else {
+            ContentUnavailableView("User not found", systemImage: "person.slash")
+        }
     }
 }
 
-#Preview {
-    UserDetailView()
-}
+//#Preview {
+//    UserDetailView()
+//}

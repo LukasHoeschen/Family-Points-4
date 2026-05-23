@@ -12,6 +12,10 @@ struct StatisticsView: View {
     
     @EnvironmentObject var dataHandler: AppDataHandler
     
+    enum StatisticsRoute {
+        case settings
+    }
+    
     @State private var selectedChart = 0
     @State private var animate = false
     
@@ -30,7 +34,6 @@ struct StatisticsView: View {
                 
                 TabView(selection: $selectedChart) {
                     List {
-                        
                         Label("Most Completed Tasks", systemImage: "chart.bar.fill")
                         
                         Chart {
@@ -137,7 +140,7 @@ struct StatisticsView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    NavigationLink(destination: SettingsView()) {
+                    NavigationLink(value: StatisticsRoute.settings) {
                         Image(systemName: "gear")
                     }
                 }
@@ -163,6 +166,12 @@ struct StatisticsView: View {
                 self.allTasks2 = tasks.sorted { $0.pointsToAdd > $1.pointsToAdd }
                 self.allTasks3 = tasks.sorted { task1, task2 in
                     (Float(task1.howManyTimesDidAllUsers) * task1.pointsToAdd) > (Float(task2.howManyTimesDidAllUsers) * task2.pointsToAdd)
+                }
+            }
+            .navigationDestination(for: StatisticsRoute.self) { route in
+                switch route {
+                case .settings:
+                    SettingsView()
                 }
             }
         }

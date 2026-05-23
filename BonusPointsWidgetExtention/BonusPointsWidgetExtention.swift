@@ -143,9 +143,9 @@ struct BonusPointsWidgetExtentionEntryView : View {
             }
         } else {
             Text("Please subscribe to use widgets")
-                .onAppear {
+//                .onAppear {
 //                    print(entry.widgetData)
-                }
+//                }
         }
     }
 }

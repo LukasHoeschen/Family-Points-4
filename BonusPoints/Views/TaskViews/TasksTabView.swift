@@ -14,6 +14,8 @@ struct TasksTabView: View {
 
     @AppStorage("currentSeenTaskList") var actualTaskListId: String = ""
     @State private var currentTaskList: String? = nil
+    @State private var path = NavigationPath()
+    @State private var stackId = UUID()
     
     @State private var createNewTaskList = false
     @State private var createNewTaskListName = ""
@@ -154,7 +156,9 @@ struct TasksTabView: View {
             case .search:
                 SearchView()
             case .family:
+                                NavigationStack {
                 FamilyView()
+                                }
             case nil:
                 Text("Please select a List")
             }

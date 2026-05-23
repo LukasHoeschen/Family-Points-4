@@ -101,12 +101,16 @@ struct ContentView: View {
                                 }
                                 
                                 Tab("Family", systemImage: "person.3") {
-                                    FamilyView()
+                                    NavigationStack {
+                                        FamilyView()
+                                    }
                                 }
                                 .badge(dataHandler.familyBadge)
                                 
                                 Tab(role: .search) {
-                                    SearchView()
+                                    NavigationStack {
+                                        SearchView()
+                                    }
                                 }
                                 
                             }
