@@ -1,0 +1,2584 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "-" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
+    },
+    "!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "!"
+          }
+        }
+      }
+    },
+    "!!!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "!!!"
+          }
+        }
+      }
+    },
+    "**%@** total achieved points with this task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**%@** Punkte insgesamt gesammelt mit dieser Aufgabe"
+          }
+        }
+      }
+    },
+    "**%lld times** completed by all family members" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**%lld mal** erledigt von allen Familienmitgliedern"
+          }
+        }
+      }
+    },
+    "**Please note:** Connecting multiple devices to your account is not available in the free version." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Bitte beachten Sie:** Das Verbinden mehrerer Geräte mit Ihrem Konto ist in der kostenlosen Version nicht möglich."
+          }
+        }
+      }
+    },
+    "**Proceed with caution.**" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Bitte mache mit Vorsicht weiter.**"
+          }
+        }
+      }
+    },
+    "%@ (%lld results)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (%lld Ergebnisse)"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "%lld Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Aufgaben"
+          }
+        }
+      }
+    },
+    "%lld Tasks done" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Aufgaben erledigt"
+          }
+        }
+      }
+    },
+    "%lld/%lld Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld/%lld Aufgaben"
+          }
+        }
+      }
+    },
+    "%lld/4 Family Members" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld/4 Familienmitglieder"
+          }
+        }
+      }
+    },
+    "%lld/4 Task Lists" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld/4 Listen"
+          }
+        }
+      }
+    },
+    "%lldP" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lldP"
+          }
+        }
+      }
+    },
+    "• 4 family members, including yourself" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 4 Familienmitglieder, einschließlich Sie selbst"
+          }
+        }
+      }
+    },
+    "• 4 task lists" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 4 Aufgabenlisten"
+          }
+        }
+      }
+    },
+    "• 30 complimentary tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 30 kostenfreie Aufgaben"
+          }
+        }
+      }
+    },
+    "0" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "1" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1"
+          }
+        }
+      }
+    },
+    "2" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        }
+      }
+    },
+    "3" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3"
+          }
+        }
+      }
+    },
+    "4" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4"
+          }
+        }
+      }
+    },
+    "5" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5"
+          }
+        }
+      }
+    },
+    "6" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6"
+          }
+        }
+      }
+    },
+    "7" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7"
+          }
+        }
+      }
+    },
+    "8" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8"
+          }
+        }
+      }
+    },
+    "9" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9"
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über"
+          }
+        }
+      }
+    },
+    "About & Contact" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über & Kontakt"
+          }
+        }
+      }
+    },
+    "About Me" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über Mich"
+          }
+        }
+      }
+    },
+    "Accept" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akkzeptieren"
+          }
+        }
+      }
+    },
+    "Account Created" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account erstellt"
+          }
+        }
+      }
+    },
+    "Add a new Task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstelle eine neue Aufgabe"
+          }
+        }
+      }
+    },
+    "Add Family Member" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge ein neues Familienmitglied hinzu"
+          }
+        }
+      }
+    },
+    "Add Family Members" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge Familienmitglieder hinzu"
+          }
+        }
+      }
+    },
+    "Add List" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste hinzufügen"
+          }
+        }
+      }
+    },
+    "Add your Family Members to your Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge deine Familienmitglieder deiner Familie hinzu"
+          }
+        }
+      }
+    },
+    "Adjust the importance level to priorities or de-priorities your tasks. Tasks will be sorted based on their importance." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lege fest, wie wichtig eine Aufgabe ist – sie wird dann entsprechend in der Liste einsortiert."
+          }
+        }
+      }
+    },
+    "All your data is end-to-end encrypted. Wondering how we store your data on our server? For example, your family name looks like this: %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihre Daten werden End-zu-End-Verschlüsselt. Möchten Sie wissen, wie wir Ihre Daten auf unserem Server speichern? \nIhr Familienname sieht beispielsweiße so aus: %@"
+          }
+        }
+      }
+    },
+    "All your data is securely encrypted on our servers. Neither we nor any third parties have the capability to decrypt it. Only you and your future family members possess the secret key required to decrypt the data." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Ihre Daten werden auf unseren Servern sicher verschlüsselt. Weder wir noch Dritte haben die Möglichkeit, sie zu entschlüsseln. Nur Sie und Ihre zukünftigen Familienmitglieder besitzen den geheimen Schlüssel, der zur Entschlüsselung der Daten erforderlich ist."
+          }
+        }
+      }
+    },
+    "Alternatively, you can simply tap the file, and it should automatically open here." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternativ können Sie auch einfach auf die Datei tippen, die dann automatisch geöffnet wird."
+          }
+        }
+      }
+    },
+    "As a student, I don’t earn much, and keeping apps available on the App Store comes with costs. If you enjoy using \"Family Points\", I’d really appreciate your support!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Student verdiene ich nicht viel, und die Apps im App Store verfügbar zu halten, kostet Geld. Wenn dir Family Points gefällt, würde ich mich sehr über deine Unterstützung freuen!"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        }
+      }
+    },
+    "Change" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändern"
+          }
+        }
+      }
+    },
+    "Change Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ändere die Punkte"
+          }
+        }
+      }
+    },
+    "Check" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überprüfen"
+          }
+        }
+      }
+    },
+    "Child" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kind"
+          }
+        }
+      }
+    },
+    "Children" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kind"
+          }
+        }
+      }
+    },
+    "Choose" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle"
+          }
+        }
+      }
+    },
+    "Choose your role" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle deine Rolle aus"
+          }
+        }
+      }
+    },
+    "Completed" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erledigt"
+          }
+        }
+      }
+    },
+    "Completed at: " : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erledigt am:"
+          }
+        }
+      }
+    },
+    "Connect new Device" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein neues Gerät verbinden"
+          }
+        }
+      }
+    },
+    "Connect to an other Device" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbinde dich mit einem anderem Gerät"
+          }
+        }
+      }
+    },
+    "Connected Devices" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbundene Geräte"
+          }
+        }
+      }
+    },
+    "Contact" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt"
+          }
+        }
+      }
+    },
+    "Contact me" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontaktiere mich"
+          }
+        }
+      }
+    },
+    "Copy my (unencrypted) Data" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiere meine (unverschlüsselten) Daten"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellen"
+          }
+        }
+      }
+    },
+    "Create a New Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstelle eine neue Familie"
+          }
+        }
+      }
+    },
+    "Create a new Key" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstelle einen neuen Code"
+          }
+        }
+      }
+    },
+    "Created:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt:"
+          }
+        }
+      }
+    },
+    "Current Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuelle Punkte"
+          }
+        }
+      }
+    },
+    "Current Tasks Completed" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktuell erledigte Aufgaben"
+          }
+        }
+      }
+    },
+    "Current Utilisation" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Derzeitige Benutzung"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        }
+      }
+    },
+    "Delete Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familie Löschen"
+          }
+        }
+      }
+    },
+    "Delete Family Member" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familienmitglied löschen "
+          }
+        }
+      }
+    },
+    "Delete List" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste löschen"
+          }
+        }
+      }
+    },
+    "Delete List?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste löschen?"
+          }
+        }
+      }
+    },
+    "Delete Task?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufgabe löschen?"
+          }
+        }
+      }
+    },
+    "Delete this Task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lösche diese Aufgabe"
+          }
+        }
+      }
+    },
+    "Delete User" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzer löschen"
+          }
+        }
+      }
+    },
+    "Delete your Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Familie löschen"
+          }
+        }
+      }
+    },
+    "Delete your User" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deinen Benutzer löschen"
+          }
+        }
+      }
+    },
+    "Deleting your family (%@) will erase all your data from our servers, including tasks, lists, family members, and their devices. This action cannot be undone." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Sie Ihre Familie löschen (%@), werden alle Ihre Daten von unseren Servern gelöscht, einschließlich Aufgaben, Listen, Familienmitglieder und deren Geräte. Diese Aktion kann nicht rückgängig gemacht werden."
+          }
+        }
+      }
+    },
+    "Deleting your user will remove all your user data (%@) stored on our servers. Your account cannot be reinstalled." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Sie Ihren Benutzer löschen, werden alle auf unseren Servern gespeicherten Benutzerdaten (%@) gelöscht. Ihr Konto kann nicht wiederhergestellt werden."
+          }
+        }
+      }
+    },
+    "Deny" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ablehnen"
+          }
+        }
+      }
+    },
+    "Details" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Details"
+          }
+        }
+      }
+    },
+    "Device:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerät:"
+          }
+        }
+      }
+    },
+    "Devices wanting to connect" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geräte, die eine Verbindung herstellen möchten"
+          }
+        }
+      }
+    },
+    "Do Homework" : {
+      "comment" : "Initialised Tasks",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hausaufgaben machen"
+          }
+        }
+      }
+    },
+    "Do you have any recommendations?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haben Sie Empfehlungen?"
+          }
+        }
+      }
+    },
+    "Do you really want to delete this list with all tasks? This can't be undo." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest Du wirklich diese Liste mit allen Aufgaben löschen?"
+          }
+        }
+      }
+    },
+    "Do you really want to delete your Family, all connected Users, Devices and Data?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest Du wirklich deine Familie, alle verbundenen Benutzer, Geräte und Daten löschen?"
+          }
+        }
+      }
+    },
+    "Do you really want to delete your User-Account, all connected Devices and Data?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest Du wirklich deinen Benutzer-Account, alle verbundenen Geräte und Daten löschen?"
+          }
+        }
+      }
+    },
+    "Do you really want to log out?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest Du dich wirklich ausloggen?"
+          }
+        }
+      }
+    },
+    "Do you really want to remove this Device?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest du wirklich dieses Gerät löschen?"
+          }
+        }
+      }
+    },
+    "Donate via [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spende über [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)"
+          }
+        }
+      }
+    },
+    "Donate via [PayPal](https://paypal.me/hoeschenDevelopment)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spende über [PayPal](https://paypal.me/hoeschenDevelopment)"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        }
+      }
+    },
+    "Done Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erledigte Aufgaben"
+          }
+        }
+      }
+    },
+    "e.g. Cleaning" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "z.B. Putzen"
+          }
+        }
+      }
+    },
+    "e.g. Do homework" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "z.B. Hausaufgaben"
+          }
+        }
+      }
+    },
+    "Encryption" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verschlüsselung"
+          }
+        }
+      }
+    },
+    "Enter an amount, then tap + to add or − to subtract points." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einen Wert eingeben, und mit + addieren und mit - abziehen."
+          }
+        }
+      }
+    },
+    "Enter your Family Link-Key" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte gib deinen Familien-Code ein"
+          }
+        }
+      }
+    },
+    "Enter your first name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte gib deinen Vornamen ein"
+          }
+        }
+      }
+    },
+    "Enter your last name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte gib deinen Nachnamen ein"
+          }
+        }
+      }
+    },
+    "Export" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportieren"
+          }
+        }
+      }
+    },
+    "Export User" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzer exportieren"
+          }
+        }
+      }
+    },
+    "Export your User" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportieren Sie Ihren Benutzer-Account"
+          }
+        }
+      }
+    },
+    "Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familie"
+          }
+        }
+      }
+    },
+    "Family Member not found" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Familienmitglied nicht gefunden"
+          }
+        }
+      }
+    },
+    "Family Points PRO" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bonus Punkte PRO"
+          }
+        }
+      }
+    },
+    "Family Points User Export" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bonus Punkte Benutzer-Export"
+          }
+        }
+      }
+    },
+    "for %@ Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "für %@ Punkte"
+          }
+        }
+      }
+    },
+    "For adding more Family Members, please subscribe." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um weitere Familienmitglieder hinzuzufügen, bitte abonnieren Sie Family Points Pro."
+          }
+        }
+      }
+    },
+    "For:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Für:"
+          }
+        }
+      }
+    },
+    "Fri" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fr"
+          }
+        }
+      }
+    },
+    "Hide" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausblenden"
+          }
+        }
+      }
+    },
+    "I'm a Mechatronics student developing this app in my free time. It's kinda expensive to host servers storing your data and making Apps available at the App Store. That's actually the only reason im working with in App-Purchases. So, if you like my App, I'd really appreciate your support and I would love to hear your Feedback!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich bin Mechatronik-Student und entwickle diese App in meiner Freizeit. Es ist ziemlich teuer, Server zu betreiben, die deine Daten speichern, und Apps im App Store verfügbar zu halten. Das ist eigentlich der einzige Grund, warum ich In-App-Käufe anbiete. Wenn dir meine App gefällt, würde ich mich wirklich über deine Unterstützung freuen und würde gerne dein Feedback hören!"
+          }
+        }
+      }
+    },
+    "I'm Lukas, a 18-year-old boy from Germany (2025). If you have ideas for new features or any suggestions, please feel free to contact me. Thank you so much for using my app." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich bin Lukas, ein 18-jähriger Junge aus Deutschland (2025). Wenn du Ideen für neue Funktionen hast oder Vorschläge machen möchtest, kannst du dich gerne bei mir melden. Vielen Dank, dass du meine App benutzt!"
+          }
+        }
+      }
+    },
+    "If a family member has already created a family, you can join that family." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn ein Familienmitglied schon eine Familie erstellt hat, kannst du dieser beitreten."
+          }
+        }
+      }
+    },
+    "If you already have a device connected to your family, you can link this device with this one. This ensures both devices share the same user information." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du schon ein Gerät mit deiner Familie verbunden hast, kannst du dieses Gerät mit dem anderen verbinden. "
+          }
+        }
+      }
+    },
+    "If you are the first in your family and want to set up your family, please create a new family." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn du der erste deiner Familie bist, kannst du hier eine neue Familie für euch erstellen."
+          }
+        }
+      }
+    },
+    "Importance" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wichtigkeit"
+          }
+        }
+      }
+    },
+    "Important Note: Unlike your other data, this recommendation is stored in plain text on my server to facilitate reading. Please be aware of this." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wichtiger Hinweis: Im Gegensatz zu Ihren anderen Daten wird diese Empfehlung auf meinem Server im Klartext gespeichert, um das Lesen zu erleichtern. Bitte beachten Sie dies."
+          }
+        }
+      }
+    },
+    "Important Note: Your message will be transmitted and stored in plain text to facilitate communication. Please provide details and ensure it's at least 100 characters." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wichtiger Hinweis: Ihre Nachricht wird im Klartext übertragen und gespeichert, um die Kommunikation zu erleichtern. Bitte geben Sie Einzelheiten an und achten Sie darauf, dass sie mindestens 100 Zeichen verwenden."
+          }
+        }
+      }
+    },
+    "Info" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
+    },
+    "Information" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information"
+          }
+        }
+      }
+    },
+    "Insights" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einblicke"
+          }
+        }
+      }
+    },
+    "Instruction Video" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anleitungsvideo"
+          }
+        }
+      }
+    },
+    "Join a Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trete einer Familie bei"
+          }
+        }
+      }
+    },
+    "Join an Existing Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trete einer vorhandenen Familie bei"
+          }
+        }
+      }
+    },
+    "Join Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trete einer Familie bei"
+          }
+        }
+      }
+    },
+    "Just open the file on your new device to log in again." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnen Sie die Datei einfach auf Ihrem neuen Gerät, um sich erneut anzumelden."
+          }
+        }
+      }
+    },
+    "Kid" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kind"
+          }
+        }
+      }
+    },
+    "Legal" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechtliches"
+          }
+        }
+      }
+    },
+    "Link Device" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbinde ein Gerät"
+          }
+        }
+      }
+    },
+    "List empty" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Liste ist leer"
+          }
+        }
+      }
+    },
+    "List not found" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste wurde nicht gefunden"
+          }
+        }
+      }
+    },
+    "Load User Account from File" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzerkonto aus Datei laden"
+          }
+        }
+      }
+    },
+    "Log out" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausloggen"
+          }
+        }
+      }
+    },
+    "Logging out will delete all your data on this device. Your account (%@) won't be deleted on our servers, but you'll need to export your account information and import it on your new device. If you have a second device connected to your account, you can use it to set up your new device." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Sie sich abmelden, werden alle Ihre Daten auf diesem Gerät gelöscht. Ihr Konto (%@) wird nicht auf unseren Servern gelöscht, aber Sie müssen Ihre Kontoinformationen exportieren und auf Ihr neues Gerät importieren. Wenn Sie ein zweites Gerät haben, das mit Ihrem Konto verbunden ist, können Sie dieses zum Einrichten Ihres neuen Geräts verwenden."
+          }
+        }
+      }
+    },
+    "Manage your Subscription" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwalte dein Abonnement"
+          }
+        }
+      }
+    },
+    "Mark some tasks as done to see them here." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markiere Aufgaben"
+          }
+        }
+      }
+    },
+    "Members wanting to join" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mitglieder, die beitreten möchten"
+          }
+        }
+      }
+    },
+    "Mon" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mo"
+          }
+        }
+      }
+    },
+    "More Options" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr Optionen"
+          }
+        }
+      }
+    },
+    "Most Completed Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Am meisten erledigte Aufgaben"
+          }
+        }
+      }
+    },
+    "Multi-device connectivity is supported exclusively for subscribers." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Multi-Device-Konnektivität wird ausschließlich für Abonnenten unterstützt."
+          }
+        }
+      }
+    },
+    "My Lists" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listen"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        }
+      }
+    },
+    "Name:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name:"
+          }
+        }
+      }
+    },
+    "New List" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Liste"
+          }
+        }
+      }
+    },
+    "New Task" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Aufgabe"
+          }
+        }
+      }
+    },
+    "No" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nein"
+          }
+        }
+      }
+    },
+    "No done tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine erledigten Aufgaben"
+          }
+        }
+      }
+    },
+    "No done tasks yet" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine erledigten Aufgaben"
+          }
+        }
+      }
+    },
+    "No Tasks in this list yet" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Aufgaben in dieser Liste"
+          }
+        }
+      }
+    },
+    "Not necessary" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht erforderlich"
+          }
+        }
+      }
+    },
+    "Notification Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benachrichtigungen"
+          }
+        }
+      }
+    },
+    "Notifications" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benachrichtigungen"
+          }
+        }
+      }
+    },
+    "Number" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wert"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "On your family member's device, select **\"Join an existing Family\"**. Then enter your family member's name and the provided code." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf dem Gerät deines Familienmitglieds wähle **\"Trete einer vorhandenen Familie bei\"** aus. Gib dann den Namen deines Familienmitglieds und diesen Code ein."
+          }
+        }
+      }
+    },
+    "Only parents can delete Lists." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur Eltern können Listen löschen"
+          }
+        }
+      }
+    },
+    "Parent" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eltern"
+          }
+        }
+      }
+    },
+    "Play Video Games for 30 Minutes" : {
+      "comment" : "Initialised Tasks",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Videospiele spielen"
+          }
+        }
+      }
+    },
+    "Please accept this Device in the Settings of your other Device." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte akzeptiere dieses Gerät in den Einstellungen deines anderen Geräts."
+          }
+        }
+      }
+    },
+    "Please ask a family member to accept you in the settings." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte ein Familienmitglied, dich in den Einstellungen zu akzeptieren."
+          }
+        }
+      }
+    },
+    "Please ask your Parents for help." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte deine Eltern um Hilfe."
+          }
+        }
+      }
+    },
+    "Please establish an internet connection" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte stelle eine Internetverbindung her"
+          }
+        }
+      }
+    },
+    "Please note that your data is exported without encryption, and your family's secret encryption key is stored in plain text.\n**Please do not delete your device or logout in this App on this device!**" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte beachten Sie, dass Ihre Daten unverschlüsselt exportiert werden und der geheime Verschlüsselungscode Ihrer Familie im Klartext gespeichert wird.\n**Bitte löschen Sie Ihr Gerät nicht und melden Sie sich in dieser App auf diesem Gerät nicht ab!**"
+          }
+        }
+      }
+    },
+    "Please select a List" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte eine Liste auswählen"
+          }
+        }
+      }
+    },
+    "Please subscribe to see all Tasks in Statistics" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte abonniere, um alle Aufgaben in den Statistiken zu sehen"
+          }
+        }
+      }
+    },
+    "Point" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punkt"
+          }
+        }
+      }
+    },
+    "Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punkte"
+          }
+        }
+      }
+    },
+    "Points to Add" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punkte, die hinzugefügt werden"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutzerklärung"
+          }
+        }
+      }
+    },
+    "Purchases and subscriptions are synchronised across all family members." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käufe und Abonnements werden zwischen allen Familienmitgliedern synchronisiert."
+          }
+        }
+      }
+    },
+    "Purchases can only be done on devices supporting iOS 17 or newer." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käufe können nur auf Geräten mit iOs 17 oder neuer durchgeführt werden."
+          }
+        }
+      }
+    },
+    "Rate \"Family Points\"" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewerte „Familien Punkte“"
+          }
+        }
+      }
+    },
+    "Rate Family Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewerte Bonus Punkte"
+          }
+        }
+      }
+    },
+    "Refresh" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuladen"
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernen"
+          }
+        }
+      }
+    },
+    "Remove Device?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerät entfernen?"
+          }
+        }
+      }
+    },
+    "Remove? This task wasn't accepted yet." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernen? Die Aufgabe wurde noch nicht akzeptiert."
+          }
+        }
+      }
+    },
+    "Right now you're using %lld Tasks of %lld free tasks." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Im Moment verwenden Sie %lld Aufgaben von %lld freien Aufgaben."
+          }
+        }
+      }
+    },
+    "Role" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rolle "
+          }
+        }
+      }
+    },
+    "Role:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rolle:"
+          }
+        }
+      }
+    },
+    "Sat" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sa"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern"
+          }
+        }
+      }
+    },
+    "Save Changes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Änderungen speichern"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchen"
+          }
+        }
+      }
+    },
+    "Select Days" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tage auswählen"
+          }
+        }
+      }
+    },
+    "Select Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit auswählen"
+          }
+        }
+      }
+    },
+    "Send" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senden"
+          }
+        }
+      }
+    },
+    "Set Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setze Punkte"
+          }
+        }
+      }
+    },
+    "Set Score of %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setze Punkte von %@"
+          }
+        }
+      }
+    },
+    "Set the Table" : {
+      "comment" : "Initialised Tasks",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tisch decken"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        }
+      }
+    },
+    "Setup" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setup"
+          }
+        }
+      }
+    },
+    "Share with Friends" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teile die App mit Freunden"
+          }
+        }
+      }
+    },
+    "Show all results in %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Ergebnisse anzeigen in %@"
+          }
+        }
+      }
+    },
+    "Statistics" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiken"
+          }
+        }
+      }
+    },
+    "Storing your data on my server is kinda expensive, so I decided to make this Store to earn a little money. If you wish, you could support me also via [PayPal](https://paypal.me/hoeschenDevelopment) or [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Speichern deiner Daten auf meinem Server ist ziemlich teuer, also habe ich beschlossen, diesen Store zu erstellen, um ein wenig Geld zu verdienen. Wenn du möchtest, kannst du mich auch über [PayPal](https://paypal.me/hoeschenDevelopment) oder [buyMeACoffee.com](https://buymeacoffee.com/hoeschenDevelopment) unterstützen."
+          }
+        }
+      }
+    },
+    "Submit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Absenden"
+          }
+        }
+      }
+    },
+    "Subscribe now" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetzt abonnieren"
+          }
+        }
+      }
+    },
+    "Sun" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So"
+          }
+        }
+      }
+    },
+    "Support Me" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstütze Mich"
+          }
+        }
+      }
+    },
+    "Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aufgaben"
+          }
+        }
+      }
+    },
+    "Terms of Use" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AGB"
+          }
+        }
+      }
+    },
+    "The Idea Behind Family Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Idee hinter Family Points"
+          }
+        }
+      }
+    },
+    "There are no completed tasks right now. Please try again later." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es gibt gerade keine erledigten Aufgaben. Bitte versuche es später."
+          }
+        }
+      }
+    },
+    "These Points will be added if the Task is complete. Enter both positive and negative numbers." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Punkte werden hinzugefügt, wenn die Aufgabe erledigt und akzeptiert wird. Es gehen sowohl positive als auch negative Punkte."
+          }
+        }
+      }
+    },
+    "This app was inspired by an idea my sister came up with some time ago. Initially, we recorded our points on our fridge. To make this fantastic idea accessible to everyone, I created this app." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese App wurde durch eine Idee meiner Schwester inspiriert, die vor einiger Zeit entstand. Ursprünglich haben wir unsere Punkte an unserem Kühlschrank notiert. Um diese fantastische Idee für alle zugänglich zu machen, habe ich diese App entwickelt."
+          }
+        }
+      }
+    },
+    "This feature allows you to export your user account along with all your private data and encryption key. While useful when transitioning to a new Apple device after selling your current one, it's essential to be mindful of the risks." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit dieser Funktion können Sie Ihr Benutzerkonto zusammen mit all Ihren privaten Daten und dem Verschlüsselungsschlüssel exportieren. Dies ist zwar nützlich, wenn Sie auf ein neues Apple-Gerät umsteigen, nachdem Sie Ihr aktuelles Gerät verkauft haben, aber Sie sollten sich der Risiken bewusst sein."
+          }
+        }
+      }
+    },
+    "This is only visible if your family name is \"Hoeschen\" and your user name is \"Lukas\". It seems like we have the same name!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dies ist nur sichtbar, wenn Ihr Familienname \"Hoeschen\" und Ihr Benutzername \"Lukas\" ist. Es scheint, als hätten wir den gleichen Namen!"
+          }
+        }
+      }
+    },
+    "This section displays tasks that have been completed most frequently among all family members." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser Abschnitt zeigt Aufgaben, die häufig von Familienmitgliedern erledigt wurden."
+          }
+        }
+      }
+    },
+    "This section displays tasks that have earned the most points." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser Abschnitt zeigt Aufgaben, mit denen die meisten Punkte erreicht wurden."
+          }
+        }
+      }
+    },
+    "This section displays tasks that yield the highest number of points." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser Abschnitt zeigt Aufgaben, die die meisten Punkte bringen."
+          }
+        }
+      }
+    },
+    "Thu" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do"
+          }
+        }
+      }
+    },
+    "Tidy my Room" : {
+      "comment" : "Initialised Tasks",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zimmer aufräumen"
+          }
+        }
+      }
+    },
+    "Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit"
+          }
+        }
+      }
+    },
+    "To create more Lists, please subscribe to Family Points Pro." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um mehr Listen zu erstellen, abonniere bitte Family Points Pro."
+          }
+        }
+      }
+    },
+    "To create more tasks, please kindly request your parents to unlock them." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um weitere Aufgaben zu erstellen, bitte deine Eltern, sie freizuschalten."
+          }
+        }
+      }
+    },
+    "Total Achieved" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insgesamt erreicht"
+          }
+        }
+      }
+    },
+    "Total achieved Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insgesamt erreichte Punkte"
+          }
+        }
+      }
+    },
+    "Total Achieved Points" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insgesamt erreichte Punkte"
+          }
+        }
+      }
+    },
+    "Total Count" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erledigt"
+          }
+        }
+      }
+    },
+    "Try Again" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versuche es erneut"
+          }
+        }
+      }
+    },
+    "Tue" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di"
+          }
+        }
+      }
+    },
+    "Unlimited Devices" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbegrenzte Anzahl von Geräten"
+          }
+        }
+      }
+    },
+    "Unlimited Family Members" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbegrenzte Anzahl von Familienmitgliedern"
+          }
+        }
+      }
+    },
+    "Unlimited Lists" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbegrenzte Listen"
+          }
+        }
+      }
+    },
+    "Unlimited Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbegrenzte Aufgaben"
+          }
+        }
+      }
+    },
+    "Unlimited Widgets (requires iOS 17.2)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbegrenzte Widgets (benötigt iOS 17.2)"
+          }
+        }
+      }
+    },
+    "Unlock premium features:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schalten Sie Premium-Funktionen frei:"
+          }
+        }
+      }
+    },
+    "Upgrade Options" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upgrade-Optionen"
+          }
+        }
+      }
+    },
+    "Use this key instead of creating a new user on your second device." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie diesen Code, anstatt einen neuen Benutzer auf Ihrem zweiten Gerät anzulegen."
+          }
+        }
+      }
+    },
+    "User Information" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benutzer Informationen"
+          }
+        }
+      }
+    },
+    "User not found" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutzer nicht gefunden"
+          }
+        }
+      }
+    },
+    "Was this video helpful?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "War dieses Video hilfreich?"
+          }
+        }
+      }
+    },
+    "Watch an example video here." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schaue dir hier ein Beispielvideo an."
+          }
+        }
+      }
+    },
+    "Wed" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi"
+          }
+        }
+      }
+    },
+    "When %@ completes tasks, they will appear here for your approval. You can then choose to either accept or deny them. This way, you can award points only when the task has truly been completed." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn %@ Aufgaben erledigt, werden diese hier angezeigt. Du kannst sie dann akzeptieren oder ablehnen, je nachdem, ob diese Aufgabe wirklich erledigt wurde."
+          }
+        }
+      }
+    },
+    "With the free version of Family Points, you enjoy the following features:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit der kostenlosen Version von Family Points genießen Sie die folgenden Funktionen:"
+          }
+        }
+      }
+    },
+    "Write a comment (optional)..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreibe einen Kommentar (optional)..."
+          }
+        }
+      }
+    },
+    "Write me an Email" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreibe mir eine Email"
+          }
+        }
+      }
+    },
+    "Write something..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreibe etwas..."
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ja"
+          }
+        }
+      }
+    },
+    "Your Devices" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Geräte"
+          }
+        }
+      }
+    },
+    "Your done Tasks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine erledigten Aufgaben"
+          }
+        }
+      }
+    },
+    "Your Family" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Familie"
+          }
+        }
+      }
+    },
+    "Your family has reached its task limit." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihre Familie hat ihre Aufgabengrenze erreicht."
+          }
+        }
+      }
+    },
+    "Your Family Link key can be found in the settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Familien-Beitritts-Code kann in den Einstellungen eines anderen Familienmitglieds gefunden werden"
+          }
+        }
+      }
+    },
+    "Your first Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Vorname"
+          }
+        }
+      }
+    },
+    "Your Information" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Informationen"
+          }
+        }
+      }
+    },
+    "Your last Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Nachname"
+          }
+        }
+      }
+    },
+    "Your name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Name"
+          }
+        }
+      }
+    },
+    "Your Name" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Name"
+          }
+        }
+      }
+    },
+    "Your Personal Link-Key" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein persönlicher Koppel-Code"
+          }
+        }
+      }
+    },
+    "Your Role" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Rolle"
+          }
+        }
+      }
+    },
+    "Your Tasks" : {
+      "comment" : "The name of the initial Tasklist",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Aufgaben"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

@@ -10,9 +10,10 @@
 		B100C5212FB3AAEF00A82D86 /* DoneTasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100C5202FB3AAEF00A82D86 /* DoneTasksListView.swift */; };
 		B1072F2629881E07008E5AF7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B1072F2529881E07008E5AF7 /* SwiftDate */; };
 		B112F2F32FC1D262009F251D /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112F2F22FC1D262009F251D /* UserDetailView.swift */; };
+		B112F2F52FC392EF009F251D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B112F2F42FC392EF009F251D /* InfoPlist.xcstrings */; };
+		B112F2F72FC392F0009F251D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B112F2F62FC392EF009F251D /* Localizable.xcstrings */; };
 		B11C850A2B2604BB00F38F0D /* AddFamilyMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C85092B2604BB00F38F0D /* AddFamilyMemberView.swift */; };
 		B11C850E2B261FC900F38F0D /* SetupMovie.mov in Resources */ = {isa = PBXBuildFile; fileRef = B11C850D2B261FC900F38F0D /* SetupMovie.mov */; };
-		B12564D72B3C6AE30084EA91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B12564D52B3C6AE30084EA91 /* InfoPlist.strings */; };
 		B12564DF2B3C75B70084EA91 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12564DE2B3C75B70084EA91 /* WidgetKit.framework */; };
 		B12564E12B3C75B70084EA91 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12564E02B3C75B70084EA91 /* SwiftUI.framework */; };
 		B12564E42B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12564E32B3C75B70084EA91 /* BonusPointsWidgetExtentionBundle.swift */; };
@@ -41,7 +42,6 @@
 		B1B9A527297C2D0D0004CAE1 /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */; };
 		B1B9A529297C2EA60004CAE1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9A528297C2EA60004CAE1 /* SettingsView.swift */; };
 		B1D7A9DA2ACC4C5D0053BA35 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1D7A9D92ACC4C5D0053BA35 /* Alamofire */; };
-		B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E0EE892B1E319300DBF92B /* Localizable.strings */; };
 		B1F06C9C2D74729400918345 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B1F06C9B2D74728100918345 /* .gitignore */; };
 		B1F2B27F294B1A700031A3F0 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */; };
 		B1F2B281294B1CB60031A3F0 /* TaskInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */; };
@@ -78,9 +78,10 @@
 		B100C5202FB3AAEF00A82D86 /* DoneTasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTasksListView.swift; sourceTree = "<group>"; };
 		B10560D22D467830007321EC /* BonusPointsWidgetExtentionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonusPointsWidgetExtentionExtension.entitlements; sourceTree = "<group>"; };
 		B112F2F22FC1D262009F251D /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		B112F2F42FC392EF009F251D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		B112F2F62FC392EF009F251D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B11C85092B2604BB00F38F0D /* AddFamilyMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyMemberView.swift; sourceTree = "<group>"; };
 		B11C850D2B261FC900F38F0D /* SetupMovie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = SetupMovie.mov; sourceTree = "<group>"; };
-		B12564D62B3C6AE30084EA91 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B12564DC2B3C75B70084EA91 /* BonusPointsWidgetExtentionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BonusPointsWidgetExtentionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12564DE2B3C75B70084EA91 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B12564E02B3C75B70084EA91 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -112,7 +113,6 @@
 		B1B9A526297C2D0D0004CAE1 /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
 		B1B9A528297C2EA60004CAE1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B1C9117D2B278737007AD509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B1E0EE8A2B1E319300DBF92B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B1F06C9B2D74728100918345 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B1F2B27E294B1A700031A3F0 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		B1F2B280294B1CB60031A3F0 /* TaskInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInListView.swift; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 			children = (
 				B191B8F02B3C7F5F0051426E /* BonusPointsDebug.entitlements */,
 				B1C9117D2B278737007AD509 /* Info.plist */,
-				B12564D52B3C6AE30084EA91 /* InfoPlist.strings */,
-				B1E0EE892B1E319300DBF92B /* Localizable.strings */,
+				B112F2F42FC392EF009F251D /* InfoPlist.xcstrings */,
+				B112F2F62FC392EF009F251D /* Localizable.xcstrings */,
 				B17EB1A429411CA1009903E9 /* Core */,
 				B17EB1A329411C92009903E9 /* Views */,
 				B17EB19429411C7B009903E9 /* FamilyPointsApp.swift */,
@@ -322,7 +322,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					B12564DB2B3C75B70084EA91 = {
 						CreatedOnToolsVersion = 15.1;
@@ -374,8 +374,8 @@
 				B1F06C9C2D74729400918345 /* .gitignore in Resources */,
 				B1F56AF72B77B729007ABB6E /* buyMeACoffeeButton.png in Resources */,
 				B17EB19D29411C7C009903E9 /* Preview Assets.xcassets in Resources */,
-				B12564D72B3C6AE30084EA91 /* InfoPlist.strings in Resources */,
-				B1E0EE8B2B1E319300DBF92B /* Localizable.strings in Resources */,
+				B112F2F52FC392EF009F251D /* InfoPlist.xcstrings in Resources */,
+				B112F2F72FC392F0009F251D /* Localizable.xcstrings in Resources */,
 				B19A16502D46A871002563B2 /* Family Points App.storekit in Resources */,
 				B11C850E2B261FC900F38F0D /* SetupMovie.mov in Resources */,
 				B17EB19929411C7C009903E9 /* Assets.xcassets in Resources */,
@@ -434,14 +434,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B12564D52B3C6AE30084EA91 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B12564D62B3C6AE30084EA91 /* de */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		B14C6C132B24FE6B00E31967 /* BonusPoints-InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -449,14 +441,6 @@
 			);
 			name = "BonusPoints-InfoPlist.strings";
 			path = BonusPoints;
-			sourceTree = "<group>";
-		};
-		B1E0EE892B1E319300DBF92B /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1E0EE8A2B1E319300DBF92B /* de */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -586,11 +570,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -645,10 +631,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -666,6 +654,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BonusPoints/Preview Content\"";
 				DEVELOPMENT_TEAM = 6M9RLHG794;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
@@ -715,6 +704,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BonusPoints/Preview Content\"";
 				DEVELOPMENT_TEAM = 6M9RLHG794;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;

@@ -58,7 +58,7 @@ struct TasksTabView: View {
                         sideBar(geo: geo)
                     } detail: {
                         detail(selection: selection)
-                    }
+                    }.navigationSplitViewStyle(.balanced)
                 }
             }
         }
@@ -150,19 +150,21 @@ struct TasksTabView: View {
             case .statistics:
                 StatisticsView()
             case .doneTasks:
-                Form {
-                    DoneTasksListView(showRemoveButton: true, userId: dm.user.id)
-                }.navigationTitle("Your done Tasks")
+                NavigationStack {
+                    Form {
+                        DoneTasksListView(showRemoveButton: true, userId: dm.user.id)
+                    }.navigationTitle("Your done Tasks")
+                }
             case .search:
                 SearchView()
             case .family:
-                                NavigationStack {
-                FamilyView()
-                                }
+                NavigationStack {
+                    FamilyView()
+                }
             case nil:
                 Text("Please select a List")
             }
-        }
+        }.environmentObject(dm)
     }
     
     func sideBar(geo: GeometryProxy) -> some View {
@@ -174,7 +176,7 @@ struct TasksTabView: View {
                             Text(taskList.name)
                                 .foregroundStyle(Color.accentColor)
                                 .font(.title2)
-                                .fontWeight(selection == .taskList(id: taskList.id) ? .bold : .regular)
+                                .fontWeight(selection == .taskList(id: taskList.id) ? .bold : .medium)
                             Text("\(taskList.list.count) Tasks")
                                 .foregroundStyle(selection == .taskList(id: taskList.id) ? Color.primary : Color.secondary)
                         }
@@ -191,8 +193,10 @@ struct TasksTabView: View {
                     Label("Add List", systemImage: "plus")
                 }
                 EditButton()
+                    .foregroundStyle(.primary)
             }
         }
+        .listStyle(.sidebar)
         .navigationTitle("My Lists")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -212,18 +216,18 @@ struct TasksTabView: View {
                 ToolbarItemGroup(placement: .bottomBar) {
                     HStack {
                         Button { selection = .doneTasks } label: {
-                            IconWithBadge(systemName: "list.bullet.rectangle", text: "Done Tasks", badgeCount: 0)
+                            IconWithBadge(systemName: "list.bullet.rectangle", text: String(localized: "Done Tasks"), badgeCount: 0)
                         }
                         .foregroundStyle(selection == .doneTasks ? Color.accentColor : Color.primary)
                         .fontWeight(selection == .doneTasks ? .bold : .regular)
                         
                         Button { selection = .family } label: {
-                            IconWithBadge(systemName: "person.3", text: "Family", badgeCount: dm.familyBadge)
+                            IconWithBadge(systemName: "person.3", text: String(localized: "Family"), badgeCount: dm.familyBadge)
                         }
                         .foregroundStyle(selection == .family ? Color.accentColor : Color.primary)
                         
                         Button { selection = .search } label: {
-                            IconWithBadge(systemName: "magnifyingglass", text: "Search", badgeCount: 0)
+                            IconWithBadge(systemName: "magnifyingglass", text: String(localized: "Search"), badgeCount: 0)
                         }
                         .foregroundStyle(selection == .search ? Color.accentColor : Color.primary)
                     }
@@ -288,6 +292,7 @@ struct TasksListListView: View {
                 }
                 .sheet(isPresented: $showNewTaskSheet) {
                     AddNewTaskView(actualTaskList: index)
+                        .environmentObject(dm)
                 }
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {

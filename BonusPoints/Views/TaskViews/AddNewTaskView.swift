@@ -41,7 +41,6 @@ struct AddNewTaskView: View {
     
     var body: some View {
         NavigationStack {
-            
             Form {
                 if dataHandler.countTasks() >= dataHandler.family.maxTasks && !dataHandler.family.premium {
                     Section {

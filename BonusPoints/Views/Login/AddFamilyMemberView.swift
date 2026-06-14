@@ -16,8 +16,6 @@ struct AddFamilyMemberView: View {
             if dataHandler.family.premium || dataHandler.family.users.count < 4 {
                 Section {
                     Text("Add your Family Members to your Family")
-                } footer: {
-                    Text("Family members can also be added through the settings.")
                 }
                 
                 Section {
@@ -46,6 +44,8 @@ struct AddFamilyMemberView: View {
                             }
                             
                             Spacer()
+                            
+//                            ShareLink(item: URL(string: "familypoints://join?token=\(dataHandler.family.linkKey)")!, message: Text("Join our family on Family Points — click to join and start earning points!"))
                         }
                     }
                 }

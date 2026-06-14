@@ -153,27 +153,16 @@ struct LoginView: View {
                                                         .font(.largeTitle)
                                                         .focused($loginUserFieldFocus, equals: i)
                                                     
-                                                    if #available(iOS 17, *) {
-                                                        Text(i == 2 ? "-" : "")
-                                                            .onChange(of: pairKey[i]) {
-                                                                if pairKey[i].count != 0 {
-                                                                    if pairKey[i].count != 1 {
-                                                                        pairKey[i] = String(pairKey[i].last!)
-                                                                    }
-                                                                    loginUserFieldFocus = (loginUserFieldFocus ?? -1) + 1
+                                                    
+                                                    Text(i == 2 ? "-" : "")
+                                                        .onChange(of: pairKey[i]) { _ in
+                                                            if pairKey[i].count != 0 {
+                                                                if pairKey[i].count != 1 {
+                                                                    pairKey[i] = String(pairKey[i].last!)
                                                                 }
+                                                                loginUserFieldFocus = (loginUserFieldFocus ?? -1) + 1
                                                             }
-                                                    } else {
-                                                        Text(i == 2 ? "-" : "")
-                                                            .onChange(of: pairKey[i]) { _ in
-                                                                if pairKey[i].count != 0 {
-                                                                    if pairKey[i].count != 1 {
-                                                                        pairKey[i] = String(pairKey[i].last!)
-                                                                    }
-                                                                    loginUserFieldFocus = (loginUserFieldFocus ?? -1) + 1
-                                                                }
-                                                            }
-                                                    }
+                                                        }
                                                 }
                                             }
                                             .padding()

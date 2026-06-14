@@ -17,13 +17,26 @@ struct FamilyPointsApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(mainHandler)
-//                .accentColor(colorScheme == .dark ? Color(red: 188 / 255.0, green: 47 / 255.0, blue: 1 / 255.0) : .orange)
                 .onOpenURL { url in
                     if let data = try? Data(contentsOf: url),
                        let decodedObject = try? JSONDecoder().decode(exportUserDataStruct.self, from: data) {
                         mainHandler.loadUserFromImportedStruct(data: decodedObject)
                     }
+                    handleURL(url)
                 }
         }
+    }
+    
+    func handleURL(_ url: URL) {
+        // familypoints://join?token=abc123
+        guard url.scheme == "familypoints",
+              url.host == "join",
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let token = components.queryItems?.first(where: { $0.name == "token" })?.value
+        else { return }
+        
+        print("Join with token: \(token)")
+        
+        
     }
 }

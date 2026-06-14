@@ -108,9 +108,7 @@ struct ContentView: View {
                                 .badge(dataHandler.familyBadge)
                                 
                                 Tab(role: .search) {
-                                    NavigationStack {
-                                        SearchView()
-                                    }
+                                    SearchView()
                                 }
                                 
                             }

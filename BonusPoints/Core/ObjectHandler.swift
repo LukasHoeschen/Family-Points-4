@@ -179,8 +179,8 @@ class AppDataHandler: ObservableObject {
         sendData["familyId"] = self.family.id
         
         AF.request(url + file, method: .post, parameters: sendData, encoding: JSONEncoding.default).responseDecodable(of: serverResponseStruct<T>.self) { response in
-            debugPrint(response)
-            print()
+//            debugPrint(response)
+//            print()
             if let value = response.value {
                 if let mes = value.message {
                     if mes == "NoCredentialsFound" {
